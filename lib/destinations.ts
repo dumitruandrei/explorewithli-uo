@@ -32,6 +32,27 @@ export type Destination = {
   packages: TravelPackage[]
 }
 
+export type Review = {
+  id: string
+  travelerName: string
+  avatar: string
+  stars: number
+  comment: string
+  googleReviewUrl: string
+}
+
+export type TeamMember = {
+  name: string
+  role: string
+  photo: string
+  bio: string
+}
+
+export type Collaborator = {
+  name: string
+  logo: string
+}
+
 export const destinations: Destination[] = [
   {
     slug: 'sichuan',
@@ -730,3 +751,96 @@ export const blogPosts: BlogPost[] = [
 export function getBlogPost(slug: string) {
   return blogPosts.find((p) => p.slug === slug)
 }
+
+export const reviews: Review[] = [
+  {
+    id: 'review-001',
+    travelerName: 'James Crawford',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James',
+    stars: 5,
+    comment:
+      'Horizon Travel transformed our understanding of southwest China. Every detail was thoughtfully arranged, from the private panda base visit to the family meals in Tibetan villages. Our guide Ming was exceptionally knowledgeable and kind. This wasn\'t just a trip—it was a journey into another way of life.',
+    googleReviewUrl:
+      'https://www.google.com/maps/place/Horizon+Travel/@coordinates/reviews',
+  },
+  {
+    id: 'review-002',
+    travelerName: 'Sophie & Marcus',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie',
+    stars: 5,
+    comment:
+      'We booked Horizon because of the small-group promise, and it delivered. Five travellers, two guides, local drivers who knew hidden restaurants. The Jiuzhaigou sunrise still takes our breath away when we close our eyes. Coming back for the Chongqing cruise in 2026.',
+    googleReviewUrl:
+      'https://www.google.com/maps/place/Horizon+Travel/@coordinates/reviews',
+  },
+  {
+    id: 'review-003',
+    travelerName: 'Amelia Rodriguez',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Amelia',
+    stars: 5,
+    comment:
+      'As a travel journalist, I\'ve been to 80+ countries. Horizon\'s approach to cultural exchange is genuinely respectful and immersive. The relationships with local communities are real. Not a single moment felt extractive or staged. Rare to find.',
+    googleReviewUrl:
+      'https://www.google.com/maps/place/Horizon+Travel/@coordinates/reviews',
+  },
+  {
+    id: 'review-004',
+    travelerName: 'Thomas Chen',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas',
+    stars: 5,
+    comment:
+      'First time in China. First time with a boutique operator. First time I actually understood a place instead of just photographing it. Sarah\'s team knows how to balance structure with spontaneity. Already planning return visit.',
+    googleReviewUrl:
+      'https://www.google.com/maps/place/Horizon+Travel/@coordinates/reviews',
+  },
+  {
+    id: 'review-005',
+    travelerName: 'Hannah & David',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Hannah',
+    stars: 5,
+    comment:
+      'Our honeymoon. Panda encounters, river cruises, family dinners in remote villages. The Shangri-La stargazing night was pure magic. Every question we had was answered before we asked it. Thank you, Horizon.',
+    googleReviewUrl:
+      'https://www.google.com/maps/place/Horizon+Travel/@coordinates/reviews',
+  },
+]
+
+export const teamMembers: TeamMember[] = [
+  {
+    name: 'Sarah Mitchell',
+    role: 'Founder & Chief Curator',
+    photo: '/images/team-sarah.png',
+    bio: 'Sarah founded Horizon Travel after a decade leading expedition teams across Central Asia and the Himalayas. She believes that travel should deepen understanding, not collect experiences. Her philosophy: move slowly, stay longer, listen more. When not scouting new routes, she\'s likely in a teahouse somewhere, notebook in hand.',
+  },
+  {
+    name: 'Ming Zhang',
+    role: 'Head Guide & Cultural Director',
+    photo: '/images/team-ming.png',
+    bio: 'Ming grew up in Chengdu and has spent 20 years as a guide, educator and cultural bridge. He holds degrees in anthropology and tourism, but his real education comes from the families, monks, and communities he works with. Ming ensures every itinerary reflects genuine local life, not tourist expectations. He speaks Mandarin, English, and some Tibetan.',
+  },
+  {
+    name: 'Elena Rossi',
+    role: 'Operations & Sustainability Lead',
+    photo: '/images/team-elena.png',
+    bio: 'Elena manages every logistical thread that makes seamless travel possible, while keeping our environmental footprint minimal. A former hotel manager in Barcelona, she shifted careers to prove that luxury and sustainability aren\'t opposites. She oversees local partnerships, carbon offsetting, and community benefit initiatives.',
+  },
+]
+
+export const collaborators: Collaborator[] = [
+  {
+    name: 'World Travel & Tourism Council',
+    logo: '/images/collab-logo-1.png',
+  },
+  {
+    name: 'Global Sustainable Tourism Council',
+    logo: '/images/collab-logo-2.png',
+  },
+  {
+    name: 'Cultural Exchange International',
+    logo: '/images/collab-logo-3.png',
+  },
+  {
+    name: 'Wildlife Conservation Alliance',
+    logo: '/images/collab-logo-4.png',
+  },
+]
