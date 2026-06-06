@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import { blogPosts } from '@/lib/destinations'
 
 export function BlogSection() {
@@ -22,7 +24,10 @@ export function BlogSection() {
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Feature article */}
-          <article className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card">
+          <Link
+            href={`/journal/${feature.slug}`}
+            className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-xl"
+          >
             <div className="relative aspect-[16/10] w-full overflow-hidden">
               <Image
                 src={feature.image || '/placeholder.svg'}
@@ -45,18 +50,20 @@ export function BlogSection() {
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 {feature.excerpt}
               </p>
-              <span className="mt-auto pt-5 text-sm font-medium text-primary">
+              <span className="mt-auto flex items-center gap-1 pt-5 text-sm font-medium text-primary">
                 Read article
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </span>
             </div>
-          </article>
+          </Link>
 
           {/* Secondary articles */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
             {rest.map((post) => (
-              <article
+              <Link
                 key={post.slug}
-                className="group flex gap-4 overflow-hidden rounded-lg border border-border bg-card p-3 sm:flex-col sm:p-0 lg:flex-row"
+                href={`/journal/${post.slug}`}
+                className="group flex gap-4 overflow-hidden rounded-lg border border-border bg-card p-3 transition-shadow hover:shadow-lg sm:flex-col sm:p-0 lg:flex-row"
               >
                 <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-md sm:aspect-[16/10] sm:w-full lg:aspect-square lg:w-40">
                   <Image
@@ -82,7 +89,7 @@ export function BlogSection() {
                     {post.excerpt}
                   </p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

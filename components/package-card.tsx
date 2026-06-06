@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Check, X, Clock, Users, ArrowRight } from 'lucide-react'
+import { Check, X, Clock, Users, ArrowRight, MapPin } from 'lucide-react'
 import type { TravelPackage } from '@/lib/destinations'
 import { ContactForm } from '@/components/contact-form'
 
@@ -176,6 +176,51 @@ export function PackageCard({
                   </li>
                 ))}
               </ul>
+
+              {/* Day-by-day itinerary */}
+              <h4 className="mt-8 font-serif text-lg text-card-foreground">
+                Your day-by-day itinerary
+              </h4>
+              <ol className="mt-4 flex flex-col">
+                {pkg.itinerary.map((day, i) => (
+                  <li key={day.day} className="flex gap-4">
+                    {/* Timeline marker */}
+                    <div className="flex flex-col items-center">
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-medium text-primary-foreground">
+                        {day.day}
+                      </span>
+                      {i < pkg.itinerary.length - 1 && (
+                        <span
+                          aria-hidden
+                          className="my-1 w-px flex-1 bg-border"
+                        />
+                      )}
+                    </div>
+                    <div className="pb-6">
+                      <p className="text-xs font-medium uppercase tracking-wider text-primary">
+                        Day {day.day}
+                      </p>
+                      <h5 className="mt-0.5 font-serif text-base text-card-foreground text-balance">
+                        {day.title}
+                      </h5>
+                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                        {day.description}
+                      </p>
+                      <ul className="mt-3 flex flex-col gap-1.5">
+                        {day.activities.map((a) => (
+                          <li
+                            key={a}
+                            className="flex items-start gap-2 text-sm text-foreground/80"
+                          >
+                            <MapPin className="mt-0.5 size-3.5 shrink-0 text-accent" />
+                            <span className="leading-snug">{a}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                ))}
+              </ol>
 
               <div className="mt-6 rounded-md bg-secondary p-4 text-sm leading-relaxed text-secondary-foreground">
                 Everything about this trip is flexible — the group size, the

@@ -1,11 +1,19 @@
 export type Activity = string
 
+export type ItineraryDay = {
+  day: number
+  title: string
+  description: string
+  activities: string[]
+}
+
 export type TravelPackage = {
   slug: string
   title: string
   image: string
   description: string
   activities: Activity[]
+  itinerary: ItineraryDay[]
   durationDays: number
   groupPrice: number // base price for a group of 4 (per person, USD)
   highlights: string
@@ -50,6 +58,62 @@ export const destinations: Destination[] = [
           'Old-town teahouse and face-changing opera evening',
           'Guided Sichuan street-food walk',
         ],
+        itinerary: [
+          {
+            day: 1,
+            title: 'Arrival in Chengdu',
+            description:
+              'Land in the laid-back capital of Sichuan and settle into your boutique courtyard hotel.',
+            activities: [
+              'Private airport transfer and check-in',
+              'Evening stroll through Jinli Ancient Street',
+              'Welcome dinner of classic Sichuan small plates',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Sunrise with the Pandas',
+            description:
+              'Beat the crowds with an early private entry to a panda research base while the giant pandas are most active.',
+            activities: [
+              'Private sunrise visit to a panda research base',
+              'Behind-the-scenes talk with conservation keepers',
+              'Afternoon tea in a traditional teahouse',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Hands-on Conservation',
+            description:
+              'Go deeper with a hands-on volunteering morning supporting the keepers and their work.',
+            activities: [
+              'Hands-on conservation experience with keepers',
+              'Bamboo preparation and enrichment activities',
+              'Documentary screening on panda rewilding',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Old-Town Culture & Cuisine',
+            description:
+              'Slow down into the rhythm of Chengdu life, from teahouses to the theatre.',
+            activities: [
+              'Guided Sichuan street-food walk',
+              'Face-changing Sichuan opera evening',
+              'Hands-on mapo tofu cooking class',
+            ],
+          },
+          {
+            day: 5,
+            title: 'Departure',
+            description:
+              'A relaxed final morning before your onward journey.',
+            activities: [
+              'Leisure morning and last-minute shopping',
+              'Private transfer to the airport',
+            ],
+          },
+        ],
         durationDays: 5,
         groupPrice: 1480,
         highlights: 'Best for first-time visitors and families.',
@@ -66,6 +130,82 @@ export const destinations: Destination[] = [
           'Sunrise photography at the mirror lakes',
           'Visit to Huanglong travertine pools',
           'Highland tea tasting with a local family',
+        ],
+        itinerary: [
+          {
+            day: 1,
+            title: 'Chengdu to the Mountains',
+            description:
+              'Depart the city and journey north into the alpine highlands of northern Sichuan.',
+            activities: [
+              'Scenic drive into the mountains',
+              'Roadside village lunch stop',
+              'Evening check-in near the valley gate',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Jiuzhaigou Valley',
+            description:
+              'A full day exploring the surreal turquoise lakes and tiered waterfalls of Jiuzhaigou.',
+            activities: [
+              'Guided hikes through Jiuzhaigou valley',
+              'Boardwalk trails between the mirror lakes',
+              'Picnic lunch among the forests',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Sunrise Photography',
+            description:
+              'Rise early for the still, mirror-like reflections that make these lakes legendary.',
+            activities: [
+              'Sunrise photography at the mirror lakes',
+              'Composition guidance with a local photographer',
+              'Relaxed afternoon by the water',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Tibetan Village Life',
+            description:
+              'Share a meal and the warmth of a Tibetan highland community.',
+            activities: [
+              'Tibetan village homestay lunch',
+              'Highland tea tasting with a local family',
+              'Walk through prayer-flag draped trails',
+            ],
+          },
+          {
+            day: 5,
+            title: 'Huanglong Pools',
+            description:
+              'Marvel at the cascading travertine pools of Huanglong, a natural wonder of mineral terraces.',
+            activities: [
+              'Visit to Huanglong travertine pools',
+              'Alpine meadow walk',
+              'Cable car ascent for panoramic views',
+            ],
+          },
+          {
+            day: 6,
+            title: 'Return Journey',
+            description:
+              'A scenic drive back toward Chengdu with stops along the way.',
+            activities: [
+              'Mountain pass viewpoints',
+              'Local handicraft market visit',
+            ],
+          },
+          {
+            day: 7,
+            title: 'Departure',
+            description: 'Final morning in Chengdu before departure.',
+            activities: [
+              'Leisure breakfast',
+              'Private transfer to the airport',
+            ],
+          },
         ],
         durationDays: 7,
         groupPrice: 1980,
@@ -98,6 +238,61 @@ export const destinations: Destination[] = [
           'Day trip to Jade Dragon Snow Mountain',
           'Black Dragon Pool sunrise stroll',
         ],
+        itinerary: [
+          {
+            day: 1,
+            title: 'Arrival in Lijiang',
+            description:
+              'Arrive in the UNESCO-listed old town and settle into a restored Naxi courtyard inn.',
+            activities: [
+              'Private transfer and check-in',
+              'Orientation walk through the canal lanes',
+              'Welcome dinner of Naxi specialties',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Old Town & Naxi Culture',
+            description:
+              'Explore the lantern-lit lanes and living traditions of the Naxi people.',
+            activities: [
+              'Private walking tour of Lijiang Old Town',
+              'Visit to the Dongba cultural museum',
+              'Naxi music and cuisine evening',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Jade Dragon Snow Mountain',
+            description:
+              'Ascend toward the glaciers of Yunnan’s most iconic peak.',
+            activities: [
+              'Day trip to Jade Dragon Snow Mountain',
+              'Cable car to the glacier viewpoint',
+              'Impression Lijiang outdoor performance',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Gardens & Reflections',
+            description:
+              'A gentle day of gardens, water and quiet corners of the old town.',
+            activities: [
+              'Black Dragon Pool sunrise stroll',
+              'Tea house afternoon with mountain views',
+              'Free time to explore the lanes',
+            ],
+          },
+          {
+            day: 5,
+            title: 'Departure',
+            description: 'A relaxed final morning before your onward journey.',
+            activities: [
+              'Leisure breakfast',
+              'Private transfer to the airport',
+            ],
+          },
+        ],
         durationDays: 5,
         groupPrice: 1620,
         highlights: 'Best for culture and slow travel.',
@@ -114,6 +309,94 @@ export const destinations: Destination[] = [
           'Tibetan family dinner and butter-tea ceremony',
           'Scenic drive over the Tiger Leaping Gorge',
           'Stargazing on the highland plateau',
+        ],
+        itinerary: [
+          {
+            day: 1,
+            title: 'Lijiang to the Highlands',
+            description:
+              'Begin the ascent from Lijiang toward the Tibetan plateau.',
+            activities: [
+              'Scenic drive north into the mountains',
+              'Roadside viewpoints and photo stops',
+              'Evening arrival in Shangri-La old town',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Tiger Leaping Gorge',
+            description:
+              'Stand above one of the deepest river canyons in the world.',
+            activities: [
+              'Scenic drive over the Tiger Leaping Gorge',
+              'Short rim trail walk',
+              'Picnic lunch with canyon views',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Songzanlin Monastery',
+            description:
+              'Visit the largest Tibetan Buddhist monastery in Yunnan, often called the little Potala Palace.',
+            activities: [
+              'Visit Songzanlin Monastery with a local monk',
+              'Prayer-wheel walk and rooftop views',
+              'Old-town butter-tea break',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Pudacuo National Park',
+            description:
+              'Walk through pristine alpine meadows, lakes and forests.',
+            activities: [
+              'Meadow walk through Pudacuo National Park',
+              'Lakeside boardwalk trails',
+              'Wildlife and wildflower spotting',
+            ],
+          },
+          {
+            day: 5,
+            title: 'Tibetan Family Life',
+            description:
+              'Share an evening in a traditional Tibetan home.',
+            activities: [
+              'Tibetan family dinner and butter-tea ceremony',
+              'Traditional song and dance',
+              'Cultural exchange with your hosts',
+            ],
+          },
+          {
+            day: 6,
+            title: 'Highland Wandering',
+            description:
+              'A free day to soak in the vast skies and quiet of the plateau.',
+            activities: [
+              'Optional horseback ride on the meadow',
+              'Local handicraft market visit',
+              'Relaxed afternoon at altitude',
+            ],
+          },
+          {
+            day: 7,
+            title: 'Plateau Stargazing',
+            description:
+              'Under some of the clearest skies in China, the highland night sky is unforgettable.',
+            activities: [
+              'Stargazing on the highland plateau',
+              'Bonfire and warm highland drinks',
+              'Astronomy guidance with your guide',
+            ],
+          },
+          {
+            day: 8,
+            title: 'Departure',
+            description: 'Final highland morning before the return journey.',
+            activities: [
+              'Leisure breakfast',
+              'Private transfer for departure',
+            ],
+          },
         ],
         durationDays: 8,
         groupPrice: 2240,
@@ -146,6 +429,50 @@ export const destinations: Destination[] = [
           'Cable car ride across the Yangtze',
           'Hidden alley food crawl',
         ],
+        itinerary: [
+          {
+            day: 1,
+            title: 'Arrival in Chongqing',
+            description:
+              'Arrive in the vertical megacity where the Yangtze and Jialing rivers meet.',
+            activities: [
+              'Private transfer and check-in',
+              'Evening orientation walk',
+              'Riverside welcome dinner',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Hotpot Masterclass',
+            description:
+              'Get hands-on with the spice capital’s most legendary dish.',
+            activities: [
+              'Private hotpot masterclass with a local chef',
+              'Spice market tour',
+              'Hidden alley food crawl',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Neon Nights & Skyline',
+            description:
+              'Experience the futuristic, fog-wrapped skyline of Chongqing after dark.',
+            activities: [
+              'Cable car ride across the Yangtze',
+              'Hongya Cave and riverside night walk',
+              'Rooftop viewpoint over the rivers',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Departure',
+            description: 'A final morning before your onward journey.',
+            activities: [
+              'Leisure breakfast',
+              'Private transfer to the airport',
+            ],
+          },
+        ],
         durationDays: 4,
         groupPrice: 1390,
         highlights: 'Best for foodies and city explorers.',
@@ -163,6 +490,72 @@ export const destinations: Destination[] = [
           'Sunrise tai chi on deck',
           'Gorge photography with a local guide',
         ],
+        itinerary: [
+          {
+            day: 1,
+            title: 'Embarkation in Chongqing',
+            description:
+              'Board your river vessel and set sail east into the night.',
+            activities: [
+              'Private transfer to the cruise terminal',
+              'Cabin check-in and ship orientation',
+              'Welcome dinner as the city lights drift by',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Fengdu Ancient Town',
+            description:
+              'Step ashore to explore the storied “Ghost City” of Fengdu.',
+            activities: [
+              'Visit to the ancient town of Fengdu',
+              'Sunrise tai chi on deck',
+              'Onboard talk on Yangtze history',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Into the Three Gorges',
+            description:
+              'Sail through the dramatic cliffs of the Qutang and Wu gorges.',
+            activities: [
+              'Gorge photography with a local guide',
+              'Scenic cruising through the Three Gorges',
+              'Evening cultural performance',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Lesser Three Gorges',
+            description:
+              'Transfer to smaller boats to navigate the intimate side canyons.',
+            activities: [
+              'Shore excursion to the Lesser Three Gorges',
+              'Sampan ride through narrow channels',
+              'Riverside village visit',
+            ],
+          },
+          {
+            day: 5,
+            title: 'Three Gorges Dam',
+            description:
+              'Witness the scale of the world’s largest hydroelectric project.',
+            activities: [
+              'Guided tour of the Three Gorges Dam',
+              'Ship lock transit experience',
+              'Farewell dinner aboard',
+            ],
+          },
+          {
+            day: 6,
+            title: 'Disembark & Departure',
+            description: 'Leave the river and continue your onward journey.',
+            activities: [
+              'Disembarkation and transfer',
+              'Onward travel assistance',
+            ],
+          },
+        ],
         durationDays: 6,
         groupPrice: 1860,
         highlights: 'Best for a relaxed, scenic pace.',
@@ -175,6 +568,11 @@ export function getDestination(slug: string) {
   return destinations.find((d) => d.slug === slug)
 }
 
+export type BlogSection = {
+  heading?: string
+  paragraphs: string[]
+}
+
 export type BlogPost = {
   slug: string
   title: string
@@ -182,6 +580,10 @@ export type BlogPost = {
   image: string
   category: string
   readTime: string
+  author: string
+  date: string
+  intro: string
+  content: BlogSection[]
 }
 
 export const blogPosts: BlogPost[] = [
@@ -193,6 +595,32 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog-tea.png',
     category: 'Culture',
     readTime: '6 min read',
+    author: 'Mei Lin',
+    date: 'March 12, 2025',
+    intro:
+      'Tea in southwest China is less a drink than a way of marking time. To sit with a cup is to step out of the hurry of travel and into the unhurried rhythm of local life.',
+    content: [
+      {
+        heading: 'The teahouse as a second living room',
+        paragraphs: [
+          'In Chengdu, the teahouse is an institution. Bamboo chairs spill out under old trees, and from morning until dusk locals gather to play cards, read the paper, have their ears cleaned, and above all, to talk. A pot of fragrant green tea costs little and buys you a whole afternoon.',
+          'Unlike the ceremony of other tea cultures, the Sichuan teahouse is wonderfully informal. The covered gaiwan bowl is refilled endlessly with hot water, and you are expected to linger. There is no rush, no expectation, only the gentle clink of porcelain and the murmur of conversation.',
+        ],
+      },
+      {
+        heading: 'Highland gardens of Yunnan',
+        paragraphs: [
+          'Travel south and west into Yunnan and the story of tea changes. Here, on misty mountain slopes, grow some of the oldest tea trees on earth — the source of pu-erh, a fermented tea prized for its depth and the way it changes with age, like wine.',
+          'Visiting a highland tea garden, you can watch leaves being hand-picked and pressed into cakes, then taste a brew that carries the earth and fog of the mountain in every sip.',
+        ],
+      },
+      {
+        heading: 'How to slow down over a cup',
+        paragraphs: [
+          'Our advice to travellers is simple: build a teahouse afternoon into every itinerary. Order a pot, put your phone away, and let the place reveal itself. Some of the most memorable moments of a journey through China happen not at a famous sight, but across a small table, steam rising between you and a new friend.',
+        ],
+      },
+    ],
   },
   {
     slug: 'festivals-of-yunnan',
@@ -202,6 +630,32 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog-festival.png',
     category: 'Traditions',
     readTime: '8 min read',
+    author: 'Daniel Cho',
+    date: 'February 2, 2025',
+    intro:
+      'Home to more than twenty ethnic minorities, Yunnan keeps a calendar bursting with festivals — explosions of music, water, fire and colour that turn entire valleys into celebration.',
+    content: [
+      {
+        heading: 'The Water-Splashing Festival',
+        paragraphs: [
+          'Each April, the Dai people of southern Yunnan ring in their new year by splashing water on one another — a joyful blessing meant to wash away the misfortunes of the past year. Streets become rivers of laughter as buckets, basins and water guns come out in force.',
+          'Beyond the splashing, the days are filled with dragon-boat races, sky lanterns and peacock dances. It is one of the most exuberant festivals you can witness anywhere in China.',
+        ],
+      },
+      {
+        heading: 'Torch Festival of the Yi',
+        paragraphs: [
+          'In high summer, the Yi people light great torches and parade them through villages and fields, believed to drive away pests and bad spirits and to pray for a good harvest. After dark, the hillsides glow with fire and the air fills with song, wrestling and bullfights.',
+        ],
+      },
+      {
+        heading: 'Planning a festival visit',
+        paragraphs: [
+          'Festival dates follow lunar and local calendars, so they shift each year. Because these celebrations are deeply community-based, we always travel with local guides who have personal ties to the villages — ensuring your visit is welcomed, respectful and genuinely immersive.',
+          'Tell us when you hope to travel and we will build an itinerary around whatever celebrations fall within your window.',
+        ],
+      },
+    ],
   },
   {
     slug: 'chongqing-after-dark',
@@ -211,6 +665,32 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog-street.png',
     category: 'Food & City',
     readTime: '5 min read',
+    author: 'Mei Lin',
+    date: 'January 18, 2025',
+    intro:
+      'When night falls, Chongqing transforms. The fog rolls in off the rivers, the skyscrapers light up in waves of colour, and the city reveals itself as one of the most cinematic places on earth.',
+    content: [
+      {
+        heading: 'A city built in layers',
+        paragraphs: [
+          'Chongqing climbs the cliffs above the meeting point of the Yangtze and Jialing rivers, and nothing here is flat. Streets stack on top of streets, a light-rail train famously punches through an apartment building, and what looks like a ground-floor exit can leave you twenty storeys up.',
+          'At night this vertical geography becomes magical. Take the cable car across the Yangtze for a slow, glittering crossing, or ride to a rooftop bar to watch the fog swallow the towers.',
+        ],
+      },
+      {
+        heading: 'The food that never sleeps',
+        paragraphs: [
+          'Chongqing is the spiritual home of hotpot, and the locals take it seriously. A cauldron of fiery, numbing broth bubbles at the centre of the table while you cook thin slices of meat, vegetables and tofu. It is communal, loud and utterly addictive.',
+          'Venture into the back alleys and you will find xiaomian noodle stalls, skewers grilling over coals, and crowds eating late into the night.',
+        ],
+      },
+      {
+        heading: 'Our after-dark route',
+        paragraphs: [
+          'We like to begin at the illuminated Hongya Cave complex, ride the cable car, then dive into a neighbourhood hotpot joint well away from the tourist track — finishing with a riverside stroll as the city shimmers on the water.',
+        ],
+      },
+    ],
   },
   {
     slug: 'packing-for-southwest-china',
@@ -220,5 +700,33 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog-packing.png',
     category: 'Travel Tips',
     readTime: '4 min read',
+    author: 'Daniel Cho',
+    date: 'December 5, 2024',
+    intro:
+      'Southwest China packs an extraordinary range of climates into a single trip. A little planning lets you stay comfortable from steamy river cities to the cold, thin air of the Tibetan plateau.',
+    content: [
+      {
+        heading: 'Dress in layers',
+        paragraphs: [
+          'You might begin a trip sweating in humid Chongqing and end it reaching for a down jacket in Shangri-La. The trick is layering: breathable base layers, a warm mid-layer and a packable waterproof shell will see you through almost anything.',
+        ],
+      },
+      {
+        heading: 'Prepare for altitude',
+        paragraphs: [
+          'Parts of Yunnan and northern Sichuan sit well above 3,000 metres. Take the first day at altitude slowly, drink plenty of water, and talk to your doctor about altitude medication before you travel. Our guides always carry oxygen and monitor the group carefully.',
+        ],
+      },
+      {
+        heading: 'The small essentials',
+        paragraphs: [
+          'Pack good walking shoes, a refillable water bottle, sun protection for the high-altitude glare, and a few tissues — and bring a sense of adventure for the spice. A power bank and a universal adapter round out the kit for a smooth, light-footed journey.',
+        ],
+      },
+    ],
   },
 ]
+
+export function getBlogPost(slug: string) {
+  return blogPosts.find((p) => p.slug === slug)
+}
