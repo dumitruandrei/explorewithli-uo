@@ -52,13 +52,18 @@ export function Hero() {
             around you. Flexible group size, duration and experiences.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button size="lg" render={<Link href="#destinations" />}>
+            <Button
+              size="lg"
+              nativeButton={false}
+              render={<Link href="#destinations" />}
+            >
               Explore destinations
               <ArrowRight className="size-4" />
             </Button>
             <Button
               size="lg"
               variant="outline"
+              nativeButton={false}
               className="border-background/40 bg-background/10 text-background backdrop-blur hover:bg-background/20 hover:text-background"
               render={<Link href="#contact" />}
             >

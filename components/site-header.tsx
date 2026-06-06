@@ -102,7 +102,12 @@ export function SiteHeader() {
             </Link>
           ))}
 
-          <Button size="sm" className="ml-2" render={<Link href="/#contact" />}>
+          <Button
+            size="sm"
+            className="ml-2"
+            nativeButton={false}
+            render={<Link href="/#contact" />}
+          >
             Plan your trip
           </Button>
         </div>
@@ -147,6 +152,7 @@ export function SiteHeader() {
           ))}
           <Button
             className="mt-3 w-full"
+            nativeButton={false}
             render={
               <Link href="/#contact" onClick={() => setMobileOpen(false)} />
             }
