@@ -12,10 +12,10 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader solid />
       <main className="bg-background">
         {/* Hero section */}
-        <section className="border-b border-border py-16 sm:py-24">
+        <section className="border-b border-border pb-16 pt-32 sm:pb-24 sm:pt-40">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <p className="text-xs font-medium uppercase tracking-widest text-primary">

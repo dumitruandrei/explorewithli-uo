@@ -6,7 +6,7 @@ import { ChevronDown, Menu, X } from 'lucide-react'
 import { destinations } from '@/lib/destinations'
 import { Button } from '@/components/ui/button'
 
-export function SiteHeader() {
+export function SiteHeader({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [destOpen, setDestOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -20,6 +20,10 @@ export function SiteHeader() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Pages without a dark hero behind the header should always use the
+  // readable solid styling instead of the light-on-image overlay styling.
+  const onLight = solid || scrolled
+
   const navLinks = [
     { label: 'Journeys', href: '/#destinations' },
     { label: 'Journal', href: '/#journal' },
@@ -30,7 +34,7 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+        onLight
           ? 'border-b border-border bg-background/90 backdrop-blur-md'
           : 'border-b border-transparent bg-transparent'
       }`}
@@ -39,7 +43,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className={`font-serif text-xl tracking-tight transition-colors sm:text-2xl ${
-            scrolled ? 'text-foreground' : 'text-background'
+            onLight ? 'text-foreground' : 'text-background'
           }`}
         >
           Explore with <span className="text-primary">Li</span>
@@ -57,7 +61,7 @@ export function SiteHeader() {
               onClick={() => setDestOpen((v) => !v)}
               aria-expanded={destOpen}
               className={`flex items-center gap-1 rounded-sm px-4 py-2 text-sm font-medium transition-colors ${
-                scrolled
+                onLight
                   ? 'text-foreground hover:text-primary'
                   : 'text-background hover:text-background/80'
               }`}
@@ -94,7 +98,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               className={`rounded-sm px-4 py-2 text-sm font-medium transition-colors ${
-                scrolled
+                onLight
                   ? 'text-foreground hover:text-primary'
                   : 'text-background hover:text-background/80'
               }`}
@@ -118,7 +122,7 @@ export function SiteHeader() {
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
-          className={`lg:hidden ${scrolled ? 'text-foreground' : 'text-background'}`}
+          className={`lg:hidden ${onLight ? 'text-foreground' : 'text-background'}`}
         >
           {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
