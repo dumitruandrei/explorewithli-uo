@@ -2,14 +2,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft } from 'lucide-react'
-import { destinations, getDestination } from '@/lib/destinations'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { PackageCard } from '@/components/package-card'
 import { ContactForm } from '@/components/contact-form'
+import {
+  getDestinationBySlug,
+  getDestinationNav,
+  getDestinationSlugs,
+} from '@/sanity/lib/fetch'
 
-export function generateStaticParams() {
-  return destinations.map((d) => ({ slug: d.slug }))
+export async function generateStaticParams() {
+  const slugs = await getDestinationSlugs()
+  return slugs.map(({ slug }) => ({ slug }))
 }
 
 export async function generateMetadata({
@@ -18,7 +23,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const destination = getDestination(slug)
+  const destination = await getDestinationBySlug(slug)
   if (!destination) return {}
   return {
     title: `${destination.name} — Explore with Li`,
@@ -32,17 +37,20 @@ export default async function DestinationPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const destination = getDestination(slug)
+  const [destination, destinations] = await Promise.all([
+    getDestinationBySlug(slug),
+    getDestinationNav(),
+  ])
+
   if (!destination) notFound()
 
   return (
     <>
-      <SiteHeader />
+      <SiteHeader destinations={destinations} />
       <main>
-        {/* Hero */}
         <section className="relative flex min-h-[70svh] items-end overflow-hidden">
           <Image
-            src={destination.heroImage || '/placeholder.svg'}
+            src={destination.heroImageUrl}
             alt={`${destination.name}, ${destination.region}`}
             fill
             priority
@@ -70,7 +78,6 @@ export default async function DestinationPage({
           </div>
         </section>
 
-        {/* Description */}
         <section className="bg-background py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
             <p className="text-lg leading-relaxed text-foreground text-pretty sm:text-xl">
@@ -79,7 +86,6 @@ export default async function DestinationPage({
           </div>
         </section>
 
-        {/* Packages */}
         <section className="bg-secondary py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className="max-w-2xl">
@@ -113,7 +119,6 @@ export default async function DestinationPage({
           </div>
         </section>
 
-        {/* Inline contact form */}
         <section className="bg-background py-16 sm:py-24">
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
             <div>

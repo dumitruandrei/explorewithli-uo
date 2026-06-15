@@ -3,10 +3,16 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ChevronDown, Menu, X } from 'lucide-react'
-import { destinations } from '@/lib/destinations'
+import type { DestinationNav } from '@/sanity/lib/fetch'
 import { Button } from '@/components/ui/button'
 
-export function SiteHeader({ solid = false }: { solid?: boolean }) {
+export function SiteHeader({
+  solid = false,
+  destinations = [],
+}: {
+  solid?: boolean
+  destinations?: DestinationNav[]
+}) {
   const [scrolled, setScrolled] = useState(false)
   const [destOpen, setDestOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)

@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
-import { teamMembers, collaborators } from '@/lib/destinations'
+import { teamMembers, collaborators } from '@/lib/about-content'
+import { getDestinationNav } from '@/sanity/lib/fetch'
 
 export const metadata = {
   title: 'About Us | Explore with Li',
@@ -9,10 +10,12 @@ export const metadata = {
     'Meet the Explore with Li team. We reimagine how people connect with southwest China through meaningful, slow travel.',
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const destinations = await getDestinationNav()
+
   return (
     <>
-      <SiteHeader solid />
+      <SiteHeader solid destinations={destinations} />
       <main className="bg-background">
         {/* Hero section */}
         <section className="border-b border-border pb-16 pt-32 sm:pb-24 sm:pt-40">

@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
-import { destinations } from '@/lib/destinations'
+import { getDestinations } from '@/sanity/lib/fetch'
 import { ContactForm } from '@/components/contact-form'
 
-export function ContactFooter() {
+export async function ContactFooter() {
+  const destinations = await getDestinations()
+
   return (
     <footer id="contact" className="bg-foreground text-background">
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: details */}
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">
               Plan your journey
@@ -18,8 +19,8 @@ export function ContactFooter() {
             </h2>
             <p className="mt-5 max-w-md leading-relaxed text-background/75">
               Tell us how you like to travel and our specialists will design a
-              flexible itinerary across Sichuan, Yunnan and Chongqing. Group
-              size, duration and activities are always adjustable.
+              flexible itinerary across southwest China. Group size, duration
+              and activities are always adjustable.
             </p>
 
             <div className="mt-10 space-y-5">
@@ -65,7 +66,6 @@ export function ContactFooter() {
             </div>
           </div>
 
-          {/* Right: form */}
           <div className="rounded-lg border border-background/15 bg-background/5 p-6 sm:p-8">
             <h3 className="font-serif text-2xl">Request a tailored itinerary</h3>
             <p className="mt-1 text-sm text-background/70">
@@ -77,7 +77,6 @@ export function ContactFooter() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-16 flex flex-col gap-6 border-t border-background/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="font-serif text-xl">
             Explore with <span className="text-primary">Li</span>
@@ -85,7 +84,7 @@ export function ContactFooter() {
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/70">
             {destinations.map((d) => (
               <Link
-                key={d.slug}
+                key={d._id}
                 href={`/destinations/${d.slug}`}
                 className="transition-colors hover:text-background"
               >

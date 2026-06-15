@@ -1,20 +1,4 @@
-export type ItineraryDay = {
-  day: number
-  title: string
-  description: string
-  activities: string[]
-}
-
-export type TravelPackage = {
-  slug: string
-  title: string
-  image: string
-  description: string
-  itinerary: ItineraryDay[]
-  durationDays: number
-  groupPrice: number // base price for a group of 4 (per person, EUR)
-  highlights: string
-}
+import type { TravelPackage } from '../lib/travel'
 
 export type Destination = {
   slug: string
@@ -34,18 +18,6 @@ export type Review = {
   stars: number
   comment: string
   googleReviewUrl: string
-}
-
-export type TeamMember = {
-  name: string
-  role: string
-  photo: string
-  bio: string
-}
-
-export type Collaborator = {
-  name: string
-  logo: string
 }
 
 export const destinations: Destination[] = [
@@ -533,39 +505,262 @@ export const destinations: Destination[] = [
       },
     ],
   },
+  {
+    slug: 'guizhou',
+    name: 'Guizhou',
+    region: 'Southwest China',
+    tagline: 'Waterfalls, drum towers & mountain villages',
+    heroImage: '/images/dest-guizhou.png',
+    description:
+      'Karst peaks, cascading falls and Dong and Miao villages where ancient songs still echo.',
+    longDescription:
+      'Guizhou is one of China\'s least visited provinces — and its most rewarding for travellers who want landscape and living culture in equal measure. Mist rolls through rice terraces, wooden drum towers rise above valley hamlets, and the roar of Huangguoshu Falls carries for miles. Our routes stay small, local and unhurried.',
+    packages: [
+      {
+        slug: 'huangguoshu-falls',
+        title: 'Huangguoshu Falls & Hidden Valleys',
+        image: '/images/pkg-guizhou-falls.png',
+        description:
+          'Stand before China\'s largest waterfall, then wander through limestone villages few travellers reach.',
+        itinerary: [
+          {
+            day: 1,
+            title: 'Arrival in Guiyang',
+            description:
+              'Settle into the provincial capital before heading into the countryside.',
+            activities: [
+              'Private transfer and boutique hotel check-in',
+              'Evening stroll through Old Town alleys',
+              'Welcome dinner of sour fish hotpot',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Huangguoshu Waterfall',
+            description:
+              'Experience the full force of the falls from multiple viewpoints.',
+            activities: [
+              'Early access paths behind the waterfall curtain',
+              'Rhino pool and gorge walk',
+              'Local Miao village lunch',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Karst Villages',
+            description:
+              'Drive deeper into stone forests and terraced hills.',
+            activities: [
+              'Guided walk through Tianxing Qiao stone forest',
+              'Village craft demonstration',
+              'Sunset over the rice terraces',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Departure',
+            description: 'A calm final morning before your onward journey.',
+            activities: [
+              'Leisure breakfast',
+              'Private transfer to the airport',
+            ],
+          },
+        ],
+        durationDays: 4,
+        groupPrice: 1290,
+        highlights: 'Best for nature lovers and photographers.',
+      },
+      {
+        slug: 'dong-village-culture',
+        title: 'Dong Villages & Drum Towers',
+        image: '/images/pkg-guizhou-dong.png',
+        description:
+          'Sleep in a wooden stilt village and hear polyphonic folk songs performed as they have been for centuries.',
+        itinerary: [
+          {
+            day: 1,
+            title: 'Into the Mountains',
+            description:
+              'Leave the cities behind for the forested highlands of southeast Guizhou.',
+            activities: [
+              'Scenic drive into the Qiandongnan region',
+              'Orientation in a restored village guesthouse',
+              'Communal rice wine welcome',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Drum Tower Life',
+            description:
+              'Learn how Dong communities gather, govern and celebrate under the tower roof.',
+            activities: [
+              'Visit to a drum tower with a village elder',
+              'Bridge and river walk',
+              'Evening folk song performance',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Textiles & Tea',
+            description:
+              'Try indigo dyeing and share a pot of local green tea with your hosts.',
+            activities: [
+              'Hands-on indigo cloth workshop',
+              'Tea picking on hillside terraces',
+              'Family-style dinner in a stilt house',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Market Day',
+            description:
+              'Join villagers trading produce, silver jewellery and stories.',
+            activities: [
+              'Weekly hill market visit',
+              'Free time to explore the lanes',
+              'Farewell feast with your hosts',
+            ],
+          },
+          {
+            day: 5,
+            title: 'Departure',
+            description: 'Return to Guiyang for your onward journey.',
+            activities: [
+              'Morning village walk',
+              'Private transfer for departure',
+            ],
+          },
+        ],
+        durationDays: 5,
+        groupPrice: 1540,
+        highlights: 'Best for culture-first travellers.',
+      },
+    ],
+  },
+  {
+    slug: 'guangxi',
+    name: 'Guangxi',
+    region: 'Southwest China',
+    tagline: 'Karst rivers, cormorant fishing & Zhuang traditions',
+    heroImage: '/images/dest-guangxi.png',
+    description:
+      'Limestone peaks rising from the Li River, bamboo rafts and timeless rural rhythms.',
+    longDescription:
+      'Guangxi is the landscape of classical Chinese painting made real — jagged karst spires reflected in glassy water, fishermen at dusk with cormorants, and Zhuang minority villages tucked between rice fields. Yangshuo and Guilin are the gateway, but our itineraries push beyond the postcard into quiet back roads and family kitchens.',
+    packages: [
+      {
+        slug: 'li-river-cruise',
+        title: 'Li River & Yangshuo Countryside',
+        image: '/images/pkg-guangxi-liriver.png',
+        description:
+          'Drift past karst peaks on a private river journey, then cycle through emerald paddies.',
+        itinerary: [
+          {
+            day: 1,
+            title: 'Arrival in Guilin',
+            description:
+              'Meet your guide and settle into a riverside retreat near Yangshuo.',
+            activities: [
+              'Private transfer from Guilin airport',
+              'Sunset walk along the Li River',
+              'Local beer fish welcome dinner',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Li River Journey',
+            description:
+              'See the famous karst scenery from the water at a quieter pace.',
+            activities: [
+              'Private bamboo raft section on the Li River',
+              'Photography stops at Xingping viewpoints',
+              'Calligraphy lesson in a village studio',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Yangshuo by Bicycle',
+            description:
+              'Pedal through villages where limestone towers frame every turn.',
+            activities: [
+              'Guided countryside cycling loop',
+              'Farm lunch with a local family',
+              'Optional Impression Liu Sanjie show',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Departure',
+            description: 'One last riverside morning before you leave.',
+            activities: [
+              'Leisure breakfast',
+              'Private transfer to the airport',
+            ],
+          },
+        ],
+        durationDays: 4,
+        groupPrice: 1350,
+        highlights: 'Best for first-time visitors and couples.',
+      },
+      {
+        slug: 'longji-rice-terraces',
+        title: 'Longji Rice Terraces & Zhuang Villages',
+        image: '/images/pkg-guangxi-longji.png',
+        description:
+          'Hike between cloud-wrapped terraces and stay in a wooden lodge above the clouds.',
+        itinerary: [
+          {
+            day: 1,
+            title: 'Ascent to Longji',
+            description:
+              'Climb into the Dragon\'s Backbone terraces as the light shifts across the paddies.',
+            activities: [
+              'Scenic drive from Guilin',
+              'Luggage porter assistance to your lodge',
+              'Sunset viewpoint walk',
+            ],
+          },
+          {
+            day: 2,
+            title: 'Terrace Trails',
+            description:
+              'Walk ridge paths between Zhuang and Yao hamlets.',
+            activities: [
+              'Guided hike through Ping\'an village terraces',
+              'Traditional bamboo rice lunch',
+              'Conversation with a local farmer',
+            ],
+          },
+          {
+            day: 3,
+            title: 'Minority Culture',
+            description:
+              'Learn embroidery, long-hair traditions and village history from community hosts.',
+            activities: [
+              'Visit to a Red Yao village',
+              'Embroidery demonstration',
+              'Home-cooked dinner on the terrace',
+            ],
+          },
+          {
+            day: 4,
+            title: 'Sunrise & Descent',
+            description:
+              'Wake early for mist over the terraces, then return toward Guilin.',
+            activities: [
+              'Sunrise photography at the viewpoints',
+              'Leisure morning in the village',
+              'Private transfer for departure',
+            ],
+          },
+        ],
+        durationDays: 4,
+        groupPrice: 1420,
+        highlights: 'Best for hikers and slow travellers.',
+      },
+    ],
+  },
 ]
-
-export function getDestination(slug: string) {
-  return destinations.find((d) => d.slug === slug)
-}
-
-/** Unique activities across all itinerary days, in first-seen order. */
-export function getPackageActivities(pkg: TravelPackage): string[] {
-  const seen = new Set<string>()
-  const activities: string[] = []
-  for (const day of pkg.itinerary) {
-    for (const activity of day.activities) {
-      if (!seen.has(activity)) {
-        seen.add(activity)
-        activities.push(activity)
-      }
-    }
-  }
-  return activities
-}
-
-export function getDestinationStartingPrice(destination: Destination): number {
-  if (destination.packages.length === 0) return 0
-  return Math.min(...destination.packages.map((pkg) => pkg.groupPrice))
-}
-
-export function formatPrice(amount: number): string {
-  return new Intl.NumberFormat('en-IE', {
-    style: 'currency',
-    currency: 'EUR',
-    maximumFractionDigits: 0,
-  }).format(amount)
-}
 
 export type BlogSection = {
   heading?: string
@@ -724,11 +919,68 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'sichuan-beyond-the-basics',
+    title: 'Sichuan Beyond the Basics',
+    excerpt:
+      'Skip the crowds and discover teahouse culture, hidden monasteries and kitchens locals actually use.',
+    image: '/images/blog-sichuan-hidden.png',
+    category: 'Culture',
+    readTime: '7 min read',
+    author: 'Ming Zhang',
+    date: 'April 8, 2025',
+    intro:
+      'Most visitors to Sichuan tick off pandas and hotpot — both essential — but the province rewards those who stay longer and walk further from the main roads.',
+    content: [
+      {
+        heading: 'The monastery trail',
+        paragraphs: [
+          'North of Chengdu, forested hills hide active Buddhist monasteries where monks still rise before dawn. A morning here is silence, incense and the clack of prayer beads — a world away from the city\'s traffic.',
+          'We arrange visits with guides who have long-standing relationships with the communities, so your presence is welcomed rather than intrusive.',
+        ],
+      },
+      {
+        heading: 'Kitchens without menus',
+        paragraphs: [
+          'Some of the best meals in Sichuan happen at tables with no English signage and no fixed menu. Trust your guide, point at what smells good, and prepare for flavours that redefine what "spicy" means.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'traveling-with-kids-in-china',
+    title: 'Traveling with Kids in Southwest China',
+    excerpt:
+      'How to keep young travellers engaged from panda bases to river boats without overloading the schedule.',
+    image: '/images/blog-family-travel.png',
+    category: 'Travel Tips',
+    readTime: '5 min read',
+    author: 'Elena Rossi',
+    date: 'March 28, 2025',
+    intro:
+      'Families often assume China is too big, too busy or too unfamiliar for children. In our experience, southwest China is one of the most rewarding regions for multi-generational trips — if you design the pace correctly.',
+    content: [
+      {
+        heading: 'Build in downtime',
+        paragraphs: [
+          'Children absorb more when the day has breathing room. We alternate big sights with teahouse afternoons, hotel swims and free exploration in car-free old towns.',
+        ],
+      },
+      {
+        heading: 'Food without battles',
+        paragraphs: [
+          'Sichuan spice can be dialled down in any kitchen. We pre-arrange milder versions of local dishes and always know where to find noodles, dumplings and fruit markets that keep everyone happy.',
+        ],
+      },
+      {
+        heading: 'Guides who get it',
+        paragraphs: [
+          'Our family specialists know when to push and when to pivot. A tired afternoon becomes a kite-flying session by the river — still China, still memorable, without tears.',
+        ],
+      },
+    ],
+  },
 ]
-
-export function getBlogPost(slug: string) {
-  return blogPosts.find((p) => p.slug === slug)
-}
 
 export const reviews: Review[] = [
   {
@@ -781,44 +1033,24 @@ export const reviews: Review[] = [
     googleReviewUrl:
       'https://www.google.com/maps/place/Explore+with+Li/@coordinates/reviews',
   },
-]
-
-export const teamMembers: TeamMember[] = [
   {
-    name: 'Sarah Mitchell',
-    role: 'Founder & Chief Curator',
-    photo: '/images/team-sarah.png',
-    bio: 'Sarah founded Explore with Li after a decade leading expedition teams across Central Asia and the Himalayas. She believes that travel should deepen understanding, not collect experiences. Her philosophy: move slowly, stay longer, listen more. When not scouting new routes, she\'s likely in a teahouse somewhere, notebook in hand.',
+    id: 'review-006',
+    travelerName: 'Olivia & Ben',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Olivia',
+    stars: 5,
+    comment:
+      'We wanted Guizhou without a tour-bus feel and got exactly that — village songs, waterfall mist and guides who translated not just language but context. The drum tower dinner was a highlight of our year.',
+    googleReviewUrl:
+      'https://www.google.com/maps/place/Explore+with+Li/@coordinates/reviews',
   },
   {
-    name: 'Ming Zhang',
-    role: 'Head Guide & Cultural Director',
-    photo: '/images/team-ming.png',
-    bio: 'Ming grew up in Chengdu and has spent 20 years as a guide, educator and cultural bridge. He holds degrees in anthropology and tourism, but his real education comes from the families, monks, and communities he works with. Ming ensures every itinerary reflects genuine local life, not tourist expectations. He speaks Mandarin, English, and some Tibetan.',
-  },
-  {
-    name: 'Elena Rossi',
-    role: 'Operations & Sustainability Lead',
-    photo: '/images/team-elena.png',
-    bio: 'Elena manages every logistical thread that makes seamless travel possible, while keeping our environmental footprint minimal. A former hotel manager in Barcelona, she shifted careers to prove that luxury and sustainability aren\'t opposites. She oversees local partnerships, carbon offsetting, and community benefit initiatives.',
-  },
-]
-
-export const collaborators: Collaborator[] = [
-  {
-    name: 'World Travel & Tourism Council',
-    logo: '/images/collab-logo-1.png',
-  },
-  {
-    name: 'Global Sustainable Tourism Council',
-    logo: '/images/collab-logo-2.png',
-  },
-  {
-    name: 'Cultural Exchange International',
-    logo: '/images/collab-logo-3.png',
-  },
-  {
-    name: 'Wildlife Conservation Alliance',
-    logo: '/images/collab-logo-4.png',
+    id: 'review-007',
+    travelerName: 'Raj Patel',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Raj',
+    stars: 5,
+    comment:
+      'Traveled solo and never felt alone. The Li River mornings were meditative, the Yangshuo cycling was joyful, and every logistics detail was handled before I knew I needed it. Already recommending to colleagues.',
+    googleReviewUrl:
+      'https://www.google.com/maps/place/Explore+with+Li/@coordinates/reviews',
   },
 ]

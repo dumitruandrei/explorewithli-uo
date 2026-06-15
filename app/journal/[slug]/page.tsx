@@ -2,12 +2,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import { blogPosts, getBlogPost } from '@/lib/destinations'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
+import {
+  formatJournalDate,
+  getDestinationNav,
+  getJournalPostBySlug,
+  getJournalPosts,
+  getJournalPostSlugs,
+} from '@/sanity/lib/fetch'
 
-export function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }))
+export async function generateStaticParams() {
+  const slugs = await getJournalPostSlugs()
+  return slugs.map(({ slug }) => ({ slug }))
 }
 
 export async function generateMetadata({
@@ -16,7 +23,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const post = await getJournalPostBySlug(slug)
   if (!post) return {}
   return {
     title: `${post.title} — Explore with Li Journal`,
@@ -30,19 +37,23 @@ export default async function JournalArticlePage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const [post, allPosts, destinations] = await Promise.all([
+    getJournalPostBySlug(slug),
+    getJournalPosts(),
+    getDestinationNav(),
+  ])
+
   if (!post) notFound()
 
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3)
+  const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 3)
 
   return (
     <>
-      <SiteHeader />
+      <SiteHeader destinations={destinations} />
       <main>
-        {/* Hero */}
         <section className="relative flex min-h-[60svh] items-end overflow-hidden">
           <Image
-            src={post.image || '/placeholder.svg'}
+            src={post.imageUrl}
             alt={post.title}
             fill
             priority
@@ -67,14 +78,13 @@ export default async function JournalArticlePage({
             <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-background/80">
               <span>By {post.author}</span>
               <span aria-hidden>·</span>
-              <span>{post.date}</span>
+              <span>{formatJournalDate(post.publishedAt)}</span>
               <span aria-hidden>·</span>
               <span>{post.readTime}</span>
             </div>
           </div>
         </section>
 
-        {/* Article body */}
         <article className="bg-background py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-5 sm:px-8">
             <p className="font-serif text-xl leading-relaxed text-foreground text-pretty sm:text-2xl">
@@ -122,7 +132,6 @@ export default async function JournalArticlePage({
           </div>
         </article>
 
-        {/* Related articles */}
         <section className="bg-secondary py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <h2 className="font-serif text-2xl leading-tight text-foreground text-balance sm:text-3xl">
@@ -137,7 +146,7 @@ export default async function JournalArticlePage({
                 >
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <Image
-                      src={p.image || '/placeholder.svg'}
+                      src={p.imageUrl}
                       alt={p.title}
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"

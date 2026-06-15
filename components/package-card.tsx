@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Check, X, Clock, Users, ArrowRight, MapPin } from 'lucide-react'
-import type { TravelPackage } from '@/lib/destinations'
-import { formatPrice, getPackageActivities } from '@/lib/destinations'
+import type { TravelPackage } from '@/lib/travel'
+import { formatPrice, getPackageActivities } from '@/lib/travel'
 import { ContactForm } from '@/components/contact-form'
 
 export function PackageCard({

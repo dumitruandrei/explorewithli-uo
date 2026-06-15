@@ -1,10 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { blogPosts } from '@/lib/destinations'
+import { getJournalPosts } from '@/sanity/lib/fetch'
 
-export function BlogSection() {
-  const [feature, ...rest] = blogPosts
+export async function BlogSection() {
+  const posts = await getJournalPosts()
+  const feature = posts.find((post) => post.featured) ?? posts[0]
+  const rest = posts.filter((post) => post.slug !== feature?.slug)
+
+  if (!feature) return null
 
   return (
     <section id="journal" className="bg-secondary py-20 sm:py-28">
@@ -23,14 +27,13 @@ export function BlogSection() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {/* Feature article */}
           <Link
             href={`/journal/${feature.slug}`}
             className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-xl"
           >
             <div className="relative aspect-[16/10] w-full overflow-hidden">
               <Image
-                src={feature.image || '/placeholder.svg'}
+                src={feature.imageUrl}
                 alt={feature.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -57,7 +60,6 @@ export function BlogSection() {
             </div>
           </Link>
 
-          {/* Secondary articles */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
             {rest.map((post) => (
               <Link
@@ -67,7 +69,7 @@ export function BlogSection() {
               >
                 <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-md sm:aspect-[16/10] sm:w-full lg:aspect-square lg:w-40">
                   <Image
-                    src={post.image || '/placeholder.svg'}
+                    src={post.imageUrl}
                     alt={post.title}
                     fill
                     sizes="(max-width: 1024px) 50vw, 160px"

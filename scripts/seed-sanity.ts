@@ -2,12 +2,12 @@ import {existsSync, readFileSync} from 'fs'
 import {join} from 'path'
 import {getCliClient} from 'sanity/cli'
 
+import type { TravelPackage } from '../lib/travel'
 import {
   blogPosts,
   destinations,
   reviews,
-  type TravelPackage,
-} from '../lib/destinations'
+} from './seed-data'
 
 function loadEnvFile() {
   const envPath = join(process.cwd(), '.env.local')
@@ -34,9 +34,20 @@ loadEnvFile()
 
 const client = getCliClient({apiVersion: '2026-06-15'})
 
-const imageCache = new Map<string, Awaited<ReturnType<typeof uploadImage>>>()
+type SanityImageField = {
+  _type: 'image'
+  asset: {
+    _type: 'reference'
+    _ref: string
+  }
+}
 
-async function uploadImage(source: string, filename: string) {
+const imageCache = new Map<string, SanityImageField>()
+
+async function uploadImage(
+  source: string,
+  filename: string,
+): Promise<SanityImageField> {
   const cacheKey = `${source}::${filename}`
   const cached = imageCache.get(cacheKey)
   if (cached) return cached
@@ -74,7 +85,7 @@ async function uploadImage(source: string, filename: string) {
     contentType,
   })
 
-  const image = {
+  const image: SanityImageField = {
     _type: 'image' as const,
     asset: {
       _type: 'reference' as const,
