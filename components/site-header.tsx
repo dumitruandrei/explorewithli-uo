@@ -42,7 +42,7 @@ export function SiteHeader() {
             scrolled ? 'text-foreground' : 'text-background'
           }`}
         >
-          Horizon<span className="text-primary">.</span>Travel
+          Explore with <span className="text-primary">Li</span>
         </Link>
 
         {/* Desktop nav */}

@@ -24,7 +24,7 @@ export function ContactFooter() {
 
             <div className="mt-10 space-y-5">
               <a
-                href="mailto:hello@horizon.travel"
+                href="mailto:hello@explorewithli.com"
                 className="flex items-center gap-4 text-background/90 transition-colors hover:text-background"
               >
                 <span className="flex size-10 items-center justify-center rounded-full border border-background/25">
@@ -34,7 +34,7 @@ export function ContactFooter() {
                   <span className="block text-xs uppercase tracking-wider text-background/60">
                     Email
                   </span>
-                  hello@horizon.travel
+                  hello@explorewithli.com
                 </span>
               </a>
               <a
@@ -80,7 +80,7 @@ export function ContactFooter() {
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col gap-6 border-t border-background/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="font-serif text-xl">
-            Horizon<span className="text-primary">.</span>Travel
+            Explore with <span className="text-primary">Li</span>
           </Link>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/70">
             {destinations.map((d) => (
@@ -97,7 +97,7 @@ export function ContactFooter() {
             </Link>
           </nav>
           <p className="text-xs text-background/50">
-            © {new Date().getFullYear()} Horizon Travel. All rights reserved.
+            © {new Date().getFullYear()} Explore with Li. All rights reserved.
           </p>
         </div>
       </div>

@@ -4,9 +4,9 @@ import { ContactFooter } from '@/components/contact-footer'
 import { teamMembers, collaborators } from '@/lib/destinations'
 
 export const metadata = {
-  title: 'About Us | Horizon Travel',
+  title: 'About Us | Explore with Li',
   description:
-    'Meet the Horizon Travel team. We reimagine how people connect with southwest China through meaningful, slow travel.',
+    'Meet the Explore with Li team. We reimagine how people connect with southwest China through meaningful, slow travel.',
 }
 
 export default function AboutPage() {
@@ -25,7 +25,7 @@ export default function AboutPage() {
                 Travel that Changes You
               </h1>
               <p className="mx-auto mt-8 max-w-2xl leading-relaxed text-muted-foreground text-lg">
-                Horizon Travel exists to prove that meaningful tourism is
+                Explore with Li exists to prove that meaningful tourism is
                 possible. We move slowly through southwest China, spend time
                 with real people, and leave places better than we found them.
               </p>
@@ -53,7 +53,7 @@ export default function AboutPage() {
                     She partnered with Ming Zhang, a cultural anthropologist and
                     lifelong Sichuan resident, and Elena Rossi, an operations
                     expert committed to sustainable practices. Together, they
-                    built Horizon Travel on a simple premise: fewer guests,
+                    built Explore with Li on a simple premise: fewer guests,
                     longer stays, real relationships.
                   </p>
                   <p>
@@ -121,7 +121,7 @@ export default function AboutPage() {
                 Meet The Team
               </p>
               <h2 className="mt-3 font-serif text-3xl leading-tight text-foreground text-balance sm:text-4xl">
-                The people behind Horizon
+                The people behind Explore with Li
               </h2>
             </div>
 

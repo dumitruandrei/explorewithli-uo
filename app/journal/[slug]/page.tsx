@@ -19,7 +19,7 @@ export async function generateMetadata({
   const post = getBlogPost(slug)
   if (!post) return {}
   return {
-    title: `${post.title} — Horizon Travel Journal`,
+    title: `${post.title} — Explore with Li Journal`,
     description: post.excerpt,
   }
 }

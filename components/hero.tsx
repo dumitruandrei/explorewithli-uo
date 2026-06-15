@@ -48,7 +48,7 @@ export function Hero() {
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-background/85 sm:text-lg text-pretty">
             From the panda forests of Sichuan to the snow peaks of Yunnan and
-            the river gorges of Chongqing — every Horizon journey is shaped
+            the river gorges of Chongqing — every Explore with Li journey is shaped
             around you. Flexible group size, duration and experiences.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

@@ -15,9 +15,9 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: 'Horizon Travel — Boutique Journeys Through China',
+  title: 'Explore with Li — Boutique Journeys Through China',
   description:
-    'Horizon Travel crafts bespoke, flexible journeys through Sichuan, Yunnan and Chongqing. Tailor your group size, duration and experiences with our local specialists.',
+    'Explore with Li crafts bespoke, flexible journeys through Sichuan, Yunnan and Chongqing. Tailor your group size, duration and experiences with our local specialists.',
   generator: 'v0.app',
   icons: {
     icon: [

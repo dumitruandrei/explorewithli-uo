@@ -21,7 +21,7 @@ export async function generateMetadata({
   const destination = getDestination(slug)
   if (!destination) return {}
   return {
-    title: `${destination.name} — Horizon Travel`,
+    title: `${destination.name} — Explore with Li`,
     description: destination.description,
   }
 }
