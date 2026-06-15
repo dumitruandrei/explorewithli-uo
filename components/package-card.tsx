@@ -4,11 +4,8 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Check, X, Clock, Users, ArrowRight, MapPin } from 'lucide-react'
 import type { TravelPackage } from '@/lib/destinations'
+import { formatPrice, getPackageActivities } from '@/lib/destinations'
 import { ContactForm } from '@/components/contact-form'
-
-function formatPrice(n: number) {
-  return `$${n.toLocaleString('en-US')}`
-}
 
 export function PackageCard({
   pkg,
@@ -37,6 +34,8 @@ export function PackageCard({
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
+
+  const activities = getPackageActivities(pkg)
 
   return (
     <>
@@ -68,7 +67,7 @@ export function PackageCard({
           </p>
 
           <ul className="mt-4 space-y-1.5">
-            {pkg.activities.slice(0, 3).map((a) => (
+            {activities.slice(0, 3).map((a) => (
               <li
                 key={a}
                 className="flex items-start gap-2 text-sm text-foreground/80"
@@ -77,9 +76,9 @@ export function PackageCard({
                 <span className="leading-snug">{a}</span>
               </li>
             ))}
-            {pkg.activities.length > 3 && (
+            {activities.length > 3 && (
               <li className="pl-6 text-xs text-muted-foreground">
-                + {pkg.activities.length - 3} more experiences
+                + {activities.length - 3} more experiences
               </li>
             )}
           </ul>
@@ -166,7 +165,7 @@ export function PackageCard({
                 What you’ll experience
               </h4>
               <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-                {pkg.activities.map((a) => (
+                {activities.map((a) => (
                   <li
                     key={a}
                     className="flex items-start gap-2 text-sm text-foreground/80"

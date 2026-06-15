@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
-import { destinations } from '@/lib/destinations'
+import { destinations, formatPrice, getDestinationStartingPrice } from '@/lib/destinations'
 
 export function DestinationsGrid() {
   return (
@@ -32,7 +32,7 @@ export function DestinationsGrid() {
             >
               <div className="relative aspect-[3/4] w-full">
                 <Image
-                  src={d.cardImage || '/placeholder.svg'}
+                  src={d.heroImage || '/placeholder.svg'}
                   alt={`${d.name}, ${d.region}`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -61,7 +61,7 @@ export function DestinationsGrid() {
                 <p className="mt-4 text-sm text-background/90">
                   From{' '}
                   <span className="font-serif text-lg text-background">
-                    ${d.startingPrice.toLocaleString('en-US')}
+                    {formatPrice(getDestinationStartingPrice(d))}
                   </span>{' '}
                   / person
                 </p>

@@ -1,5 +1,3 @@
-export type Activity = string
-
 export type ItineraryDay = {
   day: number
   title: string
@@ -12,10 +10,9 @@ export type TravelPackage = {
   title: string
   image: string
   description: string
-  activities: Activity[]
   itinerary: ItineraryDay[]
   durationDays: number
-  groupPrice: number // base price for a group of 4 (per person, USD)
+  groupPrice: number // base price for a group of 4 (per person, EUR)
   highlights: string
 }
 
@@ -25,8 +22,6 @@ export type Destination = {
   region: string
   tagline: string
   heroImage: string
-  cardImage: string
-  startingPrice: number
   description: string
   longDescription: string
   packages: TravelPackage[]
@@ -60,8 +55,6 @@ export const destinations: Destination[] = [
     region: 'Southwest China',
     tagline: 'Pandas, sacred peaks & fiery cuisine',
     heroImage: '/images/dest-sichuan.png',
-    cardImage: '/images/dest-sichuan.png',
-    startingPrice: 1480,
     description:
       'Misty mountains, bamboo forests and the gentle giants that call them home.',
     longDescription:
@@ -73,12 +66,6 @@ export const destinations: Destination[] = [
         image: '/images/pkg-sichuan-panda.png',
         description:
           'Wake before the crowds for a private morning with the pandas, then sink into the rhythm of Chengdu life.',
-        activities: [
-          'Private sunrise visit to a panda research base',
-          'Hands-on conservation experience with keepers',
-          'Old-town teahouse and face-changing opera evening',
-          'Guided Sichuan street-food walk',
-        ],
         itinerary: [
           {
             day: 1,
@@ -145,13 +132,6 @@ export const destinations: Destination[] = [
         image: '/images/pkg-sichuan-jiuzhaigou.png',
         description:
           'Trek between turquoise lakes and tiered waterfalls in one of China’s most surreal landscapes.',
-        activities: [
-          'Guided hikes through Jiuzhaigou valley',
-          'Tibetan village homestay lunch',
-          'Sunrise photography at the mirror lakes',
-          'Visit to Huanglong travertine pools',
-          'Highland tea tasting with a local family',
-        ],
         itinerary: [
           {
             day: 1,
@@ -240,8 +220,6 @@ export const destinations: Destination[] = [
     region: 'Southwest China',
     tagline: 'Ancient towns, snow peaks & living cultures',
     heroImage: '/images/dest-yunnan.png',
-    cardImage: '/images/dest-yunnan.png',
-    startingPrice: 1620,
     description:
       'Cobblestone old towns beneath snow mountains, home to China’s richest tapestry of cultures.',
     longDescription:
@@ -253,12 +231,6 @@ export const destinations: Destination[] = [
         image: '/images/pkg-yunnan-lijiang.png',
         description:
           'Lose yourself in canal-laced lanes and discover the living traditions of the Naxi people.',
-        activities: [
-          'Private walking tour of Lijiang Old Town',
-          'Naxi music and cuisine evening',
-          'Day trip to Jade Dragon Snow Mountain',
-          'Black Dragon Pool sunrise stroll',
-        ],
         itinerary: [
           {
             day: 1,
@@ -324,13 +296,6 @@ export const destinations: Destination[] = [
         image: '/images/pkg-yunnan-shangri.png',
         description:
           'Climb to the Tibetan plateau for golden monasteries, vast meadows and prayer-flag passes.',
-        activities: [
-          'Visit Songzanlin Monastery with a local monk',
-          'Meadow walk through Pudacuo National Park',
-          'Tibetan family dinner and butter-tea ceremony',
-          'Scenic drive over the Tiger Leaping Gorge',
-          'Stargazing on the highland plateau',
-        ],
         itinerary: [
           {
             day: 1,
@@ -431,8 +396,6 @@ export const destinations: Destination[] = [
     region: 'Southwest China',
     tagline: 'Riverside megacity, gorges & legendary hotpot',
     heroImage: '/images/dest-chongqing.png',
-    cardImage: '/images/dest-chongqing.png',
-    startingPrice: 1390,
     description:
       'A vertical city of fog and neon where the Yangtze and Jialing rivers meet.',
     longDescription:
@@ -444,12 +407,6 @@ export const destinations: Destination[] = [
         image: '/images/pkg-chongqing-hotpot.png',
         description:
           'Eat your way through the spice capital of China and ride the city’s vertiginous skyline.',
-        activities: [
-          'Private hotpot masterclass with a local chef',
-          'Hongya Cave and riverside night walk',
-          'Cable car ride across the Yangtze',
-          'Hidden alley food crawl',
-        ],
         itinerary: [
           {
             day: 1,
@@ -504,13 +461,6 @@ export const destinations: Destination[] = [
         image: '/images/pkg-chongqing-yangtze.png',
         description:
           'Drift through the legendary Three Gorges on a slow, scenic river journey.',
-        activities: [
-          'Multi-day Yangtze river cruise',
-          'Shore excursion to the Lesser Three Gorges',
-          'Visit to the ancient town of Fengdu',
-          'Sunrise tai chi on deck',
-          'Gorge photography with a local guide',
-        ],
         itinerary: [
           {
             day: 1,
@@ -587,6 +537,34 @@ export const destinations: Destination[] = [
 
 export function getDestination(slug: string) {
   return destinations.find((d) => d.slug === slug)
+}
+
+/** Unique activities across all itinerary days, in first-seen order. */
+export function getPackageActivities(pkg: TravelPackage): string[] {
+  const seen = new Set<string>()
+  const activities: string[] = []
+  for (const day of pkg.itinerary) {
+    for (const activity of day.activities) {
+      if (!seen.has(activity)) {
+        seen.add(activity)
+        activities.push(activity)
+      }
+    }
+  }
+  return activities
+}
+
+export function getDestinationStartingPrice(destination: Destination): number {
+  if (destination.packages.length === 0) return 0
+  return Math.min(...destination.packages.map((pkg) => pkg.groupPrice))
+}
+
+export function formatPrice(amount: number): string {
+  return new Intl.NumberFormat('en-IE', {
+    style: 'currency',
+    currency: 'EUR',
+    maximumFractionDigits: 0,
+  }).format(amount)
 }
 
 export type BlogSection = {
