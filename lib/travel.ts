@@ -9,6 +9,7 @@ export type TravelPackage = {
   slug: string
   title: string
   image: string
+  images?: string[]
   description: string
   itinerary: ItineraryDay[]
   durationDays: number

@@ -106,12 +106,21 @@ function parsePublishedAt(date: string) {
 }
 
 async function mapPackage(pkg: TravelPackage) {
+  const images = pkg.images
+    ? await Promise.all(
+        pkg.images.map((img, i) =>
+          uploadImage(img, `${pkg.slug}-gallery-${i}.png`),
+        ),
+      )
+    : undefined
+
   return {
     _type: 'travelPackage' as const,
     _key: pkg.slug,
     title: pkg.title,
     slug: {_type: 'slug' as const, current: pkg.slug},
     image: await uploadImage(pkg.image, `${pkg.slug}.png`),
+    images,
     description: pkg.description,
     itinerary: pkg.itinerary.map((day) => ({
       _type: 'itineraryDay' as const,

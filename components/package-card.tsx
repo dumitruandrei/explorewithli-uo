@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Check, X, Clock, Users, ArrowRight, MapPin } from 'lucide-react'
+import { Check, X, Clock, Users, ArrowRight, MapPin, ChevronLeft, ChevronRight } from 'lucide-react'
 import type { TravelPackage } from '@/lib/travel'
 import { formatPrice } from '@/lib/travel'
 import { ContactForm } from '@/components/contact-form'
@@ -15,6 +15,15 @@ export function PackageCard({
   destinationName: string
 }) {
   const [open, setOpen] = useState(false)
+  const [imgIndex, setImgIndex] = useState(0)
+
+  const gallery = [pkg.image, ...(pkg.images || [])].filter(Boolean)
+
+  useEffect(() => {
+    if (!open) {
+      setImgIndex(0)
+    }
+  }, [open])
 
   useEffect(() => {
     if (open) {
@@ -113,24 +122,49 @@ export function PackageCard({
             className="relative my-auto w-full max-w-3xl overflow-hidden rounded-lg bg-card shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative aspect-[16/9] w-full">
+            <div className="relative aspect-[16/9] w-full group/hero">
               <Image
-                src={pkg.image || '/placeholder.svg'}
-                alt={pkg.title}
+                src={gallery[imgIndex] || '/placeholder.svg'}
+                alt={`${pkg.title} - Image ${imgIndex + 1}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 768px"
-                className="object-cover"
+                className="object-cover transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+              
+              {gallery.length > 1 && (
+                <>
+                  {/* Left arrow */}
+                  <button
+                    type="button"
+                    onClick={() => setImgIndex((prev) => (prev === 0 ? gallery.length - 1 : prev - 1))}
+                    aria-label="Previous image"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-all hover:bg-background hover:scale-105 opacity-0 group-hover/hero:opacity-100 focus:opacity-100"
+                  >
+                    <ChevronLeft className="size-6" />
+                  </button>
+
+                  {/* Right arrow */}
+                  <button
+                    type="button"
+                    onClick={() => setImgIndex((prev) => (prev === gallery.length - 1 ? 0 : prev + 1))}
+                    aria-label="Next image"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-all hover:bg-background hover:scale-105 opacity-0 group-hover/hero:opacity-100 focus:opacity-100"
+                  >
+                    <ChevronRight className="size-6" />
+                  </button>
+                </>
+              )}
+
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="absolute right-3 top-3 flex size-9 items-center justify-center rounded-full bg-background/90 text-foreground transition-colors hover:bg-background"
+                className="absolute right-3 top-3 flex size-9 items-center justify-center rounded-full bg-background/90 text-foreground transition-colors hover:bg-background z-10"
               >
                 <X className="size-5" />
               </button>
-              <div className="absolute bottom-0 left-0 p-6">
+              <div className="absolute bottom-0 left-0 p-6 z-10">
                 <p className="text-xs font-medium uppercase tracking-wider text-background/80">
                   {destinationName}
                 </p>

@@ -83,6 +83,7 @@ type RawDestinationDetail = {
     title: string
     slug: string
     image: SanityImageSource
+    images?: SanityImageSource[]
     description: string
     itinerary: TravelPackage['itinerary']
     durationDays: number
@@ -132,6 +133,7 @@ function mapDestinationDetail(raw: RawDestinationDetail): DestinationDetail {
       slug: pkg.slug,
       title: pkg.title,
       image: sanityImageUrl(pkg.image, { width: 1200, height: 900 }),
+      images: pkg.images ? pkg.images.map((img) => sanityImageUrl(img, { width: 1200, height: 900 })) : [],
       description: pkg.description,
       itinerary: pkg.itinerary,
       durationDays: pkg.durationDays,

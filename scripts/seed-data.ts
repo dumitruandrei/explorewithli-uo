@@ -36,6 +36,11 @@ export const destinations: Destination[] = [
         slug: 'panda-sanctuary',
         title: 'Panda Sanctuary & Chengdu Living',
         image: '/images/pkg-sichuan-panda.png',
+        images: [
+          'https://picsum.photos/seed/panda1/1200/900',
+          'https://picsum.photos/seed/panda2/1200/900',
+          'https://picsum.photos/seed/panda3/1200/900',
+        ],
         description:
           'Wake before the crowds for a private morning with the pandas, then sink into the rhythm of Chengdu life.',
         itinerary: [
@@ -109,6 +114,11 @@ export const destinations: Destination[] = [
         slug: 'jiuzhaigou-lakes',
         title: 'Jiuzhaigou Lakes & Alpine Valleys',
         image: '/images/pkg-sichuan-jiuzhaigou.png',
+        images: [
+          'https://picsum.photos/seed/jiuzhaigou1/1200/900',
+          'https://picsum.photos/seed/jiuzhaigou2/1200/900',
+          'https://picsum.photos/seed/jiuzhaigou3/1200/900',
+        ],
         description:
           'Trek between turquoise lakes and tiered waterfalls in one of China’s most surreal landscapes.',
         itinerary: [
@@ -215,6 +225,11 @@ export const destinations: Destination[] = [
         slug: 'lijiang-old-town',
         title: 'Lijiang Old Town & Naxi Culture',
         image: '/images/pkg-yunnan-lijiang.png',
+        images: [
+          'https://picsum.photos/seed/lijiang1/1200/900',
+          'https://picsum.photos/seed/lijiang2/1200/900',
+          'https://picsum.photos/seed/lijiang3/1200/900',
+        ],
         description:
           'Lose yourself in canal-laced lanes and discover the living traditions of the Naxi people.',
         itinerary: [
@@ -287,6 +302,11 @@ export const destinations: Destination[] = [
         slug: 'shangri-la-highlands',
         title: 'Shangri-La Highlands & Monasteries',
         image: '/images/pkg-yunnan-shangri.png',
+        images: [
+          'https://picsum.photos/seed/shangrila1/1200/900',
+          'https://picsum.photos/seed/shangrila2/1200/900',
+          'https://picsum.photos/seed/shangrila3/1200/900',
+        ],
         description:
           'Climb to the Tibetan plateau for golden monasteries, vast meadows and prayer-flag passes.',
         itinerary: [
@@ -405,6 +425,11 @@ export const destinations: Destination[] = [
         slug: 'hotpot-city',
         title: 'Hotpot City & Neon Nights',
         image: '/images/pkg-chongqing-hotpot.png',
+        images: [
+          'https://picsum.photos/seed/chongqinghotpot1/1200/900',
+          'https://picsum.photos/seed/chongqinghotpot2/1200/900',
+          'https://picsum.photos/seed/chongqinghotpot3/1200/900',
+        ],
         description:
           'Eat your way through the spice capital of China and ride the city’s vertiginous skyline.',
         itinerary: [
@@ -466,6 +491,11 @@ export const destinations: Destination[] = [
         slug: 'yangtze-gorges',
         title: 'Yangtze River & Three Gorges',
         image: '/images/pkg-chongqing-yangtze.png',
+        images: [
+          'https://picsum.photos/seed/yangtze1/1200/900',
+          'https://picsum.photos/seed/yangtze2/1200/900',
+          'https://picsum.photos/seed/yangtze3/1200/900',
+        ],
         description:
           'Drift through the legendary Three Gorges on a slow, scenic river journey.',
         itinerary: [

@@ -32,6 +32,7 @@ export const destinationBySlugQuery = groq`
       title,
       "slug": slug.current,
       image,
+      images,
       description,
       itinerary[]{
         day,

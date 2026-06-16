@@ -29,6 +29,13 @@ export const travelPackage = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'images',
+      title: 'Additional Gallery Images',
+      type: 'array',
+      of: [defineArrayMember({type: 'image', options: {hotspot: true}})],
+      description: 'Optional extra images for a slider / gallery scroll.',
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
