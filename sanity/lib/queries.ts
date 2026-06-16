@@ -92,9 +92,6 @@ export const journalPostBySlugQuery = groq`
     author,
     publishedAt,
     intro,
-    content[]{
-      heading,
-      paragraphs
-    }
+    content[]
   }
 `

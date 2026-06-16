@@ -71,7 +71,11 @@ export const journalPost = defineType({
       name: 'content',
       title: 'Article Content',
       type: 'array',
-      of: [defineArrayMember({type: 'journalSection'})],
+      of: [
+        defineArrayMember({type: 'journalSection'}),
+        defineArrayMember({type: 'block'}),
+        defineArrayMember({type: 'richTableBlock'}),
+      ],
       validation: (Rule) => Rule.required().min(1),
     }),
     defineField({

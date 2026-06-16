@@ -65,10 +65,7 @@ export type JournalPostCard = {
 
 export type JournalPostDetail = JournalPostCard & {
   intro: string
-  content: {
-    heading?: string
-    paragraphs: string[]
-  }[]
+  content: any[]
 }
 
 type RawDestinationDetail = {

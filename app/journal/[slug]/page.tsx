@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { PortableText, type PortableTextComponents } from 'next-sanity'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import {
@@ -11,6 +12,112 @@ import {
   getJournalPosts,
   getJournalPostSlugs,
 } from '@/sanity/lib/fetch'
+
+const portableTextComponents: PortableTextComponents = {
+  block: {
+    h1: ({ children }) => (
+      <h1 className="font-serif text-3xl mt-8 mb-4 text-foreground leading-tight sm:text-4xl">
+        {children}
+      </h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="font-serif text-2xl mt-8 mb-4 text-foreground leading-tight sm:text-3xl">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="font-serif text-xl mt-6 mb-3 text-foreground leading-tight sm:text-2xl">
+        {children}
+      </h3>
+    ),
+    normal: ({ children }) => (
+      <p className="leading-relaxed text-foreground/80 text-pretty mb-4">
+        {children}
+      </p>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-primary/40 pl-4 italic text-foreground/90 my-6 bg-secondary/30 py-2 pr-2 rounded-r-md">
+        {children}
+      </blockquote>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="list-disc ml-6 my-4 flex flex-col gap-2 text-foreground/80 leading-relaxed">
+        {children}
+      </ul>
+    ),
+    number: ({ children }) => (
+      <ol className="list-decimal ml-6 my-4 flex flex-col gap-2 text-foreground/80 leading-relaxed">
+        {children}
+      </ol>
+    ),
+  },
+  marks: {
+    strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
+    em: ({ children }) => <em className="italic">{children}</em>,
+    link: ({ children, value }) => {
+      const rel = !value.href?.startsWith('/') ? 'noreferrer noopener' : undefined
+      const target = !value.href?.startsWith('/') ? '_blank' : undefined
+      return (
+        <a
+          href={value.href}
+          target={target}
+          rel={rel}
+          className="underline text-primary font-medium hover:text-primary/80 transition-colors"
+        >
+          {children}
+        </a>
+      )
+    },
+  },
+  types: {
+    richTableBlock: ({ value }: { value: any }) => {
+      if (!value || !value.rows) return null
+
+      const { rows, columnHeaders, hasColumnTitles, hasRowTitles } = value
+
+      return (
+        <div className="my-8 w-full overflow-x-auto rounded-lg border border-border bg-card shadow-sm scrollbar-none">
+          <table className="w-full border-collapse text-left text-sm">
+            {hasColumnTitles && columnHeaders && (
+              <thead className="border-b border-border bg-muted/60 font-medium text-foreground select-none">
+                <tr>
+                  {hasRowTitles && rows.some((r: any) => r.title) && <th className="p-3" />}
+                  {columnHeaders.map((header: any, index: number) => (
+                    <th key={index} className="p-3 border-r border-border last:border-r-0">
+                      {header.title || ''}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+            )}
+            <tbody className="divide-y divide-border">
+              {rows.map((row: any, rowIndex: number) => (
+                <tr key={rowIndex} className="transition-colors hover:bg-muted/30">
+                  {hasRowTitles && row.title && (
+                    <td className="border-r border-border bg-muted/20 p-3 font-semibold text-foreground select-none">
+                      {row.title}
+                    </td>
+                  )}
+                  {row.cells?.map((cell: any, cellIndex: number) => (
+                    <td key={cellIndex} className="p-3 border-r border-border last:border-r-0 text-foreground/80 leading-relaxed">
+                      {cell.content ? (
+                        <div className="prose prose-sm max-w-none prose-p:my-0">
+                          <PortableText value={cell.content} />
+                        </div>
+                      ) : null}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+    }
+  }
+}
 
 export async function generateStaticParams() {
   const slugs = await getJournalPostSlugs()
@@ -92,25 +199,35 @@ export default async function JournalArticlePage({
             </p>
 
             <div className="mt-12 flex flex-col gap-10">
-              {post.content.map((section, i) => (
-                <section key={i}>
-                  {section.heading && (
-                    <h2 className="font-serif text-2xl leading-tight text-foreground text-balance sm:text-3xl">
-                      {section.heading}
-                    </h2>
-                  )}
-                  <div className="mt-4 flex flex-col gap-4">
-                    {section.paragraphs.map((p, j) => (
-                      <p
-                        key={j}
-                        className="leading-relaxed text-foreground/80 text-pretty"
-                      >
-                        {p}
-                      </p>
-                    ))}
+              {post.content.map((item: any, i: number) => {
+                if (item._type === 'journalSection') {
+                  return (
+                    <section key={i}>
+                      {item.heading && (
+                        <h2 className="font-serif text-2xl leading-tight text-foreground text-balance sm:text-3xl">
+                          {item.heading}
+                        </h2>
+                      )}
+                      <div className="mt-4 flex flex-col gap-4">
+                        {item.paragraphs?.map((p: string, j: number) => (
+                          <p
+                            key={j}
+                            className="leading-relaxed text-foreground/80 text-pretty"
+                          >
+                            {p}
+                          </p>
+                        ))}
+                      </div>
+                    </section>
+                  )
+                }
+
+                return (
+                  <div key={i}>
+                    <PortableText value={[item]} components={portableTextComponents} />
                   </div>
-                </section>
-              ))}
+                )
+              })}
             </div>
 
             <div className="mt-14 rounded-lg border border-border bg-secondary p-6 text-center sm:p-8">
