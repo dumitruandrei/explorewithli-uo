@@ -134,6 +134,8 @@ async function mapPackage(pkg: TravelPackage) {
     groupPrice: pkg.groupPrice,
     highlights: pkg.highlights,
     tripHighlights: pkg.tripHighlights,
+    included: pkg.included,
+    notIncluded: pkg.notIncluded,
   }
 }
 

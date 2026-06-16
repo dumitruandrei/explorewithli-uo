@@ -253,6 +253,50 @@ export function PackageCard({
                 ))}
               </ol>
 
+              {/* What's Included & Not Included */}
+              {((pkg.included && pkg.included.length > 0) || (pkg.notIncluded && pkg.notIncluded.length > 0)) && (
+                <div className="mt-10 border-t border-border pt-8">
+                  <h4 className="font-serif text-lg text-card-foreground mb-6">
+                    Pricing details & inclusions
+                  </h4>
+                  <div className="grid gap-8 sm:grid-cols-2">
+                    {pkg.included && pkg.included.length > 0 && (
+                      <div className="rounded-lg border border-emerald-100 bg-emerald-50/20 p-5 dark:border-emerald-950/30 dark:bg-emerald-950/5">
+                        <h5 className="font-medium text-emerald-800 dark:text-emerald-400 flex items-center gap-2 mb-3">
+                          <Check className="size-5 shrink-0 text-emerald-600 dark:text-emerald-500" />
+                          What’s Included
+                        </h5>
+                        <ul className="space-y-2.5">
+                          {pkg.included.map((item) => (
+                            <li key={item} className="flex items-start gap-2 text-sm text-foreground/80 leading-relaxed">
+                              <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-500/60" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {pkg.notIncluded && pkg.notIncluded.length > 0 && (
+                      <div className="rounded-lg border border-red-100 bg-red-50/10 p-5 dark:border-red-950/20 dark:bg-red-950/5">
+                        <h5 className="font-medium text-red-800 dark:text-red-400 flex items-center gap-2 mb-3">
+                          <X className="size-5 shrink-0 text-red-600 dark:text-red-500" />
+                          What’s Not Included
+                        </h5>
+                        <ul className="space-y-2.5">
+                          {pkg.notIncluded.map((item) => (
+                            <li key={item} className="flex items-start gap-2 text-sm text-foreground/80 leading-relaxed">
+                              <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-red-400/50" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
               <div className="mt-6 rounded-md bg-secondary p-4 text-sm leading-relaxed text-secondary-foreground">
                 Everything about this trip is flexible — the group size, the
                 duration and the activities included can all be tailored to you.

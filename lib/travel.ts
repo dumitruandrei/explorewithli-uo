@@ -16,6 +16,8 @@ export type TravelPackage = {
   groupPrice: number
   highlights: string
   tripHighlights: string[]
+  included?: string[]
+  notIncluded?: string[]
 }
 
 export type DestinationPricing = {

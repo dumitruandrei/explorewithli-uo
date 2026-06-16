@@ -79,18 +79,20 @@ type RawDestinationDetail = {
   heroImage: SanityImageSource
   description: string
   longDescription: string
-  packages: {
-    title: string
-    slug: string
-    image: SanityImageSource
-    images?: SanityImageSource[]
-    description: string
-    itinerary: TravelPackage['itinerary']
-    durationDays: number
-    groupPrice: number
-    highlights: string
-    tripHighlights: string[]
-  }[]
+    packages: {
+      title: string
+      slug: string
+      image: SanityImageSource
+      images?: SanityImageSource[]
+      description: string
+      itinerary: TravelPackage['itinerary']
+      durationDays: number
+      groupPrice: number
+      highlights: string
+      tripHighlights: string[]
+      included?: string[]
+      notIncluded?: string[]
+    }[]
 }
 
 type RawReview = {
@@ -140,6 +142,8 @@ function mapDestinationDetail(raw: RawDestinationDetail): DestinationDetail {
       groupPrice: pkg.groupPrice,
       highlights: pkg.highlights,
       tripHighlights: pkg.tripHighlights,
+      included: pkg.included || [],
+      notIncluded: pkg.notIncluded || [],
     })),
   }
 }

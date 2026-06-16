@@ -76,6 +76,22 @@ export const travelPackage = defineType({
       description: 'Key highlights of the trip shown on the product card.',
       validation: (Rule) => Rule.required().min(1),
     }),
+    defineField({
+      name: 'included',
+      title: 'What’s Included',
+      type: 'array',
+      of: [defineArrayMember({type: 'string'})],
+      description: 'Items included in the tour price.',
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
+      name: 'notIncluded',
+      title: 'What’s Not Included',
+      type: 'array',
+      of: [defineArrayMember({type: 'string'})],
+      description: 'Items not included in the tour price.',
+      validation: (Rule) => Rule.required().min(1),
+    }),
   ],
   preview: {
     select: {
