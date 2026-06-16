@@ -14,6 +14,7 @@ export type TravelPackage = {
   durationDays: number
   groupPrice: number
   highlights: string
+  tripHighlights: string[]
 }
 
 export type DestinationPricing = {

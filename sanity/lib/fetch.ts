@@ -88,6 +88,7 @@ type RawDestinationDetail = {
     durationDays: number
     groupPrice: number
     highlights: string
+    tripHighlights: string[]
   }[]
 }
 
@@ -136,6 +137,7 @@ function mapDestinationDetail(raw: RawDestinationDetail): DestinationDetail {
       durationDays: pkg.durationDays,
       groupPrice: pkg.groupPrice,
       highlights: pkg.highlights,
+      tripHighlights: pkg.tripHighlights,
     })),
   }
 }

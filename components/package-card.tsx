@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Check, X, Clock, Users, ArrowRight, MapPin } from 'lucide-react'
 import type { TravelPackage } from '@/lib/travel'
-import { formatPrice, getPackageActivities } from '@/lib/travel'
+import { formatPrice } from '@/lib/travel'
 import { ContactForm } from '@/components/contact-form'
 
 export function PackageCard({
@@ -34,8 +34,6 @@ export function PackageCard({
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
-
-  const activities = getPackageActivities(pkg)
 
   return (
     <>
@@ -67,18 +65,18 @@ export function PackageCard({
           </p>
 
           <ul className="mt-4 space-y-1.5">
-            {activities.slice(0, 3).map((a) => (
+            {(pkg.tripHighlights || []).slice(0, 3).map((h) => (
               <li
-                key={a}
+                key={h}
                 className="flex items-start gap-2 text-sm text-foreground/80"
               >
                 <Check className="mt-0.5 size-4 shrink-0 text-accent" />
-                <span className="leading-snug">{a}</span>
+                <span className="leading-snug">{h}</span>
               </li>
             ))}
-            {activities.length > 3 && (
+            {(pkg.tripHighlights || []).length > 3 && (
               <li className="pl-6 text-xs text-muted-foreground">
-                + {activities.length - 3} more experiences
+                + {(pkg.tripHighlights || []).length - 3} more highlights
               </li>
             )}
           </ul>
@@ -162,16 +160,16 @@ export function PackageCard({
               </p>
 
               <h4 className="mt-6 font-serif text-lg text-card-foreground">
-                What you’ll experience
+                Trip Highlights
               </h4>
               <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-                {activities.map((a) => (
+                {(pkg.tripHighlights || []).map((h) => (
                   <li
-                    key={a}
+                    key={h}
                     className="flex items-start gap-2 text-sm text-foreground/80"
                   >
                     <Check className="mt-0.5 size-4 shrink-0 text-accent" />
-                    <span className="leading-snug">{a}</span>
+                    <span className="leading-snug">{h}</span>
                   </li>
                 ))}
               </ul>

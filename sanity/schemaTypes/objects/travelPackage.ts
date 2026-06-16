@@ -61,6 +61,14 @@ export const travelPackage = defineType({
       description: 'e.g. "Best for first-time visitors and families."',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'tripHighlights',
+      title: 'Trip Highlights',
+      type: 'array',
+      of: [defineArrayMember({type: 'string'})],
+      description: 'Key highlights of the trip shown on the product card.',
+      validation: (Rule) => Rule.required().min(1),
+    }),
   ],
   preview: {
     select: {

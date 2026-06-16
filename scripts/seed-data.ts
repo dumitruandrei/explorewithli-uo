@@ -97,6 +97,13 @@ export const destinations: Destination[] = [
         durationDays: 5,
         groupPrice: 1480,
         highlights: 'Best for first-time visitors and families.',
+        tripHighlights: [
+          'Private sunrise visit to a giant panda research base',
+          'Hands-on panda conservation volunteer experience',
+          'Traditional teahouse afternoon tea and guided street-food walk',
+          'Private hands-on cooking class with a local chef',
+          'Face-changing Sichuan Opera evening show',
+        ],
       },
       {
         slug: 'jiuzhaigou-lakes',
@@ -183,6 +190,13 @@ export const destinations: Destination[] = [
         durationDays: 7,
         groupPrice: 1980,
         highlights: 'Best for nature lovers and photographers.',
+        tripHighlights: [
+          "Full day guided hike through Jiuzhaigou's valleys",
+          'Sunrise photography at legendary mirror lakes',
+          'Travertine mineral pools of Huanglong with cable car',
+          'Authentic Tibetan village homestay lunch and tea',
+          'Scenic alpine meadow trails and mountain passes',
+        ],
       },
     ],
   },
@@ -261,6 +275,13 @@ export const destinations: Destination[] = [
         durationDays: 5,
         groupPrice: 1620,
         highlights: 'Best for culture and slow travel.',
+        tripHighlights: [
+          'Private walking tour of UNESCO-listed Lijiang Old Town',
+          'Day trip to Jade Dragon Snow Mountain with cable car',
+          'Impression Lijiang outdoor theater performance',
+          'Sunrise stroll around Black Dragon Pool',
+          'Visit to the Dongba cultural museum and Naxi dinner',
+        ],
       },
       {
         slug: 'shangri-la-highlands',
@@ -359,6 +380,13 @@ export const destinations: Destination[] = [
         durationDays: 8,
         groupPrice: 2240,
         highlights: 'Best for adventurous, immersive travellers.',
+        tripHighlights: [
+          'Songzanlin Monastery private tour with a local monk',
+          'Scenic drive and rim trail walk at Tiger Leaping Gorge',
+          'Pristine meadow walks in Pudacuo National Park',
+          'Authentic Tibetan family dinner and butter-tea ceremony',
+          'Clear night stargazing on the highland plateau',
+        ],
       },
     ],
   },
@@ -426,6 +454,13 @@ export const destinations: Destination[] = [
         durationDays: 4,
         groupPrice: 1390,
         highlights: 'Best for foodies and city explorers.',
+        tripHighlights: [
+          'Private hotpot masterclass with a local chef',
+          'Guided spice market tour and hidden alley food crawl',
+          'Cable car ride across the Yangtze River',
+          'Spectacular night views of Hongya Cave and city skyline',
+          'Traditional riverside welcome dinner',
+        ],
       },
       {
         slug: 'yangtze-gorges',
@@ -502,261 +537,13 @@ export const destinations: Destination[] = [
         durationDays: 6,
         groupPrice: 1860,
         highlights: 'Best for a relaxed, scenic pace.',
-      },
-    ],
-  },
-  {
-    slug: 'guizhou',
-    name: 'Guizhou',
-    region: 'Southwest China',
-    tagline: 'Waterfalls, drum towers & mountain villages',
-    heroImage: '/images/dest-guizhou.png',
-    description:
-      'Karst peaks, cascading falls and Dong and Miao villages where ancient songs still echo.',
-    longDescription:
-      'Guizhou is one of China\'s least visited provinces — and its most rewarding for travellers who want landscape and living culture in equal measure. Mist rolls through rice terraces, wooden drum towers rise above valley hamlets, and the roar of Huangguoshu Falls carries for miles. Our routes stay small, local and unhurried.',
-    packages: [
-      {
-        slug: 'huangguoshu-falls',
-        title: 'Huangguoshu Falls & Hidden Valleys',
-        image: '/images/pkg-guizhou-falls.png',
-        description:
-          'Stand before China\'s largest waterfall, then wander through limestone villages few travellers reach.',
-        itinerary: [
-          {
-            day: 1,
-            title: 'Arrival in Guiyang',
-            description:
-              'Settle into the provincial capital before heading into the countryside.',
-            activities: [
-              'Private transfer and boutique hotel check-in',
-              'Evening stroll through Old Town alleys',
-              'Welcome dinner of sour fish hotpot',
-            ],
-          },
-          {
-            day: 2,
-            title: 'Huangguoshu Waterfall',
-            description:
-              'Experience the full force of the falls from multiple viewpoints.',
-            activities: [
-              'Early access paths behind the waterfall curtain',
-              'Rhino pool and gorge walk',
-              'Local Miao village lunch',
-            ],
-          },
-          {
-            day: 3,
-            title: 'Karst Villages',
-            description:
-              'Drive deeper into stone forests and terraced hills.',
-            activities: [
-              'Guided walk through Tianxing Qiao stone forest',
-              'Village craft demonstration',
-              'Sunset over the rice terraces',
-            ],
-          },
-          {
-            day: 4,
-            title: 'Departure',
-            description: 'A calm final morning before your onward journey.',
-            activities: [
-              'Leisure breakfast',
-              'Private transfer to the airport',
-            ],
-          },
+        tripHighlights: [
+          'Scenic cruising through the majestic Three Gorges',
+          'Guided tour of the epic Three Gorges Dam',
+          'Sampan ride through the narrow Lesser Three Gorges',
+          'Shore excursion to the ancient "Ghost City" of Fengdu',
+          'Cultural performances and sunrise tai chi on deck',
         ],
-        durationDays: 4,
-        groupPrice: 1290,
-        highlights: 'Best for nature lovers and photographers.',
-      },
-      {
-        slug: 'dong-village-culture',
-        title: 'Dong Villages & Drum Towers',
-        image: '/images/pkg-guizhou-dong.png',
-        description:
-          'Sleep in a wooden stilt village and hear polyphonic folk songs performed as they have been for centuries.',
-        itinerary: [
-          {
-            day: 1,
-            title: 'Into the Mountains',
-            description:
-              'Leave the cities behind for the forested highlands of southeast Guizhou.',
-            activities: [
-              'Scenic drive into the Qiandongnan region',
-              'Orientation in a restored village guesthouse',
-              'Communal rice wine welcome',
-            ],
-          },
-          {
-            day: 2,
-            title: 'Drum Tower Life',
-            description:
-              'Learn how Dong communities gather, govern and celebrate under the tower roof.',
-            activities: [
-              'Visit to a drum tower with a village elder',
-              'Bridge and river walk',
-              'Evening folk song performance',
-            ],
-          },
-          {
-            day: 3,
-            title: 'Textiles & Tea',
-            description:
-              'Try indigo dyeing and share a pot of local green tea with your hosts.',
-            activities: [
-              'Hands-on indigo cloth workshop',
-              'Tea picking on hillside terraces',
-              'Family-style dinner in a stilt house',
-            ],
-          },
-          {
-            day: 4,
-            title: 'Market Day',
-            description:
-              'Join villagers trading produce, silver jewellery and stories.',
-            activities: [
-              'Weekly hill market visit',
-              'Free time to explore the lanes',
-              'Farewell feast with your hosts',
-            ],
-          },
-          {
-            day: 5,
-            title: 'Departure',
-            description: 'Return to Guiyang for your onward journey.',
-            activities: [
-              'Morning village walk',
-              'Private transfer for departure',
-            ],
-          },
-        ],
-        durationDays: 5,
-        groupPrice: 1540,
-        highlights: 'Best for culture-first travellers.',
-      },
-    ],
-  },
-  {
-    slug: 'guangxi',
-    name: 'Guangxi',
-    region: 'Southwest China',
-    tagline: 'Karst rivers, cormorant fishing & Zhuang traditions',
-    heroImage: '/images/dest-guangxi.png',
-    description:
-      'Limestone peaks rising from the Li River, bamboo rafts and timeless rural rhythms.',
-    longDescription:
-      'Guangxi is the landscape of classical Chinese painting made real — jagged karst spires reflected in glassy water, fishermen at dusk with cormorants, and Zhuang minority villages tucked between rice fields. Yangshuo and Guilin are the gateway, but our itineraries push beyond the postcard into quiet back roads and family kitchens.',
-    packages: [
-      {
-        slug: 'li-river-cruise',
-        title: 'Li River & Yangshuo Countryside',
-        image: '/images/pkg-guangxi-liriver.png',
-        description:
-          'Drift past karst peaks on a private river journey, then cycle through emerald paddies.',
-        itinerary: [
-          {
-            day: 1,
-            title: 'Arrival in Guilin',
-            description:
-              'Meet your guide and settle into a riverside retreat near Yangshuo.',
-            activities: [
-              'Private transfer from Guilin airport',
-              'Sunset walk along the Li River',
-              'Local beer fish welcome dinner',
-            ],
-          },
-          {
-            day: 2,
-            title: 'Li River Journey',
-            description:
-              'See the famous karst scenery from the water at a quieter pace.',
-            activities: [
-              'Private bamboo raft section on the Li River',
-              'Photography stops at Xingping viewpoints',
-              'Calligraphy lesson in a village studio',
-            ],
-          },
-          {
-            day: 3,
-            title: 'Yangshuo by Bicycle',
-            description:
-              'Pedal through villages where limestone towers frame every turn.',
-            activities: [
-              'Guided countryside cycling loop',
-              'Farm lunch with a local family',
-              'Optional Impression Liu Sanjie show',
-            ],
-          },
-          {
-            day: 4,
-            title: 'Departure',
-            description: 'One last riverside morning before you leave.',
-            activities: [
-              'Leisure breakfast',
-              'Private transfer to the airport',
-            ],
-          },
-        ],
-        durationDays: 4,
-        groupPrice: 1350,
-        highlights: 'Best for first-time visitors and couples.',
-      },
-      {
-        slug: 'longji-rice-terraces',
-        title: 'Longji Rice Terraces & Zhuang Villages',
-        image: '/images/pkg-guangxi-longji.png',
-        description:
-          'Hike between cloud-wrapped terraces and stay in a wooden lodge above the clouds.',
-        itinerary: [
-          {
-            day: 1,
-            title: 'Ascent to Longji',
-            description:
-              'Climb into the Dragon\'s Backbone terraces as the light shifts across the paddies.',
-            activities: [
-              'Scenic drive from Guilin',
-              'Luggage porter assistance to your lodge',
-              'Sunset viewpoint walk',
-            ],
-          },
-          {
-            day: 2,
-            title: 'Terrace Trails',
-            description:
-              'Walk ridge paths between Zhuang and Yao hamlets.',
-            activities: [
-              'Guided hike through Ping\'an village terraces',
-              'Traditional bamboo rice lunch',
-              'Conversation with a local farmer',
-            ],
-          },
-          {
-            day: 3,
-            title: 'Minority Culture',
-            description:
-              'Learn embroidery, long-hair traditions and village history from community hosts.',
-            activities: [
-              'Visit to a Red Yao village',
-              'Embroidery demonstration',
-              'Home-cooked dinner on the terrace',
-            ],
-          },
-          {
-            day: 4,
-            title: 'Sunrise & Descent',
-            description:
-              'Wake early for mist over the terraces, then return toward Guilin.',
-            activities: [
-              'Sunrise photography at the viewpoints',
-              'Leisure morning in the village',
-              'Private transfer for departure',
-            ],
-          },
-        ],
-        durationDays: 4,
-        groupPrice: 1420,
-        highlights: 'Best for hikers and slow travellers.',
       },
     ],
   },

@@ -124,6 +124,7 @@ async function mapPackage(pkg: TravelPackage) {
     durationDays: pkg.durationDays,
     groupPrice: pkg.groupPrice,
     highlights: pkg.highlights,
+    tripHighlights: pkg.tripHighlights,
   }
 }
 

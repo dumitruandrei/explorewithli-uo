@@ -41,7 +41,8 @@ export const destinationBySlugQuery = groq`
       },
       durationDays,
       groupPrice,
-      highlights
+      highlights,
+      tripHighlights
     }
   }
 `
