@@ -40,13 +40,15 @@ export default async function AboutPage() {
             <div className="grid gap-8 md:grid-cols-2">
               {/* Authenticity Card */}
               <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8">
-                <div className="flex size-12 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
-                  <Sparkles className="size-6" />
+                <div className="flex items-center gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
+                    <Sparkles className="size-5" />
+                  </div>
+                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
+                    Authenticity
+                  </h3>
                 </div>
-                <h3 className="mt-5 font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                  Authenticity
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   We don’t just show you the famous sights; we take you behind
                   the scenes to uncover the hidden gems of Chongqing and
                   introduce you to the rich traditions of local ethnic minority
@@ -56,13 +58,15 @@ export default async function AboutPage() {
 
               {/* Sustainability Card */}
               <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8">
-                <div className="flex size-12 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
-                  <Leaf className="size-6" />
+                <div className="flex items-center gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
+                    <Leaf className="size-5" />
+                  </div>
+                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
+                    Sustainability
+                  </h3>
                 </div>
-                <h3 className="mt-5 font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                  Sustainability
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   We love our home and want to keep it vibrant. By exploring
                   bustling local markets and utilizing Chongqing’s incredible
                   public transportation system, we minimize our footprint while
@@ -72,13 +76,15 @@ export default async function AboutPage() {
 
               {/* Trust Card */}
               <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8">
-                <div className="flex size-12 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
-                  <ShieldCheck className="size-6" />
+                <div className="flex items-center gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
+                    <ShieldCheck className="size-5" />
+                  </div>
+                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
+                    Trust
+                  </h3>
                 </div>
-                <h3 className="mt-5 font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                  Trust
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   Great adventures are built on confidence. We maintain absolute
                   transparency in our pricing and logistics—no hidden fees, no
                   surprises, just honest and reliable planning.
@@ -87,13 +93,15 @@ export default async function AboutPage() {
 
               {/* Curiosity Card */}
               <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8">
-                <div className="flex size-12 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
-                  <Compass className="size-6" />
+                <div className="flex items-center gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
+                    <Compass className="size-5" />
+                  </div>
+                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
+                    Curiosity
+                  </h3>
                 </div>
-                <h3 className="mt-5 font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                  Curiosity
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   The world is constantly evolving, and so are we. We listen to
                   and learn from our guests and local partners, using those
                   insights to constantly design fresh, innovative ways to
