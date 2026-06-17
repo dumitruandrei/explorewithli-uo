@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, MessageSquare, MapPin } from 'lucide-react'
 import { getDestinations } from '@/sanity/lib/fetch'
 import { ContactForm } from '@/components/contact-form'
 
@@ -25,7 +25,7 @@ export async function ContactFooter() {
 
             <div className="mt-10 space-y-5">
               <a
-                href="mailto:hello@explorewithli.com"
+                href="mailto:info@explorechongqingwithli.com"
                 className="flex items-center gap-4 text-background/90 transition-colors hover:text-background"
               >
                 <span className="flex size-10 items-center justify-center rounded-full border border-background/25">
@@ -35,21 +35,23 @@ export async function ContactFooter() {
                   <span className="block text-xs uppercase tracking-wider text-background/60">
                     Email
                   </span>
-                  hello@explorewithli.com
+                  info@explorechongqingwithli.com
                 </span>
               </a>
               <a
-                href="tel:+862812345678"
+                href="https://wa.me/41763752691"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-4 text-background/90 transition-colors hover:text-background"
               >
                 <span className="flex size-10 items-center justify-center rounded-full border border-background/25">
-                  <Phone className="size-5" />
+                  <MessageSquare className="size-5" />
                 </span>
                 <span>
                   <span className="block text-xs uppercase tracking-wider text-background/60">
-                    Call
+                    WhatsApp
                   </span>
-                  +86 28 1234 5678
+                  +41 76 375 26 91
                 </span>
               </a>
               <div className="flex items-center gap-4 text-background/90">
@@ -58,9 +60,9 @@ export async function ContactFooter() {
                 </span>
                 <span>
                   <span className="block text-xs uppercase tracking-wider text-background/60">
-                    Studio
+                    Location
                   </span>
-                  Jinjiang District, Chengdu, China
+                  Zürich, Switzerland
                 </span>
               </div>
             </div>
