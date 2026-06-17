@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import type { DestinationNav } from '@/sanity/lib/fetch'
 import { Button } from '@/components/ui/button'
@@ -45,14 +46,21 @@ export function SiteHeader({
           : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-1 sm:px-8">
         <Link
           href="/"
-          className={`font-serif text-xl tracking-tight transition-colors sm:text-2xl ${
+          className={`flex items-center gap-3 font-serif text-xl tracking-tight transition-colors sm:text-2xl ${
             onLight ? 'text-foreground' : 'text-background'
           }`}
         >
-          Explore with <span className="text-primary">Li</span>
+          <img
+            src={onLight ? "/images/logo-transparent.png" : "/images/logo-white.png"}
+            alt="Explore with Li logo"
+            className="h-20 w-auto object-contain transition-all duration-300"
+          />
+          <span>
+            Explore with <span className="text-primary">Li</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}

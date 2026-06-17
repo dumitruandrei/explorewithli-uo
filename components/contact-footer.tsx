@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, MessageSquare, MapPin } from 'lucide-react'
 import { getDestinations } from '@/sanity/lib/fetch'
 import { ContactForm } from '@/components/contact-form'
@@ -15,7 +16,7 @@ export async function ContactFooter() {
               Plan your journey
             </p>
             <h2 className="font-serif text-3xl leading-tight text-balance sm:text-5xl">
-              Let’s shape a journey that’s entirely yours
+              Let&apos;s shape a journey that&apos;s entirely yours
             </h2>
             <p className="mt-5 max-w-md leading-relaxed text-background/75">
               Tell us how you like to travel and our specialists will design a
@@ -80,8 +81,18 @@ export async function ContactFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-6 border-t border-background/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="font-serif text-xl">
-            Explore with             <span className="text-[oklch(0.72_0.13_148)]">Li</span>
+          <Link
+            href="/"
+            className="flex items-center gap-3 font-serif text-xl"
+          >
+            <img
+              src="/images/logo-white.png"
+              alt="Explore with Li logo"
+              className="h-20 w-auto object-contain"
+            />
+            <span>
+              Explore with <span className="text-[oklch(0.72_0.13_148)]">Li</span>
+            </span>
           </Link>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/70">
             {destinations.map((d) => (
