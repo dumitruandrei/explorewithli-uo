@@ -20,19 +20,28 @@ export function Hero() {
         />
       </div>
 
-      {/* Optional looping video overlay */}
+      {/* Loopable background videos, responsive to screen size */}
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        key="desktop-video"
+        className="absolute inset-0 hidden h-full w-full object-cover sm:block"
         autoPlay
         loop
         muted
         playsInline
         poster="/images/hero-china.png"
       >
-        <source
-          src="https://videos.pexels.com/video-files/2818546/2818546-uhd_2560_1440_24fps.mp4"
-          type="video/mp4"
-        />
+        <source src="/videos/hero-desktop.webm" type="video/webm" />
+      </video>
+      <video
+        key="mobile-video"
+        className="absolute inset-0 block h-full w-full object-cover sm:hidden"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/images/hero-china.png"
+      >
+        <source src="/videos/hero-mobile.webm" type="video/webm" />
       </video>
 
       {/* Gradient scrims for legibility */}
