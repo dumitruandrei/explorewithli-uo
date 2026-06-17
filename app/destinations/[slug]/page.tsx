@@ -72,15 +72,7 @@ export default async function DestinationPage({
             <h1 className="mt-2 font-serif text-4xl text-background text-balance sm:text-6xl">
               {destination.name}
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-background/85 sm:text-lg">
-              {destination.tagline}
-            </p>
-          </div>
-        </section>
-
-        <section className="bg-background py-16 sm:py-20">
-          <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
-            <p className="text-lg leading-relaxed text-foreground text-pretty sm:text-xl">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-background/85 sm:text-lg">
               {destination.longDescription}
             </p>
           </div>

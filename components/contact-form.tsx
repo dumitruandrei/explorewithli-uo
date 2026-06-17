@@ -15,6 +15,8 @@ export function ContactForm({
   compact = false,
 }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const isDark = variant === 'dark'
   const labelClass = `mb-1.5 block text-xs font-medium uppercase tracking-wider ${
@@ -26,9 +28,43 @@ export function ContactForm({
       : 'border-border text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:ring-primary/40'
   }`
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError(null)
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      travelDate: formData.get('travelDate'),
+      duration: formData.get('duration'),
+      people: formData.get('people'),
+      message: formData.get('message'),
+      context: context || null,
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        const errData = await response.json()
+        throw new Error(errData.error || 'Something went wrong. Please try again.')
+      }
+
+      setSubmitted(true)
+    } catch (err: any) {
+      console.error('Submission error:', err)
+      setError(err.message || 'Failed to send enquiry. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -59,7 +95,7 @@ export function ContactForm({
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div className={`grid gap-4 ${compact ? '' : 'sm:grid-cols-2'}`}>
-        <div className={compact ? '' : 'sm:col-span-2'}>
+        <div className={compact ? '' : 'sm:col-span-1'}>
           <label htmlFor="name" className={labelClass}>
             Full name
           </label>
@@ -68,6 +104,20 @@ export function ContactForm({
             name="name"
             required
             placeholder="Your name"
+            className={fieldClass}
+          />
+        </div>
+
+        <div className={compact ? '' : 'sm:col-span-1'}>
+          <label htmlFor="email" className={labelClass}>
+            Email address
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@example.com"
             className={fieldClass}
           />
         </div>
@@ -128,16 +178,23 @@ export function ContactForm({
         </div>
       </div>
 
+      {error && (
+        <p className="mt-4 text-center text-sm font-medium text-red-500">
+          {error}
+        </p>
+      )}
+
       <Button
         type="submit"
         size="lg"
+        disabled={loading}
         className={`mt-5 w-full ${
           isDark
             ? 'bg-background text-foreground hover:bg-background/90'
             : ''
         }`}
       >
-        Request your tailored itinerary
+        {loading ? 'Sending enquiry...' : 'Request your tailored itinerary'}
       </Button>
       <p
         className={`mt-3 text-center text-xs leading-relaxed ${
