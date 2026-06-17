@@ -52,7 +52,7 @@ export function Hero() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
             Boutique journeys · Southwest China
           </p>
-          <h1 className="font-serif text-4xl font-bold leading-[1.05] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-balance sm:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-4xl leading-[1.05] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-balance sm:text-6xl lg:text-7xl">
             Travel China slowly, deeply, and entirely on your own terms.
           </h1>
           <p className="mt-6 max-w-xl text-base font-medium leading-relaxed text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] sm:text-lg sm:font-normal text-pretty">
