@@ -170,7 +170,7 @@ export default async function JournalArticlePage({
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/40 to-foreground/30" />
           <div className="relative mx-auto w-full max-w-3xl px-5 pb-14 pt-32 sm:px-8">
             <Link
-              href="/#journal"
+              href="/journal"
               className="mb-6 inline-flex items-center gap-2 text-sm text-background/80 transition-colors hover:text-background"
             >
               <ArrowLeft className="size-4" />

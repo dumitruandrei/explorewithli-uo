@@ -32,7 +32,7 @@ export function SiteHeader({
 
   const navLinks = [
     { label: 'Journeys', href: '/#destinations' },
-    { label: 'Journal', href: '/#journal' },
+    { label: 'Journal', href: '/journal' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/#contact' },
   ]

@@ -3,27 +3,40 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { getJournalPosts } from '@/sanity/lib/fetch'
 
+const HOMEPAGE_PREVIEW_COUNT = 2
+
 export async function BlogSection() {
   const posts = await getJournalPosts()
   const feature = posts.find((post) => post.featured) ?? posts[0]
-  const rest = posts.filter((post) => post.slug !== feature?.slug)
+  const rest = posts
+    .filter((post) => post.slug !== feature?.slug)
+    .slice(0, HOMEPAGE_PREVIEW_COUNT)
 
   if (!feature) return null
 
   return (
     <section id="journal" className="bg-secondary py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="max-w-2xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            The Journal
-          </p>
-          <h2 className="font-serif text-3xl leading-tight text-foreground text-balance sm:text-5xl">
-            Stories & knowledge from the road
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Insights from our local specialists to inspire your next journey
-            through China.
-          </p>
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">
+              The Journal
+            </p>
+            <h2 className="font-serif text-3xl leading-tight text-foreground text-balance sm:text-5xl">
+              Stories & knowledge from the road
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              Insights from our local specialists to inspire your next journey
+              through China.
+            </p>
+          </div>
+          <Link
+            href="/journal"
+            className="flex shrink-0 items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+          >
+            View all articles
+            <ArrowRight className="size-4" />
+          </Link>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
