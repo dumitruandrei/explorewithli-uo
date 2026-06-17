@@ -57,7 +57,7 @@ export default async function DestinationPage({
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-foreground/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/30" />
           <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-32 sm:px-8">
             <Link
               href="/#destinations"

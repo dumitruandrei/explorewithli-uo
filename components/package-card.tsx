@@ -130,7 +130,7 @@ export function PackageCard({
                 sizes="(max-width: 768px) 100vw, 768px"
                 className="object-cover transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               
               {gallery.length > 1 && (
                 <>
