@@ -137,16 +137,17 @@ export function ContactForm({
 
         <div>
           <label htmlFor="duration" className={labelClass}>
-            Trip duration
+            Trip duration (days)
           </label>
-          <select id="duration" name="duration" className={fieldClass} required>
-            <option value="">Select</option>
-            <option>3–5 days</option>
-            <option>6–8 days</option>
-            <option>9–12 days</option>
-            <option>2+ weeks</option>
-            <option>Flexible / not sure</option>
-          </select>
+          <input
+            id="duration"
+            name="duration"
+            type="number"
+            min={1}
+            required
+            placeholder="Number of days"
+            className={fieldClass}
+          />
         </div>
 
         <div className={compact ? '' : 'sm:col-span-2'}>
