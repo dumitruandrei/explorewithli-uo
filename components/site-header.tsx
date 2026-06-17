@@ -46,24 +46,18 @@ export function SiteHeader({
           : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-1 sm:px-8">
         <Link
           href="/"
           className={`flex items-center gap-3 font-serif text-xl tracking-tight transition-colors sm:text-2xl ${
             onLight ? 'text-foreground' : 'text-background'
           }`}
         >
-          <div className="relative size-8 overflow-hidden">
-            <Image
-              src="/images/logo.png"
-              alt="Explore with Li logo"
-              fill
-              sizes="32px"
-              className={`object-contain transition-all duration-300 ${
-                onLight ? '' : 'brightness-0 invert'
-              }`}
-            />
-          </div>
+          <img
+            src={onLight ? "/images/logo-transparent.png" : "/images/logo-white.png"}
+            alt="Explore with Li logo"
+            className="h-20 w-auto object-contain transition-all duration-300"
+          />
           <span>
             Explore with <span className="text-primary">Li</span>
           </span>

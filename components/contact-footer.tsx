@@ -83,17 +83,13 @@ export async function ContactFooter() {
         <div className="mt-16 flex flex-col gap-6 border-t border-background/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-serif text-xl"
+            className="flex items-center gap-3 font-serif text-xl"
           >
-            <div className="relative size-7 overflow-hidden">
-              <Image
-                src="/images/logo.png"
-                alt="Explore with Li logo"
-                fill
-                sizes="28px"
-                className="object-contain brightness-0 invert"
-              />
-            </div>
+            <img
+              src="/images/logo-white.png"
+              alt="Explore with Li logo"
+              className="h-20 w-auto object-contain"
+            />
             <span>
               Explore with <span className="text-primary">Li</span>
             </span>
