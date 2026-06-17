@@ -46,25 +46,26 @@ export default async function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                   <p>
-                    In 2018, Sarah Mitchell sat in a teahouse in Chengdu with a
-                    question: why does most tourism feel so surface-level? After
-                    fifteen years guiding groups through the world's most remote
-                    regions, she knew the answer. The problem wasn't the
-                    destinations—it was the pace.
+                    It started with a realization that cold blueprints couldn't
+                    match the warmth of human connection. After years working as a
+                    civil engineer in America and Switzerland, Hanghang Li knew
+                    that standard, rushed tourism was missing the true depth of
+                    China. He wanted to combine engineering precision with a deep,
+                    authentic love for slow travel.
                   </p>
                   <p>
-                    She partnered with Ming Zhang, a cultural anthropologist and
-                    lifelong Sichuan resident, and Elena Rossi, an operations
-                    expert committed to sustainable practices. Together, they
-                    built Explore with Li on a simple premise: fewer guests,
-                    longer stays, real relationships.
+                    In Zurich, Hanghang founded Explore with Li. He was soon joined
+                    by Shu Chen, a Guilin native with deep roots in the Chinese
+                    travel industry and a master's degree from Spain, and Nadja
+                    Spillmann, a Swiss local with a Thai heart and a master's
+                    specializing in linguistic and cultural diversity.
                   </p>
                   <p>
-                    What began as a single itinerary in Sichuan has grown into a
-                    curated collection of journeys across three provinces. Every
-                    trip is designed with our guides, refined with our partners,
-                    and shaped by feedback from the communities we work with. We
-                    measure success not in bookings, but in understanding.
+                    Together, they set out to bridge the gap between Western
+                    expectations and the vibrant, complex soul of the East. Today,
+                    they design worry-free, culture-rich journeys that look beyond
+                    standard guidebooks—focusing on fewer guests, longer stays,
+                    and real relationships.
                   </p>
                 </div>
               </div>
@@ -128,24 +129,41 @@ export default async function AboutPage() {
               </h2>
             </div>
 
-            <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
               {teamMembers.map((member) => (
-                <div key={member.name} className="flex flex-col">
-                  <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg">
+                <div
+                  key={member.name}
+                  className="group flex flex-col rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-primary/30 hover:shadow-md"
+                >
+                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg">
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
-                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="mt-4 font-serif text-xl text-foreground">
+                  <h3 className="mt-5 font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
                     {member.name}
                   </h3>
                   <p className="mt-1 text-sm font-medium text-primary">
                     {member.role}
                   </p>
-                  <p className="mt-4 leading-relaxed text-muted-foreground">
+
+                  {/* Languages Spoken Badges */}
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {member.speaks.map((lang) => (
+                      <span
+                        key={lang}
+                        className="inline-flex items-center rounded-full bg-primary/5 px-2.5 py-0.5 text-[11px] font-medium text-primary border border-primary/10"
+                      >
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="mt-5 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
                     {member.bio}
                   </p>
                 </div>
