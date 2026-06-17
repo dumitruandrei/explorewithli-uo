@@ -6,6 +6,7 @@ export async function ReviewsSection() {
 
   return (
     <section id="reviews" className="border-t border-border py-20">
+      {/* Header container kept at max-w-6xl for consistent text alignment */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="text-xs font-medium uppercase tracking-widest text-primary">
@@ -19,10 +20,11 @@ export async function ReviewsSection() {
             southwest China. Read more on Google.
           </p>
         </div>
+      </div>
 
-        <div className="px-4 sm:px-8">
-          <ReviewsCarousel reviews={reviews} />
-        </div>
+      {/* Carousel container made wider on desktop for a more immersive marquee feel */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 xl:max-w-[1400px] 2xl:max-w-[1600px]">
+        <ReviewsCarousel reviews={reviews} />
       </div>
     </section>
   )

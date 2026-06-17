@@ -12,9 +12,9 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
 
   return (
     <div className="relative w-full overflow-hidden py-4 select-none">
-      {/* Subtle fade effect on the left and right edges for a premium look */}
-      <div className="absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none sm:w-32" />
-      <div className="absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none sm:w-32" />
+      {/* Subtle fade effect on the left and right edges for a premium look, optimized for mobile readability */}
+      <div className="absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none sm:w-24 md:w-32" />
+      <div className="absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none sm:w-24 md:w-32" />
 
       {/* Scrolling Belt - Uses highly performant hardware-accelerated CSS marquee */}
       <div 
