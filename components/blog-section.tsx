@@ -80,12 +80,12 @@ export async function BlogSection() {
                 href={`/journal/${post.slug}`}
                 className="group flex flex-1 gap-3 overflow-hidden rounded-lg border border-border bg-card p-2.5 transition-shadow hover:shadow-lg"
               >
-                <div className="relative aspect-square w-20 shrink-0 overflow-hidden rounded-md">
+                <div className="relative aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-md">
                   <Image
                     src={post.imageUrl}
                     alt={post.title}
                     fill
-                    sizes="80px"
+                    sizes="112px"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
