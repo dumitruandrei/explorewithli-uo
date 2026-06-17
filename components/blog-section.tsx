@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { getJournalPosts } from '@/sanity/lib/fetch'
 
-const HOMEPAGE_PREVIEW_COUNT = 2
+const HOMEPAGE_PREVIEW_COUNT = 3
 
 export async function BlogSection() {
   const posts = await getJournalPosts()
@@ -73,23 +73,23 @@ export async function BlogSection() {
             </div>
           </Link>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+          <div className="flex flex-col gap-4">
             {rest.map((post) => (
               <Link
                 key={post.slug}
                 href={`/journal/${post.slug}`}
-                className="group flex gap-4 overflow-hidden rounded-lg border border-border bg-card p-3 transition-shadow hover:shadow-lg sm:flex-col sm:p-0 lg:flex-row"
+                className="group flex gap-4 overflow-hidden rounded-lg border border-border bg-card p-3 transition-shadow hover:shadow-lg"
               >
-                <div className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-md sm:aspect-[16/10] sm:w-full lg:aspect-square lg:w-40">
+                <div className="relative aspect-square w-28 shrink-0 overflow-hidden rounded-md">
                   <Image
                     src={post.imageUrl}
                     alt={post.title}
                     fill
-                    sizes="(max-width: 1024px) 50vw, 160px"
+                    sizes="112px"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="flex flex-1 flex-col py-1 sm:p-4 lg:py-3 lg:pr-4">
+                <div className="flex flex-1 flex-col justify-center py-1 pr-1">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
                     <span className="font-medium text-primary">
                       {post.category}
@@ -100,7 +100,7 @@ export async function BlogSection() {
                   <h3 className="mt-1.5 font-serif text-lg leading-tight text-card-foreground text-balance">
                     {post.title}
                   </h3>
-                  <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
                     {post.excerpt}
                   </p>
                 </div>
