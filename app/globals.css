@@ -50,14 +50,14 @@
 }
 
 :root {
-  /* Warm parchment-stone — noticeable but not clinical white */
-  --background: oklch(0.965 0.009 88);
+  /* Near-neutral warm white — zero chroma so opacity overlays on images stay colourless */
+  --background: oklch(0.975 0.002 90);
   /* Rich dark moss — strong enough for readable text */
   --foreground: oklch(0.24 0.042 148);
-  /* Slightly warmer card surface for depth */
-  --card: oklch(0.975 0.011 90);
+  /* Very slightly warm card surface */
+  --card: oklch(0.985 0.003 90);
   --card-foreground: oklch(0.24 0.042 148);
-  --popover: oklch(0.975 0.011 90);
+  --popover: oklch(0.985 0.003 90);
   --popover-foreground: oklch(0.24 0.042 148);
   /* Forest green — the primary brand action color */
   --primary: oklch(0.44 0.13 148);
@@ -93,7 +93,7 @@
 }
 
 .dark {
-  --background: oklch(0.18 0.025 148);
+  --background: oklch(0.16 0.003 145);
   --foreground: oklch(0.94 0.012 88);
   --card: oklch(0.24 0.03 145);
   --card-foreground: oklch(0.94 0.012 88);
