@@ -61,7 +61,7 @@ export function PackageCard({
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <span className="absolute right-3 top-3 rounded-full bg-background/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur">
-            {pkg.durationDays} days
+            {pkg.durationDays} {pkg.durationDays === 1 ? 'day' : 'days'}
           </span>
         </button>
 
@@ -178,7 +178,7 @@ export function PackageCard({
               <div className="flex flex-wrap gap-4 text-sm">
                 <span className="flex items-center gap-1.5 text-foreground/80">
                   <Clock className="size-4 text-primary" />
-                  {pkg.durationDays} days (flexible)
+                  {pkg.durationDays} {pkg.durationDays === 1 ? 'day' : 'days'} (flexible)
                 </span>
                 <span className="flex items-center gap-1.5 text-foreground/80">
                   <Users className="size-4 text-primary" />
