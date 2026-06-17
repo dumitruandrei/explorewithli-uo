@@ -49,13 +49,13 @@ export function Hero() {
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:pb-24">
         <div className="max-w-3xl animate-fade-up">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-white/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
             Boutique journeys · Southwest China
           </p>
-          <h1 className="font-serif text-4xl leading-[1.05] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-balance sm:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-4xl font-bold leading-[1.05] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-balance sm:text-6xl lg:text-7xl">
             Travel China slowly, deeply, and entirely on your own terms.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/95 drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] sm:text-lg text-pretty">
+          <p className="mt-6 max-w-xl text-base font-medium leading-relaxed text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] sm:text-lg sm:font-normal text-pretty">
             From the panda forests of Sichuan to the snow peaks of Yunnan and
             the river gorges of Chongqing — every Explore with Li journey is shaped
             around you. Flexible group size, duration and experiences.
