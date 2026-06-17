@@ -7,11 +7,11 @@ export async function ContactFooter() {
   const destinations = await getDestinations()
 
   return (
-    <footer id="contact" className="bg-foreground text-background">
+    <footer id="contact" className="bg-[oklch(0.28_0.07_148)] text-[oklch(0.94_0.012_88)]">
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[oklch(0.72_0.13_148)]">
               Plan your journey
             </p>
             <h2 className="font-serif text-3xl leading-tight text-balance sm:text-5xl">
@@ -81,7 +81,7 @@ export async function ContactFooter() {
 
         <div className="mt-16 flex flex-col gap-6 border-t border-background/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="font-serif text-xl">
-            Explore with <span className="text-primary">Li</span>
+            Explore with             <span className="text-[oklch(0.72_0.13_148)]">Li</span>
           </Link>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/70">
             {destinations.map((d) => (
