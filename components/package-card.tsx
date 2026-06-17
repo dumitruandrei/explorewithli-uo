@@ -139,7 +139,7 @@ export function PackageCard({
                     type="button"
                     onClick={() => setImgIndex((prev) => (prev === 0 ? gallery.length - 1 : prev - 1))}
                     aria-label="Previous image"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-all hover:bg-background hover:scale-105 opacity-0 group-hover/hero:opacity-100 focus:opacity-100"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-all hover:bg-background hover:scale-105 opacity-100 sm:opacity-0 sm:group-hover/hero:opacity-100 focus:opacity-100"
                   >
                     <ChevronLeft className="size-6" />
                   </button>
@@ -149,7 +149,7 @@ export function PackageCard({
                     type="button"
                     onClick={() => setImgIndex((prev) => (prev === gallery.length - 1 ? 0 : prev + 1))}
                     aria-label="Next image"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-all hover:bg-background hover:scale-105 opacity-0 group-hover/hero:opacity-100 focus:opacity-100"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-all hover:bg-background hover:scale-105 opacity-100 sm:opacity-0 sm:group-hover/hero:opacity-100 focus:opacity-100"
                   >
                     <ChevronRight className="size-6" />
                   </button>
