@@ -42,6 +42,7 @@ export function ContactForm({
       duration: formData.get('duration'),
       people: formData.get('people'),
       message: formData.get('message'),
+      privacyConsent: formData.get('privacyConsent') === 'on',
       context: context || null,
     }
 
@@ -190,6 +191,45 @@ export function ContactForm({
             placeholder="Interests, pace, must-sees, special occasions…"
             className={`${fieldClass} resize-none`}
           />
+        </div>
+
+        <div className={compact ? '' : 'sm:col-span-2'}>
+          <div className="flex items-start gap-3">
+            <input
+              id="privacyConsent"
+              name="privacyConsent"
+              type="checkbox"
+              required
+              className={`mt-1 h-4 w-4 rounded border transition-colors cursor-pointer ${
+                isDark
+                  ? 'border-background/25 bg-transparent accent-background/70'
+                  : 'border-border bg-transparent accent-primary'
+              }`}
+            />
+            <label
+              htmlFor="privacyConsent"
+              className={`text-xs leading-relaxed cursor-pointer ${
+                isDark
+                  ? 'text-background/70'
+                  : 'text-muted-foreground'
+              }`}
+            >
+              I agree to the{' '}
+              <a
+                href="/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`font-medium underline transition-colors ${
+                  isDark
+                    ? 'text-background hover:text-background/80'
+                    : 'text-primary hover:text-primary/80'
+                }`}
+              >
+                Privacy Policy
+              </a>
+              {' '}and consent to Explore with Li contacting me about my trip.
+            </label>
+          </div>
         </div>
       </div>
 

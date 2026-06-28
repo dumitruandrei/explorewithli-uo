@@ -4,12 +4,12 @@ import { Resend } from 'resend'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { firstName, lastName, email, travelDate, duration, people, message, context } = body
+    const { firstName, lastName, email, travelDate, duration, people, message, context, privacyConsent } = body
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !travelDate || !duration || !people) {
+    if (!firstName || !lastName || !email || !travelDate || !duration || !people || !privacyConsent) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Missing required fields or privacy consent not given' },
         { status: 400 }
       )
     }
