@@ -72,7 +72,8 @@ export const journalPostsQuery = groq`
     readTime,
     author,
     publishedAt,
-    featured
+    featured,
+    tags
   }
 `
 
@@ -92,6 +93,29 @@ export const journalPostBySlugQuery = groq`
     author,
     publishedAt,
     intro,
-    content[]
+    content[],
+    tags
   }
+`
+
+export const journalPostsByTagQuery = groq`
+  *[_type == "journalPost" && $tag in tags] | order(publishedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    image,
+    category,
+    readTime,
+    author,
+    publishedAt,
+    featured,
+    tags
+  }
+`
+
+export const journalTagsQuery = groq`
+  array::unique(
+    *[_type == "journalPost"].tags[]
+  )
 `

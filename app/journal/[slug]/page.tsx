@@ -230,6 +230,21 @@ export default async function JournalArticlePage({
               })}
             </div>
 
+            {/* Tags section */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="mt-14 flex flex-wrap gap-3">
+                {post.tags.map((tag) => (
+                  <Link
+                    key={tag}
+                    href={`/journal/tag/${encodeURIComponent(tag)}`}
+                    className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10 hover:border-primary/50"
+                  >
+                    {tag}
+                  </Link>
+                ))}
+              </div>
+            )}
+
             <div className="mt-14 rounded-lg border border-border bg-secondary p-6 text-center sm:p-8">
               <h3 className="font-serif text-xl text-secondary-foreground text-balance sm:text-2xl">
                 Inspired to experience this for yourself?

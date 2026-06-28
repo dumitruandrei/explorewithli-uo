@@ -86,6 +86,20 @@ export const journalPost = defineType({
         'The homepage journal section highlights one featured article.',
       initialValue: false,
     }),
+    defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+        },
+      ],
+      options: {
+        layout: 'tags',
+      },
+      description: 'Add tags to help categorize and filter this post',
+    }),
   ],
   orderings: [
     {

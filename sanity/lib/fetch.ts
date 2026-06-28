@@ -10,8 +10,10 @@ import {
   destinationSlugsQuery,
   destinationsQuery,
   journalPostBySlugQuery,
-  journalPostSlugsQuery,
   journalPostsQuery,
+  journalPostSlugsQuery,
+  journalPostsByTagQuery,
+  journalTagsQuery,
   reviewsQuery,
 } from './queries'
 
@@ -61,6 +63,7 @@ export type JournalPostCard = {
   author: string
   publishedAt: string
   featured: boolean
+  tags: string[]
 }
 
 export type JournalPostDetail = JournalPostCard & {
@@ -112,6 +115,7 @@ type RawJournalPostCard = {
   author: string
   publishedAt: string
   featured: boolean
+  tags?: string[]
 }
 
 type RawJournalPostDetail = RawJournalPostCard & {
@@ -168,6 +172,7 @@ function mapJournalPostCard(raw: RawJournalPostCard): JournalPostCard {
     author: raw.author,
     publishedAt: raw.publishedAt,
     featured: raw.featured,
+    tags: raw.tags || [],
   }
 }
 
@@ -259,3 +264,18 @@ export const getJournalPostBySlug = cache(
     return raw ? mapJournalPostDetail(raw) : null
   },
 )
+
+export const getJournalPostsByTag = cache(
+  async (tag: string): Promise<JournalPostCard[]> => {
+    const raw = await client.fetch<RawJournalPostCard[]>(
+      journalPostsByTagQuery,
+      { tag },
+      fetchOptions,
+    )
+    return raw.map(mapJournalPostCard)
+  },
+)
+
+export const getAllJournalTags = cache(async (): Promise<string[]> => {
+  return client.fetch<string[]>(journalTagsQuery, {}, fetchOptions)
+})
