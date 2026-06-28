@@ -108,9 +108,17 @@ export async function ContactFooter() {
               Journal
             </Link>
           </nav>
-          <p className="text-xs text-background/50">
-            © {new Date().getFullYear()} Explore with Li. All rights reserved.
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <p className="text-xs text-background/50">
+              © {new Date().getFullYear()} Explore with Li. All rights reserved.
+            </p>
+            <Link
+              href="/privacy"
+              className="text-xs text-background/50 transition-colors hover:text-background/80"
+            >
+              Privacy &amp; Cookie Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
