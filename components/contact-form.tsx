@@ -35,7 +35,8 @@ export function ContactForm({
 
     const formData = new FormData(e.currentTarget)
     const data = {
-      name: formData.get('name'),
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
       email: formData.get('email'),
       travelDate: formData.get('travelDate'),
       duration: formData.get('duration'),
@@ -96,19 +97,32 @@ export function ContactForm({
     <form onSubmit={handleSubmit} className="w-full">
       <div className={`grid gap-4 ${compact ? '' : 'sm:grid-cols-2'}`}>
         <div className={compact ? '' : 'sm:col-span-1'}>
-          <label htmlFor="name" className={labelClass}>
-            Full name
+          <label htmlFor="firstName" className={labelClass}>
+            First name
           </label>
           <input
-            id="name"
-            name="name"
+            id="firstName"
+            name="firstName"
             required
-            placeholder="Your name"
+            placeholder="First name"
             className={fieldClass}
           />
         </div>
 
         <div className={compact ? '' : 'sm:col-span-1'}>
+          <label htmlFor="lastName" className={labelClass}>
+            Last name
+          </label>
+          <input
+            id="lastName"
+            name="lastName"
+            required
+            placeholder="Last name"
+            className={fieldClass}
+          />
+        </div>
+
+        <div className={compact ? '' : 'sm:col-span-2'}>
           <label htmlFor="email" className={labelClass}>
             Email address
           </label>

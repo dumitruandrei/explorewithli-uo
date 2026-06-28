@@ -4,15 +4,17 @@ import { Resend } from 'resend'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, travelDate, duration, people, message, context } = body
+    const { firstName, lastName, email, travelDate, duration, people, message, context } = body
 
     // Validate required fields
-    if (!name || !email || !travelDate || !duration || !people) {
+    if (!firstName || !lastName || !email || !travelDate || !duration || !people) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       )
     }
+
+    const name = `${firstName} ${lastName}`
 
     const apiKey = process.env.RESEND_API_KEY
     const toEmail = process.env.CONTACT_EMAIL || 'info@explorechongqingwithli.com'
@@ -153,8 +155,12 @@ export async function POST(request: Request) {
               
               <table class="details-table">
                 <tr>
-                  <th>Full Name</th>
-                  <td>${name}</td>
+                  <th>First Name</th>
+                  <td>${firstName}</td>
+                </tr>
+                <tr>
+                  <th>Last Name</th>
+                  <td>${lastName}</td>
                 </tr>
                 <tr>
                   <th>Email Address</th>
