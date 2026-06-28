@@ -116,14 +116,20 @@ export default async function PrivacyPage() {
                     destinations are popular, but we don&apos;t believe in
                     tracking you to find out.
                   </p>
-                  <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground">
-                      <span className="mt-0.5 size-1.5 shrink-0 rounded-full bg-primary translate-y-2" />
-                      We use <strong className="text-foreground mx-1">Vercel Web Analytics</strong> to view aggregate, anonymous traffic trends (such as counting how many people visit our tour pages).
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        We use{' '}
+                        <strong className="text-foreground">Vercel Web Analytics</strong>{' '}
+                        to view aggregate, anonymous traffic trends (such as counting how many people visit our tour pages).
+                      </p>
                     </li>
-                    <li className="flex gap-3 text-sm text-muted-foreground">
-                      <span className="mt-0.5 size-1.5 shrink-0 rounded-full bg-primary translate-y-2" />
-                      This service is entirely cookieless, collects no personally identifiable information, and cannot track your behavior across other websites.
+                    <li className="flex items-start gap-3">
+                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        This service is entirely cookieless, collects no personally identifiable information, and cannot track your behavior across other websites.
+                      </p>
                     </li>
                   </ul>
                 </div>
