@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
     const apiKey = process.env.RESEND_API_KEY
     const toEmail = process.env.CONTACT_EMAIL || 'info@explorechongqingwithli.com'
-    const fromEmail = process.env.FROM_EMAIL || 'Explore with Li <onboarding@resend.dev>'
+    const fromEmail = process.env.FROM_EMAIL || 'Explore with Li <info@explorechongqingwithli.com>'
 
     if (!apiKey) {
       console.warn(
