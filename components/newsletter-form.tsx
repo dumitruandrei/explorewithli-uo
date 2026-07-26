@@ -108,9 +108,9 @@ export function NewsletterForm({ variant = 'light', compact = false, showPrivacy
           />
           <Button
             type="submit"
-            size={compact ? 'sm' : 'md'}
+            size={compact ? 'sm' : 'lg'}
             disabled={loading || (showPrivacy && !privacyConsent)}
-            className={`shrink-0 ${isDark ? 'bg-background text-foreground hover:bg-background/90' : ''}`}
+            className={`shrink-0 whitespace-nowrap px-6 ${isDark ? 'bg-background text-foreground hover:bg-background/90' : ''}`}
           >
             {loading ? '...' : 'Subscribe'}
           </Button>
