@@ -11,12 +11,18 @@ function getResendClient() {
 export async function subscribeToNewsletter(email: string, firstName: string, lastName: string) {
   try {
     const resend = getResendClient()
+    const segmentId = process.env.RESEND_NEWSLETTER_LIST_ID
+    
+    if (!segmentId) {
+      throw new Error('RESEND_NEWSLETTER_LIST_ID is not configured')
+    }
+
     // Add contact to the newsletter segment
     const response = await resend.contacts.create({
       email,
       firstName,
       lastName,
-      segmentId: process.env.RESEND_NEWSLETTER_LIST_ID,
+      segments: [{ id: segmentId }],
     })
 
     return { success: true, data: response }
