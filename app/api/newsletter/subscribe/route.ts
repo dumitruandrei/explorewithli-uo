@@ -4,12 +4,20 @@ import { subscribeToNewsletter } from '@/lib/newsletter'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { email } = body
+    const { email, firstName, lastName } = body
 
     // Validate email
     if (!email || !email.includes('@')) {
       return NextResponse.json(
         { error: 'Valid email address is required' },
+        { status: 400 }
+      )
+    }
+
+    // Validate names
+    if (!firstName || !lastName) {
+      return NextResponse.json(
+        { error: 'First name and last name are required' },
         { status: 400 }
       )
     }
@@ -23,7 +31,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const result = await subscribeToNewsletter(email)
+    const result = await subscribeToNewsletter(email, firstName, lastName)
 
     return NextResponse.json({
       success: true,

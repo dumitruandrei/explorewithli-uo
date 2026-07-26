@@ -38,6 +38,8 @@ export function NewsletterForm({ variant = 'light', compact = false, showPrivacy
 
     const formData = new FormData(e.currentTarget)
     const email = formData.get('email') as string
+    const firstName = formData.get('firstName') as string
+    const lastName = formData.get('lastName') as string
 
     try {
       const response = await fetch('/api/newsletter/subscribe', {
@@ -45,7 +47,7 @@ export function NewsletterForm({ variant = 'light', compact = false, showPrivacy
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, firstName, lastName }),
       })
 
       if (!response.ok) {
@@ -92,6 +94,39 @@ export function NewsletterForm({ variant = 'light', compact = false, showPrivacy
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div className={compact ? 'space-y-2' : 'space-y-3'}>
+        {/* Name fields */}
+        {!compact && (
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label htmlFor="newsletter-firstName" className={labelClass}>
+                First name
+              </label>
+              <input
+                id="newsletter-firstName"
+                name="firstName"
+                type="text"
+                required
+                placeholder="John"
+                className={fieldClass}
+              />
+            </div>
+            <div>
+              <label htmlFor="newsletter-lastName" className={labelClass}>
+                Last name
+              </label>
+              <input
+                id="newsletter-lastName"
+                name="lastName"
+                type="text"
+                required
+                placeholder="Doe"
+                className={fieldClass}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Email field */}
         {!compact && (
           <label htmlFor="newsletter-email" className={labelClass}>
             Email address
