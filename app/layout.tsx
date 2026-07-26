@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Fraunces } from 'next/font/google'
+import { NewsletterSidebar } from '@/components/newsletter-sidebar'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -50,6 +51,7 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         {children}
+        <NewsletterSidebar />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
