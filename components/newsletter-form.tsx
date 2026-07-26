@@ -2,17 +2,18 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Mail } from 'lucide-react'
 
 type NewsletterFormProps = {
   variant?: 'light' | 'dark'
   compact?: boolean
+  showPrivacy?: boolean
 }
 
-export function NewsletterForm({ variant = 'light', compact = false }: NewsletterFormProps) {
+export function NewsletterForm({ variant = 'light', compact = false, showPrivacy = true }: NewsletterFormProps) {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [privacyConsent, setPrivacyConsent] = useState(false)
 
   const isDark = variant === 'dark'
   const labelClass = `mb-2 block text-xs font-medium uppercase tracking-wider ${
@@ -28,6 +29,12 @@ export function NewsletterForm({ variant = 'light', compact = false }: Newslette
     e.preventDefault()
     setLoading(true)
     setError(null)
+
+    if (showPrivacy && !privacyConsent) {
+      setError('Please agree to receive communications to continue.')
+      setLoading(false)
+      return
+    }
 
     const formData = new FormData(e.currentTarget)
     const email = formData.get('email') as string
@@ -102,13 +109,38 @@ export function NewsletterForm({ variant = 'light', compact = false }: Newslette
           <Button
             type="submit"
             size={compact ? 'sm' : 'md'}
-            disabled={loading}
+            disabled={loading || (showPrivacy && !privacyConsent)}
             className={isDark ? 'bg-background text-foreground hover:bg-background/90' : ''}
           >
-            {loading ? '...' : compact ? 'Join' : 'Subscribe'}
+            {loading ? '...' : 'Subscribe'}
           </Button>
         </div>
       </div>
+
+      {/* Privacy consent checkbox */}
+      {showPrivacy && (
+        <div className={`mt-3 flex items-start gap-2 ${compact ? 'text-xs' : ''}`}>
+          <input
+            id="newsletter-privacy"
+            type="checkbox"
+            checked={privacyConsent}
+            onChange={(e) => setPrivacyConsent(e.target.checked)}
+            className={`mt-1 rounded border ${
+              isDark
+                ? 'border-background/25 bg-transparent accent-background'
+                : 'border-border bg-background accent-primary'
+            }`}
+          />
+          <label
+            htmlFor="newsletter-privacy"
+            className={`leading-relaxed ${
+              isDark ? 'text-background/70 text-xs' : 'text-muted-foreground text-xs'
+            }`}
+          >
+            I agree to receive travel stories and updates. You can unsubscribe at any time by clicking the unsubscribe link in any email.
+          </label>
+        </div>
+      )}
 
       {error && (
         <p className="mt-2 text-xs font-medium text-red-500">{error}</p>

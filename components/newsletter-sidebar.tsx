@@ -35,10 +35,7 @@ export function NewsletterSidebar() {
             className="absolute bottom-0 right-0 mb-16 w-80 rounded-lg border border-border bg-card shadow-lg p-6 animate-in fade-in slide-in-from-bottom-4 duration-200"
           >
             <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <Mail className="size-5 text-primary" />
-                <h3 className="font-serif text-lg text-foreground">Get the next article</h3>
-              </div>
+              <h3 className="font-serif text-lg text-foreground">Stay Updated</h3>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-muted-foreground hover:text-foreground transition-colors p-1"
@@ -46,10 +43,10 @@ export function NewsletterSidebar() {
                 <X className="size-4" />
               </button>
             </div>
-            <p className="text-sm text-muted-foreground mb-4">
-              Subscribe to receive fresh travel stories and insights delivered to your inbox.
+            <p className="text-sm text-muted-foreground mb-5">
+              Get new travel articles and stories delivered to your inbox. No spam, unsubscribe anytime.
             </p>
-            <NewsletterForm variant="light" compact />
+            <NewsletterForm variant="light" showPrivacy />
           </div>
         )}
 
