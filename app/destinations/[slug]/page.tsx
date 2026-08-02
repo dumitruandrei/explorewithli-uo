@@ -5,7 +5,6 @@ import { ArrowLeft } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { PackageCard } from '@/components/package-card'
-import { ContactForm } from '@/components/contact-form'
 import {
   getDestinationBySlug,
   getDestinationNav,
@@ -111,26 +110,7 @@ export default async function DestinationPage({
           </div>
         </section>
 
-        <section className="bg-background py-16 sm:py-24">
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">
-                Enquire
-              </p>
-              <h2 className="font-serif text-3xl leading-tight text-foreground text-balance sm:text-4xl">
-                Design your {destination.name} journey
-              </h2>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
-                Share your travel dates, group size and the experiences you’d
-                love. A local specialist will craft a flexible itinerary built
-                around you.
-              </p>
-            </div>
-            <div className="rounded-lg border border-border bg-card p-6 sm:p-8">
-              <ContactForm context={`a trip to ${destination.name}`} />
-            </div>
-          </div>
-        </section>
+
       </main>
       <ContactFooter />
     </>
