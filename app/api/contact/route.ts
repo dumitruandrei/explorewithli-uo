@@ -4,17 +4,15 @@ import { Resend } from 'resend'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { firstName, lastName, email, travelDate, duration, people, message, context, privacyConsent } = body
+    const { name, email, message, context, privacyConsent } = body
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !travelDate || !duration || !people || !privacyConsent) {
+    if (!name || !email || !message || !privacyConsent) {
       return NextResponse.json(
         { error: 'Missing required fields or privacy consent not given' },
         { status: 400 }
       )
     }
-
-    const name = `${firstName} ${lastName}`
 
     const apiKey = process.env.RESEND_API_KEY
     const toEmail = process.env.CONTACT_EMAIL || 'info@explorechongqingwithli.com'
@@ -155,28 +153,12 @@ export async function POST(request: Request) {
               
               <table class="details-table">
                 <tr>
-                  <th>First Name</th>
-                  <td>${firstName}</td>
-                </tr>
-                <tr>
-                  <th>Last Name</th>
-                  <td>${lastName}</td>
+                  <th>Name</th>
+                  <td>${name}</td>
                 </tr>
                 <tr>
                   <th>Email Address</th>
                   <td><a href="mailto:${email}" style="color: #854d0e; text-decoration: none; font-weight: 500;">${email}</a></td>
-                </tr>
-                <tr>
-                  <th>Travel Date</th>
-                  <td>${travelDate}</td>
-                </tr>
-                <tr>
-                  <th>Trip Duration</th>
-                  <td>${duration}</td>
-                </tr>
-                <tr>
-                  <th>Travellers</th>
-                  <td>${people} ${parseInt(people) === 1 ? 'person' : 'people'}</td>
                 </tr>
                 ${context ? `
                 <tr>
@@ -187,7 +169,7 @@ export async function POST(request: Request) {
 
               ${message ? `
               <div class="message-box">
-                <h3>Dream Trip Details</h3>
+                <h3>Message</h3>
                 <p>"${message}"</p>
               </div>` : ''}
             </div>

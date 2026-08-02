@@ -35,12 +35,8 @@ export function ContactForm({
 
     const formData = new FormData(e.currentTarget)
     const data = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
+      name: formData.get('name'),
       email: formData.get('email'),
-      travelDate: formData.get('travelDate'),
-      duration: formData.get('duration'),
-      people: formData.get('people'),
       message: formData.get('message'),
       privacyConsent: formData.get('privacyConsent') === 'on',
       context: context || null,
@@ -97,28 +93,15 @@ export function ContactForm({
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div className={`grid gap-4 ${compact ? '' : 'sm:grid-cols-2'}`}>
-        <div className={compact ? '' : 'sm:col-span-1'}>
-          <label htmlFor="firstName" className={labelClass}>
-            First name
+        <div className={compact ? '' : 'sm:col-span-2'}>
+          <label htmlFor="name" className={labelClass}>
+            Full name
           </label>
           <input
-            id="firstName"
-            name="firstName"
+            id="name"
+            name="name"
             required
-            placeholder="First name"
-            className={fieldClass}
-          />
-        </div>
-
-        <div className={compact ? '' : 'sm:col-span-1'}>
-          <label htmlFor="lastName" className={labelClass}>
-            Last name
-          </label>
-          <input
-            id="lastName"
-            name="lastName"
-            required
-            placeholder="Last name"
+            placeholder="Your name"
             className={fieldClass}
           />
         </div>
@@ -137,49 +120,6 @@ export function ContactForm({
           />
         </div>
 
-        <div>
-          <label htmlFor="travelDate" className={labelClass}>
-            Travel date
-          </label>
-          <input
-            id="travelDate"
-            name="travelDate"
-            type="date"
-            required
-            className={fieldClass}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="duration" className={labelClass}>
-            Trip duration (days)
-          </label>
-          <input
-            id="duration"
-            name="duration"
-            type="number"
-            min={1}
-            required
-            placeholder="Number of days"
-            className={fieldClass}
-          />
-        </div>
-
-        <div className={compact ? '' : 'sm:col-span-2'}>
-          <label htmlFor="people" className={labelClass}>
-            Number of travellers
-          </label>
-          <input
-            id="people"
-            name="people"
-            type="number"
-            min={1}
-            defaultValue={4}
-            required
-            className={fieldClass}
-          />
-        </div>
-
         <div className={compact ? '' : 'sm:col-span-2'}>
           <label htmlFor="message" className={labelClass}>
             Tell us about your dream trip
@@ -188,7 +128,7 @@ export function ContactForm({
             id="message"
             name="message"
             rows={compact ? 3 : 4}
-            placeholder="Interests, pace, must-sees, special occasions…"
+            placeholder="Interests, pace, must-sees, special occasions… (Please include your preferred dates, trip duration, and number of travelers)"
             className={`${fieldClass} resize-none`}
           />
         </div>
