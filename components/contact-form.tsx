@@ -122,13 +122,13 @@ export function ContactForm({
 
         <div className={compact ? '' : 'sm:col-span-2'}>
           <label htmlFor="message" className={labelClass}>
-            Message
+            Tell us about your dream trip
           </label>
           <textarea
             id="message"
             name="message"
             rows={compact ? 3 : 4}
-            placeholder="Share your travel details: preferred dates, trip duration, number of travelers, and any other details about your dream trip…"
+            placeholder="Interests, pace, must-sees, special occasions… (Please include your preferred dates, trip duration, and number of travelers)"
             className={`${fieldClass} resize-none`}
           />
         </div>
