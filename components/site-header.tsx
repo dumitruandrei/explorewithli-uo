@@ -32,10 +32,8 @@ export function SiteHeader({
   const onLight = solid || scrolled
 
   const navLinks = [
-    { label: 'Journeys', href: '/#destinations' },
     { label: 'Journal', href: '/journal' },
     { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/#contact' },
   ]
 
   return (
