@@ -84,7 +84,7 @@ export function PackageCard({
               </li>
             ))}
             {(pkg.tripHighlights || []).length > 3 && (
-              <li className="pl-6 text-xs text-muted-foreground">
+              <li className="pl-6 text-sm text-muted-foreground">
                 + {(pkg.tripHighlights || []).length - 3} more highlights
               </li>
             )}
@@ -92,7 +92,7 @@ export function PackageCard({
 
           <div className="mt-5 flex items-end justify-between border-t border-border pt-4">
             <div>
-              <p className="text-xs text-muted-foreground">From, group of 4</p>
+              <p className="text-sm text-muted-foreground">From, group of 4</p>
               <p className="font-serif text-2xl text-card-foreground">
                 {formatPrice(pkg.groupPrice)}
                 <span className="text-sm text-muted-foreground"> / person</span>

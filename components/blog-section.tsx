@@ -54,7 +54,7 @@ export async function BlogSection() {
               />
             </div>
             <div className="flex flex-1 flex-col p-6">
-              <div className="flex items-center gap-3 text-xs text-muted-foreground">
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <span className="rounded-full bg-secondary px-2.5 py-1 font-medium text-secondary-foreground">
                   {feature.category}
                 </span>
@@ -90,7 +90,7 @@ export async function BlogSection() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col justify-center py-0.5 pr-1">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span className="font-medium text-primary">
                       {post.category}
                     </span>
@@ -100,7 +100,7 @@ export async function BlogSection() {
                   <h3 className="mt-1 font-serif text-base leading-snug text-card-foreground text-balance">
                     {post.title}
                   </h3>
-                  <p className="mt-1 line-clamp-1 text-xs leading-relaxed text-muted-foreground">
+                  <p className="mt-1 line-clamp-1 text-sm leading-relaxed text-muted-foreground">
                     {post.excerpt}
                   </p>
                 </div>

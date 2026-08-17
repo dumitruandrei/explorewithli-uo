@@ -48,7 +48,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
               </div>
 
               {/* Compact Review Content */}
-              <p className="mt-3 text-xs text-foreground/90 leading-relaxed sm:text-sm line-clamp-4 italic">
+              <p className="mt-3 text-sm leading-relaxed text-foreground/90 line-clamp-4 italic">
                 {review.comment}
               </p>
             </div>
@@ -66,10 +66,10 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
                   />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                     {review.travelerName}
                   </p>
-                  <p className="text-[10px] text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     Google Review
                   </p>
                 </div>

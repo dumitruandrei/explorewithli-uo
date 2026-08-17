@@ -33,7 +33,7 @@ export async function ContactFooter() {
                   <Mail className="size-5" />
                 </span>
                 <span>
-                  <span className="block text-xs uppercase tracking-wider text-background/60">
+                  <span className="block text-sm uppercase tracking-wider text-background/80">
                     Email
                   </span>
                   info@explorechongqingwithli.com
@@ -49,7 +49,7 @@ export async function ContactFooter() {
                   <MessageSquare className="size-5" />
                 </span>
                 <span>
-                  <span className="block text-xs uppercase tracking-wider text-background/60">
+                  <span className="block text-sm uppercase tracking-wider text-background/80">
                     WhatsApp
                   </span>
                   +41 76 375 26 91
@@ -60,7 +60,7 @@ export async function ContactFooter() {
                   <MapPin className="size-5" />
                 </span>
                 <span>
-                  <span className="block text-xs uppercase tracking-wider text-background/60">
+                  <span className="block text-sm uppercase tracking-wider text-background/80">
                     Location
                   </span>
                   Zürich, Switzerland
@@ -109,12 +109,12 @@ export async function ContactFooter() {
             </Link>
           </nav>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <p className="text-xs text-background/50">
+            <p className="text-sm text-background/75">
               © {new Date().getFullYear()} Explore with Li. All rights reserved.
             </p>
             <Link
               href="/privacy"
-              className="text-xs text-background/50 transition-colors hover:text-background/80"
+              className="text-sm text-background/75 transition-colors hover:text-background"
             >
               Privacy &amp; Cookie Policy
             </Link>
