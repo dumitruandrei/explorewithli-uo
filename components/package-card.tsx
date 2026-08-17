@@ -92,7 +92,7 @@ export function PackageCard({
 
           <div className="mt-5 flex items-end justify-between border-t border-border pt-4">
             <div>
-              <p className="text-sm text-muted-foreground">From, group of 4</p>
+              <p className="text-sm text-muted-foreground">From</p>
               <p className="font-serif text-2xl text-card-foreground">
                 {formatPrice(pkg.groupPrice)}
                 <span className="text-sm text-muted-foreground"> / person</span>
