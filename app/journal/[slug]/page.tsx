@@ -5,7 +5,6 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { PortableText, type PortableTextComponents } from 'next-sanity'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
-import { NewsletterForm } from '@/components/newsletter-form'
 import {
   formatJournalDate,
   getDestinationNav,
@@ -245,21 +244,6 @@ export default async function JournalArticlePage({
                 ))}
               </div>
             )}
-
-            {/* Newsletter signup section */}
-            <div className="mt-16 rounded-lg border border-border bg-secondary/50 p-8 sm:p-10">
-              <div className="max-w-2xl">
-                <h3 className="font-serif text-2xl text-foreground text-balance sm:text-3xl">
-                  Get the next article in your inbox
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Join our community of curious travelers. We&rsquo;ll send you fresh stories, travel insights, and exclusive updates about adventures across Sichuan, Yunnan, and Chongqing.
-                </p>
-                <div className="mt-5">
-                  <NewsletterForm variant="light" />
-                </div>
-              </div>
-            </div>
 
             <div className="mt-14 rounded-lg border border-border bg-secondary p-6 text-center sm:p-8">
               <h3 className="font-serif text-xl text-secondary-foreground text-balance sm:text-2xl">

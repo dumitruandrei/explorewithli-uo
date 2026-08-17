@@ -158,7 +158,6 @@ export default async function PrivacyPage() {
                   {[
                     'Send us an email or use a contact form.',
                     'Inquire about booking a custom travel itinerary.',
-                    'Sign up for a travel newsletter.',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-muted-foreground">
                       <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
@@ -173,45 +172,6 @@ export default async function PrivacyPage() {
                   to respond to your request and provide our travel services.
                 </p>
 
-                {/* Newsletter section */}
-                <div className="mt-8 rounded-xl border border-border bg-card p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Mail className="size-5 text-primary shrink-0" />
-                    <h3 className="font-serif text-xl text-foreground">
-                      Newsletter Subscription
-                    </h3>
-                  </div>
-                  <p className="text-sm leading-relaxed text-muted-foreground mb-4">
-                    When you subscribe to our newsletter, we collect your email address to send you:
-                  </p>
-                  <ul className="space-y-3 mb-4">
-                    {[
-                      'Travel stories and articles from our journal.',
-                      'Exclusive travel insights and tips about destinations in Sichuan, Yunnan, and Chongqing.',
-                      'Updates about new travel experiences and offerings.',
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-                        <p className="text-sm leading-relaxed text-muted-foreground">{item}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    <strong className="text-foreground">How we store your data:</strong> We use{' '}
-                    <a
-                      href="https://resend.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      Resend
-                    </a>
-                    , a trusted email service provider, to manage our newsletter. Your email is securely stored in our Resend contact list.
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    <strong className="text-foreground">Unsubscribing:</strong> Every newsletter includes an unsubscribe link. You can opt out at any time, and we will remove your email from our list immediately.
-                  </p>
-                </div>
               </div>
 
               {/* Divider */}
