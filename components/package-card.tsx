@@ -182,7 +182,7 @@ export function PackageCard({
                 </span>
                 <span className="flex items-center gap-1.5 text-foreground/80">
                   <Users className="size-4 text-primary" />
-                  Priced for a group of 4
+                  Priced for 4 — fully adaptable for fewer or more travelers.
                 </span>
                 <span className="flex items-center gap-1.5 font-medium text-foreground">
                   {formatPrice(pkg.groupPrice)} / person
