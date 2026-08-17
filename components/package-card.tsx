@@ -93,7 +93,7 @@ export function PackageCard({
           <div className="mt-5 flex items-end justify-between border-t border-border pt-4">
             <div>
               <p className="font-serif text-2xl text-card-foreground">
-                <span className="text-sm text-muted-foreground">For </span>
+                <span className="text-sm text-muted-foreground">From </span>
                 {formatPrice(pkg.groupPrice)}
                 <span className="text-sm text-muted-foreground"> / person</span>
               </p>
@@ -185,7 +185,7 @@ export function PackageCard({
                   Priced for 4 — fully adaptable for fewer or more travelers.
                 </span>
                 <span className="flex items-center gap-1.5 font-medium text-foreground">
-                  For {formatPrice(pkg.groupPrice)} / person
+                  From {formatPrice(pkg.groupPrice)} / person
                 </span>
               </div>
 
