@@ -286,7 +286,7 @@ export default async function JournalArticlePage({
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-5">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <span className="font-medium text-primary">
                         {p.category}
                       </span>

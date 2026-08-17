@@ -9,7 +9,7 @@ export async function ReviewsSection() {
       {/* Header container kept at max-w-6xl for consistent text alignment */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <p className="text-xs font-medium uppercase tracking-widest text-primary">
+          <p className="text-sm font-medium uppercase tracking-widest text-primary">
             Traveller Stories
           </p>
           <h2 className="mt-3 font-serif text-4xl leading-tight text-foreground sm:text-5xl text-balance">

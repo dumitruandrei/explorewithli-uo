@@ -90,7 +90,7 @@ export default async function JournalTagPage({
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-5">
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span className="font-medium text-primary">
                           {post.category}
                         </span>
@@ -114,7 +114,7 @@ export default async function JournalTagPage({
                             </span>
                           ))}
                           {post.tags.length > 2 && (
-                            <span className="inline-block text-xs text-muted-foreground">
+                            <span className="inline-block text-sm text-muted-foreground">
                               +{post.tags.length - 2}
                             </span>
                           )}

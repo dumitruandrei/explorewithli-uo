@@ -20,7 +20,7 @@ export default async function PrivacyPage() {
         {/* Hero */}
         <section className="border-b border-border pb-12 pt-24 sm:pb-16 sm:pt-32">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <p className="text-xs font-medium uppercase tracking-widest text-primary">
+            <p className="text-sm font-medium uppercase tracking-widest text-primary">
               Legal
             </p>
             <h1 className="mt-4 text-balance font-serif text-4xl leading-tight text-foreground sm:text-5xl">

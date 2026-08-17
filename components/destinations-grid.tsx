@@ -48,7 +48,7 @@ export async function DestinationsGrid() {
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-background/75">
+                    <p className="text-sm font-medium uppercase tracking-wider text-background/90">
                       {d.region}
                     </p>
                     <h3 className="mt-1 font-serif text-2xl text-background">

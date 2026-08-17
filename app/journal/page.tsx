@@ -60,7 +60,7 @@ export default async function JournalIndexPage() {
                   />
                 </div>
                 <div className="flex flex-col justify-center p-8 sm:p-10">
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <span className="rounded-full bg-secondary px-2.5 py-1 font-medium text-secondary-foreground">
                       {feature.category}
                     </span>
@@ -106,7 +106,7 @@ export default async function JournalIndexPage() {
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-5">
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span className="font-medium text-primary">
                           {post.category}
                         </span>
