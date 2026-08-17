@@ -25,7 +25,7 @@ export async function BlogSection() {
             <h2 className="font-serif text-3xl leading-tight text-foreground text-balance sm:text-5xl">
               Stories & knowledge from the road
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               Insights from our local specialists to inspire your next journey
               through China.
             </p>

@@ -20,7 +20,7 @@ export async function DestinationsGrid() {
               Southwest China, endless ways to wander
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+          <p className="max-w-sm text-base leading-relaxed text-muted-foreground">
             Each destination is a starting point. Choose a region, then shape
             the journey — group size, duration and activities are always yours
             to decide.
