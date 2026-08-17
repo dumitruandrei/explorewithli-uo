@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import type { DestinationNav } from '@/sanity/lib/fetch'
 import { Button } from '@/components/ui/button'
+import { ContactAnchor } from '@/components/contact-anchor'
 
 export function SiteHeader({
   solid = false,
@@ -119,14 +120,9 @@ export function SiteHeader({
             </Link>
           ))}
 
-          <Button
-            size="sm"
-            className="ml-2"
-            nativeButton={false}
-            render={<Link href="/#contact" />}
-          >
+          <ContactAnchor className="ml-2 inline-flex h-9 items-center justify-center rounded-md bg-primary px-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
             Plan your trip
-          </Button>
+          </ContactAnchor>
         </div>
 
         {/* Mobile toggle */}
@@ -167,15 +163,12 @@ export function SiteHeader({
               {link.label}
             </Link>
           ))}
-          <Button
-            className="mt-3 w-full"
-            nativeButton={false}
-            render={
-              <Link href="/#contact" onClick={() => setMobileOpen(false)} />
-            }
+          <ContactAnchor
+            className="mt-3 inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            onClick={() => setMobileOpen(false)}
           >
             Plan your trip
-          </Button>
+          </ContactAnchor>
         </div>
       )}
     </header>

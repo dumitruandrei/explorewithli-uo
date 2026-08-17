@@ -5,11 +5,13 @@ import type { MouseEvent, ReactNode } from 'react'
 type ContactAnchorProps = {
   children: ReactNode
   className?: string
+  onClick?: () => void
 }
 
-export function ContactAnchor({ children, className }: ContactAnchorProps) {
+export function ContactAnchor({ children, className, onClick }: ContactAnchorProps) {
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
     event.preventDefault()
+    onClick?.()
 
     const contact = document.getElementById('contact')
     if (!contact) return
