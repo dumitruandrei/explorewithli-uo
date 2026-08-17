@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { PortableText, type PortableTextComponents } from 'next-sanity'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
+import { ContactAnchor } from '@/components/contact-anchor'
 import {
   formatJournalDate,
   getDestinationNav,
@@ -253,13 +254,12 @@ export default async function JournalArticlePage({
                 Our local specialists craft flexible, tailor-made journeys
                 across southwest China.
               </p>
-              <Link
-                href="#contact"
+              <ContactAnchor
                 className="mt-5 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 Plan your trip
                 <ArrowRight className="size-4" />
-              </Link>
+              </ContactAnchor>
             </div>
           </div>
         </article>
