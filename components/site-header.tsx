@@ -96,7 +96,7 @@ export function SiteHeader({
                       <span className="block font-serif text-base text-popover-foreground">
                         {d.name}
                       </span>
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-sm text-muted-foreground">
                         {d.tagline}
                       </span>
                     </Link>

@@ -19,10 +19,10 @@ export function ContactForm({
   const [error, setError] = useState<string | null>(null)
 
   const isDark = variant === 'dark'
-  const labelClass = `mb-1.5 block text-xs font-medium uppercase tracking-wider ${
+  const labelClass = `mb-1.5 block text-sm font-medium uppercase tracking-wider ${
     isDark ? 'text-background/70' : 'text-muted-foreground'
   }`
-  const fieldClass = `w-full rounded-sm border bg-transparent px-3 py-2.5 text-sm outline-none transition-colors focus:ring-1 ${
+  const fieldClass = `w-full rounded-sm border bg-transparent px-3 py-2.5 text-base outline-none transition-colors focus:ring-1 ${
     isDark
       ? 'border-background/25 text-background placeholder:text-background/40 focus:border-background/60 focus:ring-background/40'
       : 'border-border text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:ring-primary/40'
@@ -148,7 +148,7 @@ export function ContactForm({
             />
             <label
               htmlFor="privacyConsent"
-              className={`text-xs leading-relaxed cursor-pointer ${
+              className={`text-sm leading-relaxed cursor-pointer ${
                 isDark
                   ? 'text-background/70'
                   : 'text-muted-foreground'
@@ -192,7 +192,7 @@ export function ContactForm({
         {loading ? 'Sending enquiry...' : 'Request your tailored itinerary'}
       </Button>
       <p
-        className={`mt-3 text-center text-xs leading-relaxed ${
+        className={`mt-3 text-center text-sm leading-relaxed ${
           isDark ? 'text-background/60' : 'text-muted-foreground'
         }`}
       >

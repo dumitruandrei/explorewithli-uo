@@ -86,7 +86,7 @@ export default async function DestinationPage({
               <h2 className="font-serif text-3xl leading-tight text-foreground text-balance sm:text-4xl">
                 Curated journeys through {destination.name}
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 Prices shown are per person based on a group of four. Tap any
                 journey for the full itinerary and to enquire.
               </p>

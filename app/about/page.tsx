@@ -22,7 +22,7 @@ export default async function AboutPage() {
         <section className="border-b border-border pb-16 pt-24 sm:pb-20 sm:pt-32">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <p className="text-xs font-medium uppercase tracking-widest text-primary">
+              <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Our Values
               </p>
               <h1 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-6xl text-balance">
@@ -116,7 +116,7 @@ export default async function AboutPage() {
         <section className="border-b border-border py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
-              <p className="text-xs font-medium uppercase tracking-widest text-primary">
+              <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Meet The Team
               </p>
               <h2 className="mt-3 font-serif text-3xl leading-tight text-foreground text-balance sm:text-4xl">
@@ -171,7 +171,7 @@ export default async function AboutPage() {
         <section className="border-b border-border py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
-              <p className="text-xs font-medium uppercase tracking-widest text-primary">
+              <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Our Partners
               </p>
               <h2 className="mt-3 font-serif text-3xl leading-tight text-foreground text-balance sm:text-4xl">

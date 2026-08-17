@@ -60,7 +60,7 @@ export function PackageCard({
             sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <span className="absolute right-3 top-3 rounded-full bg-background/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur">
+          <span className="absolute right-3 top-3 rounded-full bg-background/90 px-3 py-1 text-sm font-medium text-foreground backdrop-blur">
             {pkg.durationDays} {pkg.durationDays === 1 ? 'day' : 'days'}
           </span>
         </button>
@@ -77,14 +77,14 @@ export function PackageCard({
             {(pkg.tripHighlights || []).slice(0, 3).map((h) => (
               <li
                 key={h}
-                className="flex items-start gap-2 text-sm text-foreground/80"
+                className="flex items-start gap-2 text-base text-foreground"
               >
                 <Check className="mt-0.5 size-4 shrink-0 text-accent" />
                 <span className="leading-snug">{h}</span>
               </li>
             ))}
             {(pkg.tripHighlights || []).length > 3 && (
-              <li className="pl-6 text-xs text-muted-foreground">
+              <li className="pl-6 text-sm text-muted-foreground">
                 + {(pkg.tripHighlights || []).length - 3} more highlights
               </li>
             )}
@@ -92,7 +92,7 @@ export function PackageCard({
 
           <div className="mt-5 flex items-end justify-between border-t border-border pt-4">
             <div>
-              <p className="text-xs text-muted-foreground">From, group of 4</p>
+              <p className="text-sm text-muted-foreground">From, group of 4</p>
               <p className="font-serif text-2xl text-card-foreground">
                 {formatPrice(pkg.groupPrice)}
                 <span className="text-sm text-muted-foreground"> / person</span>
@@ -165,7 +165,7 @@ export function PackageCard({
                 <X className="size-5" />
               </button>
               <div className="absolute bottom-0 left-0 p-6 z-10">
-                <p className="text-xs font-medium uppercase tracking-wider text-background/80">
+                <p className="text-sm font-medium uppercase tracking-wider text-background">
                   {destinationName}
                 </p>
                 <h2 className="mt-1 font-serif text-2xl text-background sm:text-3xl text-balance">
@@ -200,7 +200,7 @@ export function PackageCard({
                 {(pkg.tripHighlights || []).map((h) => (
                   <li
                     key={h}
-                    className="flex items-start gap-2 text-sm text-foreground/80"
+                    className="flex items-start gap-2 text-base text-foreground"
                   >
                     <Check className="mt-0.5 size-4 shrink-0 text-accent" />
                     <span className="leading-snug">{h}</span>
@@ -228,20 +228,20 @@ export function PackageCard({
                       )}
                     </div>
                     <div className="pb-6">
-                      <p className="text-xs font-medium uppercase tracking-wider text-primary">
+                      <p className="text-sm font-medium uppercase tracking-wider text-primary">
                         Day {day.day}
                       </p>
                       <h5 className="mt-0.5 font-serif text-base text-card-foreground text-balance">
                         {day.title}
                       </h5>
-                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-1.5 text-base leading-relaxed text-muted-foreground">
                         {day.description}
                       </p>
                       <ul className="mt-3 flex flex-col gap-1.5">
                         {day.activities.map((a) => (
                           <li
                             key={a}
-                            className="flex items-start gap-2 text-sm text-foreground/80"
+                            className="flex items-start gap-2 text-base text-foreground"
                           >
                             <MapPin className="mt-0.5 size-3.5 shrink-0 text-accent" />
                             <span className="leading-snug">{a}</span>
