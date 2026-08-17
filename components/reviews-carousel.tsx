@@ -27,7 +27,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
             href={review.googleReviewUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex w-[280px] shrink-0 flex-col justify-between rounded-lg border border-border bg-card p-5 shadow-sm transition-all hover:border-primary/40 hover:shadow-md sm:w-[320px]"
+            className="group flex w-[320px] shrink-0 flex-col justify-between rounded-lg border border-border bg-card p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md sm:w-[380px]"
           >
             <div>
               {/* Star Rating & Quote Mark */}
@@ -48,7 +48,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
               </div>
 
               {/* Compact Review Content */}
-              <p className="mt-3 text-sm leading-relaxed text-foreground/90 line-clamp-4 italic">
+              <p className="mt-4 text-base leading-relaxed text-foreground line-clamp-5 italic">
                 {review.comment}
               </p>
             </div>
@@ -69,7 +69,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
                   <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                     {review.travelerName}
                   </p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-sm font-medium text-muted-foreground">
                     Google Review
                   </p>
                 </div>
