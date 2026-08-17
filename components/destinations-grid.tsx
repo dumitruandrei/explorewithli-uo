@@ -34,7 +34,7 @@ export async function DestinationsGrid() {
               href={`/destinations/${d.slug}`}
               className="group relative flex flex-col justify-end overflow-hidden rounded-lg border border-border"
             >
-              <div className="relative aspect-[3/4] w-full">
+              <div className="relative aspect-[4/3] w-full lg:aspect-[16/10]">
                 <Image
                   src={sanityImageUrl(d.heroImage, { width: 800, height: 1067 })}
                   alt={`${d.name}, ${d.region}`}
