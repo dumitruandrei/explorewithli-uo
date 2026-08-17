@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ContactAnchor } from '@/components/contact-anchor'
 
 export function Hero() {
   return (
@@ -69,15 +70,9 @@ export function Hero() {
               Explore destinations
               <ArrowRight className="size-4" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              nativeButton={false}
-              className="border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20 hover:text-white"
-              render={<Link href="#contact" />}
-            >
+            <ContactAnchor className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-white/40 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur transition-colors hover:bg-white/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
               Plan your trip
-            </Button>
+            </ContactAnchor>
           </div>
         </div>
       </div>
