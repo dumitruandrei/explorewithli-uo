@@ -97,17 +97,17 @@ export default async function HowItWorksPage() {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h2 className="mt-5 font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
+                  <h2 className="mt-5 font-serif text-2xl text-foreground md:text-3xl transition-colors group-hover:text-primary">
                     <span className="sr-only">{`Step ${index + 1}: `}</span>
                     {step.title}
                   </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                     {step.body}
                   </p>
                   {step.link && (
                     <Link
                       href={step.link.href}
-                      className="mt-5 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                      className="mt-5 inline-flex min-h-11 items-center gap-1.5 text-base font-medium text-primary transition-colors hover:text-primary/80"
                     >
                       {step.link.label}
                       <ArrowRight className="size-4" aria-hidden="true" />
