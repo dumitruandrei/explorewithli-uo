@@ -33,6 +33,7 @@ export function SiteHeader({
   const onLight = solid || scrolled
 
   const navLinks = [
+    { label: 'Group Tour', href: '/group-tour' },
     { label: 'Journal', href: '/journal' },
     { label: 'About', href: '/about' },
   ]
