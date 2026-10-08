@@ -14,7 +14,7 @@ export const groupTour = {
 export const departures = [
   {
     name: 'Spring A',
-    dates: 'March 21 – April 3, 2027',
+    dates: 'Mar 21 – Apr 3, 2027',
     note: 'Easter holidays',
     seats: 8,
   },
@@ -26,13 +26,13 @@ export const departures = [
   },
   {
     name: 'Autumn A',
-    dates: 'September 12 – September 25, 2027',
+    dates: 'Sep 12 – Sep 25, 2027',
     note: 'Sunny shoulder season',
     seats: 10,
   },
   {
     name: 'Autumn B',
-    dates: 'October 17 – October 30, 2027',
+    dates: 'Oct 17 – Oct 30, 2027',
     note: 'Autumn holidays',
     seats: 10,
   },

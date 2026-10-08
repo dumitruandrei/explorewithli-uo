@@ -59,9 +59,9 @@ export function GroupTourSectionNav({ sections }: { sections: NavSection[] }) {
   return (
     <nav
       aria-label="Page sections"
-      className="fixed right-0 top-1/2 z-30 -translate-y-1/2"
+      className="fixed left-0 top-1/2 z-30 -translate-y-1/2"
     >
-      <ul className="flex flex-col">
+      <ul className="flex flex-col rounded-r-2xl border border-l-0 border-border bg-card/80 py-1.5 shadow-sm backdrop-blur">
         {sections.map(({ id, label }) => {
           const active = id === activeId
           return (
@@ -71,11 +71,11 @@ export function GroupTourSectionNav({ sections }: { sections: NavSection[] }) {
                 onClick={(e) => handleClick(e, id)}
                 aria-current={active ? 'location' : undefined}
                 aria-label={label}
-                className="group relative flex h-8 w-5 items-center justify-center focus-visible:outline-none sm:w-6"
+                className="group relative flex h-10 w-7 items-center justify-center focus-visible:outline-none sm:w-9"
               >
                 <span
                   className={cn(
-                    'pointer-events-none absolute right-full mr-1 whitespace-nowrap rounded-full border border-border bg-card/90 px-2.5 py-1 text-xs font-medium text-foreground opacity-0 shadow-sm backdrop-blur transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100',
+                    'pointer-events-none absolute left-full ml-2 whitespace-nowrap rounded-full border border-border bg-card/95 px-3 py-1.5 text-sm font-medium text-foreground opacity-0 shadow-sm backdrop-blur transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100',
                     active && labelVisible && 'opacity-100',
                   )}
                 >
@@ -85,8 +85,8 @@ export function GroupTourSectionNav({ sections }: { sections: NavSection[] }) {
                   className={cn(
                     'block rounded-full transition-all duration-300 group-focus-visible:ring-2 group-focus-visible:ring-ring group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-background',
                     active
-                      ? 'h-4 w-1.5 bg-primary'
-                      : 'size-1.5 bg-muted-foreground/50 group-hover:bg-primary/70',
+                      ? 'h-6 w-2.5 bg-primary'
+                      : 'size-2.5 bg-muted-foreground/50 group-hover:bg-primary/70',
                   )}
                 />
               </a>
