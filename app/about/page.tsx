@@ -29,9 +29,7 @@ export default async function AboutPage() {
                 Travel that Changes You
               </h1>
               <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-muted-foreground text-lg">
-                We believe that travel should be more than just sightseeing—it
-                should be a deep, meaningful connection. Here is what drives
-                everything we do:
+                Information is now universal, but connection is becoming rare. In a world increasingly mediated by AI, our mission at Explore with Li is to anchor your journey in the tangible. We move beyond the sights to design experiences centered on authentic human exchange and the quiet, everyday moments that define a culture. We bridge the gap between &quot;seeing a place&quot; and &quot;belonging to it&quot; through intentional, human-led travel design.
               </p>
             </div>
           </div>
