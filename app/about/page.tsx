@@ -3,7 +3,6 @@ import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { teamMembers, collaborators } from '@/lib/about-content'
 import { getDestinationNav } from '@/sanity/lib/fetch'
-import { Sparkles, Leaf, ShieldCheck, Compass } from 'lucide-react'
 
 export const metadata = {
   title: 'About Us | Explore with Li',
@@ -23,7 +22,7 @@ export default async function AboutPage() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
-                Our Values
+                Our Mission
               </p>
               <h1 className="mt-4 font-serif text-4xl leading-tight text-foreground sm:text-6xl text-balance">
                 Travel that Changes You
@@ -34,80 +33,6 @@ export default async function AboutPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-12 max-w-6xl px-4 sm:px-6 lg:px-8 sm:mt-16">
-            <div className="grid gap-8 md:grid-cols-2">
-              {/* Authenticity Card */}
-              <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8">
-                <div className="flex items-center gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
-                    <Sparkles className="size-5" />
-                  </div>
-                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                    Authenticity
-                  </h3>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  We don’t just show you the famous sights; we take you behind
-                  the scenes to uncover the hidden gems of Chongqing and
-                  introduce you to the rich traditions of local ethnic minority
-                  groups. With us, you experience the real culture, firsthand.
-                </p>
-              </div>
-
-              {/* Sustainability Card */}
-              <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8">
-                <div className="flex items-center gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
-                    <Leaf className="size-5" />
-                  </div>
-                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                    Sustainability
-                  </h3>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  We love our home and want to keep it vibrant. By exploring
-                  bustling local markets and utilizing Chongqing’s incredible
-                  public transportation system, we minimize our footprint while
-                  maximizing your local immersion.
-                </p>
-              </div>
-
-              {/* Trust Card */}
-              <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8">
-                <div className="flex items-center gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
-                    <ShieldCheck className="size-5" />
-                  </div>
-                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                    Trust
-                  </h3>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Great adventures are built on confidence. We maintain absolute
-                  transparency in our pricing and logistics—no hidden fees, no
-                  surprises, just honest and reliable planning.
-                </p>
-              </div>
-
-              {/* Curiosity Card */}
-              <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8">
-                <div className="flex items-center gap-4">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-primary/10">
-                    <Compass className="size-5" />
-                  </div>
-                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                    Curiosity
-                  </h3>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  The world is constantly evolving, and so are we. We listen to
-                  and learn from our guests and local partners, using those
-                  insights to constantly design fresh, innovative ways to
-                  explore China.
-                </p>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* Team section */}
