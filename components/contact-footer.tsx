@@ -1,12 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, MessageSquare, MapPin } from 'lucide-react'
-import { getDestinations } from '@/sanity/lib/fetch'
 import { ContactForm } from '@/components/contact-form'
 
-export async function ContactFooter() {
-  const destinations = await getDestinations()
-
+export function ContactFooter() {
   return (
     <footer id="contact" className="bg-[oklch(0.28_0.07_148)] text-[oklch(0.94_0.012_88)]">
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
@@ -94,23 +91,6 @@ export async function ContactFooter() {
               Explore with <span className="text-[oklch(0.72_0.13_148)]">Li</span>
             </span>
           </Link>
-          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-background/70">
-            {destinations.map((d) => (
-              <Link
-                key={d._id}
-                href={`/destinations/${d.slug}`}
-                className="transition-colors hover:text-background"
-              >
-                {d.name}
-              </Link>
-            ))}
-            <Link href="/how-it-works" className="transition-colors hover:text-background">
-              How It Works
-            </Link>
-            <Link href="/#journal" className="transition-colors hover:text-background">
-              Journal
-            </Link>
-          </nav>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <p className="text-sm text-background/75">
               © {new Date().getFullYear()} Explore with Li. All rights reserved.
