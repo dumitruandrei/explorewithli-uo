@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import {
   CalendarDays,
   Check,
@@ -12,6 +11,7 @@ import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { ContactAnchor } from '@/components/contact-anchor'
 import { GroupTourSectionNav } from '@/components/group-tour-section-nav'
+import { GroupTourCarousel } from '@/components/group-tour-carousel'
 import { getDestinationNav } from '@/sanity/lib/fetch'
 import {
   groupTour,
@@ -102,16 +102,30 @@ export default async function GroupTourPage() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-border shadow-sm">
-              <Image
-                src="/images/pkg-yunnan-lijiang.png"
-                alt="Lijiang old town beneath Jade Dragon Snow Mountain"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+            <GroupTourCarousel
+              slides={[
+                {
+                  src: '/images/group-tour/chongqing-night.jpg',
+                  alt: 'Hongyadong in Chongqing lit up in gold against the night sky',
+                },
+                {
+                  src: '/images/group-tour/hotpot.jpg',
+                  alt: 'A Chongqing hotpot feast with a bubbling chilli broth and many side dishes',
+                },
+                {
+                  src: '/images/group-tour/dragon-procession.jpg',
+                  alt: 'A dragon procession in an old Yunnan town with locals in red costumes',
+                },
+                {
+                  src: '/images/group-tour/rice-terraces-sunset.jpg',
+                  alt: 'Rice terraces glowing in the valley at sunset',
+                },
+                {
+                  src: '/images/group-tour/tea-terraces.png',
+                  alt: 'Tea pickers working on terraced tea hills',
+                },
+              ]}
+            />
           </div>
 
           {/* Key facts */}
