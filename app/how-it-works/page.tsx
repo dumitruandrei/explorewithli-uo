@@ -97,7 +97,7 @@ export default async function HowItWorksPage() {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h2 className="mt-5 font-serif text-2xl text-foreground md:text-3xl transition-colors group-hover:text-primary">
+                  <h2 className="mt-5 font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
                     <span className="sr-only">{`Step ${index + 1}: `}</span>
                     {step.title}
                   </h2>
