@@ -11,6 +11,7 @@ import {
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { ContactAnchor } from '@/components/contact-anchor'
+import { GroupTourSectionNav } from '@/components/group-tour-section-nav'
 import { getDestinationNav } from '@/sanity/lib/fetch'
 import {
   groupTour,
@@ -28,15 +29,29 @@ export const metadata = {
     'Join a small-group, 14-day journey from Chongqing through Yunnan to Shanghai in 2027. Maximum 14 travellers, from 2,780 CHF per person.',
 }
 
+const navSections = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'departures', label: 'Departure dates' },
+  { id: 'why-join', label: 'Why join' },
+  { id: 'itinerary', label: 'Itinerary' },
+  { id: 'details', label: 'Details & pricing' },
+  { id: 'booking', label: 'Booking' },
+  { id: 'contact', label: 'Contact' },
+]
+
 export default async function GroupTourPage() {
   const destinations = await getDestinationNav()
 
   return (
     <>
       <SiteHeader solid destinations={destinations} />
+      <GroupTourSectionNav sections={navSections} />
       <main className="bg-background">
         {/* Hero */}
-        <section className="border-b border-border pb-16 pt-24 sm:pb-20 sm:pt-32">
+        <section
+          id="overview"
+          className="scroll-mt-24 border-b border-border pb-10 pt-24 sm:pb-12 sm:pt-28"
+        >
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
             <div>
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
@@ -100,7 +115,7 @@ export default async function GroupTourPage() {
           </div>
 
           {/* Key facts */}
-          <div className="mx-auto mt-12 grid max-w-6xl grid-cols-2 gap-4 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
+          <div className="mx-auto mt-8 grid max-w-6xl grid-cols-2 gap-4 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
             {[
               { label: 'Duration', value: '14 days / 13 nights' },
               {
@@ -129,9 +144,12 @@ export default async function GroupTourPage() {
         </section>
 
         {/* Departures */}
-        <section className="border-b border-border py-16 sm:py-24">
+        <section
+          id="departures"
+          className="scroll-mt-24 border-b border-border py-10 sm:py-14"
+        >
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center">
+            <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Departure Dates
               </p>
@@ -166,9 +184,12 @@ export default async function GroupTourPage() {
         </section>
 
         {/* Highlights */}
-        <section className="border-b border-border py-16 sm:py-24">
+        <section
+          id="why-join"
+          className="scroll-mt-24 border-b border-border py-10 sm:py-14"
+        >
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center">
+            <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Why Join
               </p>
@@ -195,9 +216,12 @@ export default async function GroupTourPage() {
         </section>
 
         {/* Itinerary */}
-        <section className="border-b border-border py-16 sm:py-24">
+        <section
+          id="itinerary"
+          className="scroll-mt-24 border-b border-border py-10 sm:py-14"
+        >
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-14 text-center">
+            <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Itinerary
               </p>
@@ -237,9 +261,12 @@ export default async function GroupTourPage() {
         </section>
 
         {/* Included / Not included */}
-        <section className="border-b border-border py-16 sm:py-24">
+        <section
+          id="details"
+          className="scroll-mt-24 border-b border-border py-10 sm:py-14"
+        >
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center">
+            <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Tour Details & Pricing
               </p>
@@ -286,9 +313,12 @@ export default async function GroupTourPage() {
         </section>
 
         {/* Booking */}
-        <section className="border-b border-border py-16 sm:py-24">
+        <section
+          id="booking"
+          className="scroll-mt-24 border-b border-border py-10 sm:py-14"
+        >
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center">
+            <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Secure Your Spot
               </p>
@@ -320,7 +350,7 @@ export default async function GroupTourPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 sm:py-24">
+        <section id="contact" className="scroll-mt-24 py-10 sm:py-14">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
               Ready to Explore Together?
