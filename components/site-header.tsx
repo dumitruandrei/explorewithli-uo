@@ -34,6 +34,7 @@ export function SiteHeader({
 
   const navLinks = [
     { label: 'How It Works', href: '/how-it-works' },
+    { label: 'Group Tour', href: '/group-tour' },
     { label: 'Journal', href: '/journal' },
     { label: 'About', href: '/about' },
   ]
