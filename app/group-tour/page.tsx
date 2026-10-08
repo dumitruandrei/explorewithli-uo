@@ -69,10 +69,20 @@ export default async function GroupTourPage() {
                   Reserve your spot
                 </ContactAnchor>
                 <a
-                  href="#flyers"
-                  className="inline-flex h-11 items-center justify-center rounded-md border border-border bg-card px-5 text-sm font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary"
+                  href={groupTour.flyers.eng}
+                  download
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border bg-card px-5 text-sm font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary"
                 >
-                  Download flyer
+                  <Download className="size-4" />
+                  Flyer (ENG)
+                </a>
+                <a
+                  href={groupTour.flyers.deu}
+                  download
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-border bg-card px-5 text-sm font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary"
+                >
+                  <Download className="size-4" />
+                  Flyer (DEU)
                 </a>
               </div>
             </div>
@@ -118,35 +128,6 @@ export default async function GroupTourPage() {
           </p>
         </section>
 
-        {/* Highlights */}
-        <section className="border-b border-border py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center">
-              <p className="text-sm font-medium uppercase tracking-widest text-primary">
-                Why Join
-              </p>
-              <h2 className="mt-3 text-balance font-serif text-3xl leading-tight text-foreground sm:text-4xl">
-                What makes this trip special
-              </h2>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {highlights.map((item) => (
-                <div
-                  key={item.title}
-                  className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8"
-                >
-                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Departures */}
         <section className="border-b border-border py-16 sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -178,6 +159,35 @@ export default async function GroupTourPage() {
                     <Users className="size-3.5" />
                     {d.seats} seats left
                   </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Highlights */}
+        <section className="border-b border-border py-16 sm:py-24">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <p className="text-sm font-medium uppercase tracking-widest text-primary">
+                Why Join
+              </p>
+              <h2 className="mt-3 text-balance font-serif text-3xl leading-tight text-foreground sm:text-4xl">
+                What makes this trip special
+              </h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {highlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-md sm:p-8"
+                >
+                  <h3 className="font-serif text-2xl text-foreground transition-colors group-hover:text-primary">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {item.body}
+                  </p>
                 </div>
               ))}
             </div>
@@ -309,8 +319,8 @@ export default async function GroupTourPage() {
           </div>
         </section>
 
-        {/* CTA + flyers */}
-        <section id="flyers" className="scroll-mt-24 py-16 sm:py-24">
+        {/* CTA */}
+        <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
               Ready to Explore Together?
@@ -346,34 +356,6 @@ export default async function GroupTourPage() {
                 <Mail className="size-4" />
                 Email
               </a>
-            </div>
-
-            <div className="mt-14 rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8">
-              <h3 className="font-serif text-2xl text-foreground">
-                Download the tour flyer
-              </h3>
-              <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Review the detailed day-by-day program, reservation conditions,
-                and flight guidelines in English or German.
-              </p>
-              <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-                <a
-                  href={groupTour.flyers.eng}
-                  download
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  <Download className="size-4" />
-                  Flyer in English (ENG)
-                </a>
-                <a
-                  href={groupTour.flyers.deu}
-                  download
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  <Download className="size-4" />
-                  Flyer auf Deutsch (DEU)
-                </a>
-              </div>
             </div>
           </div>
         </section>
