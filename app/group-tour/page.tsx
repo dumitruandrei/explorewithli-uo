@@ -52,7 +52,7 @@ export default async function GroupTourPage() {
           id="overview"
           className="scroll-mt-24 border-b border-border pb-10 pt-24 sm:pb-12 sm:pt-28"
         >
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 pl-10 pr-4 sm:pl-12 sm:pr-6 lg:grid-cols-2 lg:gap-14 lg:pr-8">
             <div>
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Group Tour 2027
@@ -129,7 +129,7 @@ export default async function GroupTourPage() {
           </div>
 
           {/* Key facts */}
-          <div className="mx-auto mt-8 grid max-w-6xl grid-cols-2 gap-4 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
+          <div className="mx-auto mt-8 grid max-w-6xl grid-cols-2 gap-4 pl-10 pr-4 sm:pl-12 sm:pr-6 md:grid-cols-4 lg:pr-8">
             {[
               { label: 'Duration', value: '14 days / 13 nights' },
               {
@@ -152,7 +152,7 @@ export default async function GroupTourPage() {
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-4 max-w-6xl px-4 text-center text-sm text-muted-foreground sm:px-6 lg:px-8">
+          <p className="mx-auto mt-4 max-w-6xl pl-10 pr-4 text-center text-sm text-muted-foreground sm:pl-12 sm:pr-6 lg:pr-8">
             Per person, excluding international long-haul flights.
           </p>
         </section>
@@ -162,7 +162,7 @@ export default async function GroupTourPage() {
           id="departures"
           className="scroll-mt-24 border-b border-border py-10 sm:py-14"
         >
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl pl-10 pr-4 sm:pl-12 sm:pr-6 lg:pr-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Departure Dates
@@ -202,7 +202,7 @@ export default async function GroupTourPage() {
           id="why-join"
           className="scroll-mt-24 border-b border-border py-10 sm:py-14"
         >
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl pl-10 pr-4 sm:pl-12 sm:pr-6 lg:pr-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Why Join
@@ -234,7 +234,7 @@ export default async function GroupTourPage() {
           id="itinerary"
           className="scroll-mt-24 border-b border-border py-10 sm:py-14"
         >
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl pl-10 pr-4 sm:pl-12 sm:pr-6 lg:pr-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Itinerary
@@ -279,7 +279,7 @@ export default async function GroupTourPage() {
           id="details"
           className="scroll-mt-24 border-b border-border py-10 sm:py-14"
         >
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl pl-10 pr-4 sm:pl-12 sm:pr-6 lg:pr-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Tour Details & Pricing
@@ -331,7 +331,7 @@ export default async function GroupTourPage() {
           id="booking"
           className="scroll-mt-24 border-b border-border py-10 sm:py-14"
         >
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl pl-10 pr-4 sm:pl-12 sm:pr-6 lg:pr-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
                 Secure Your Spot
@@ -365,7 +365,7 @@ export default async function GroupTourPage() {
 
         {/* CTA */}
         <section id="contact" className="scroll-mt-24 py-10 sm:py-14">
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl pl-10 pr-4 text-center sm:pl-12 sm:pr-6 lg:pr-8">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
               Ready to Explore Together?
             </p>
