@@ -33,6 +33,7 @@ export function SiteHeader({
   const onLight = solid || scrolled
 
   const navLinks = [
+    { label: 'How It Works', href: '/how-it-works' },
     { label: 'Journal', href: '/journal' },
     { label: 'About', href: '/about' },
   ]

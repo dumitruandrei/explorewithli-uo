@@ -104,6 +104,9 @@ export async function ContactFooter() {
                 {d.name}
               </Link>
             ))}
+            <Link href="/how-it-works" className="transition-colors hover:text-background">
+              How It Works
+            </Link>
             <Link href="/#journal" className="transition-colors hover:text-background">
               Journal
             </Link>
