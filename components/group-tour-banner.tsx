@@ -41,13 +41,24 @@ export function GroupTourBanner() {
             </p>
           </div>
 
-          <Link
-            href="/group-tour"
-            className="inline-flex h-14 shrink-0 items-center justify-center gap-2 self-start rounded-md bg-[oklch(0.975_0.002_90)] px-8 text-base font-semibold text-[oklch(0.24_0.042_148)] shadow-lg transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[oklch(0.24_0.042_148)] lg:self-auto"
-          >
-            Discover our group tours
-            <ArrowRight className="size-5" />
-          </Link>
+          <div className="flex shrink-0 flex-col items-start gap-5 lg:items-end">
+            <p className="flex flex-col lg:items-end">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+                Starting from
+              </span>
+              <span className="mt-1 font-serif text-4xl leading-none text-white sm:text-5xl">
+                {groupTour.priceEur}
+              </span>
+              <span className="mt-1.5 text-sm text-white/70">per person</span>
+            </p>
+            <Link
+              href="/group-tour"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-md bg-[oklch(0.975_0.002_90)] px-8 text-base font-semibold text-[oklch(0.24_0.042_148)] shadow-lg transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[oklch(0.24_0.042_148)]"
+            >
+              Discover our group tours
+              <ArrowRight className="size-5" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
