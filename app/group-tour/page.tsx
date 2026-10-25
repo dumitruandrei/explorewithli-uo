@@ -36,7 +36,7 @@ const navSections = [
   { id: 'itinerary', label: 'Itinerary' },
   { id: 'details', label: 'Details & pricing' },
   { id: 'booking', label: 'Booking' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'get-in-touch', label: 'Contact' },
 ]
 
 export default async function GroupTourPage() {
@@ -364,7 +364,7 @@ export default async function GroupTourPage() {
         </section>
 
         {/* CTA */}
-        <section id="contact" className="scroll-mt-24 py-10 sm:py-14">
+        <section id="get-in-touch" className="scroll-mt-24 py-10 sm:py-14">
           <div className="mx-auto max-w-3xl pl-10 pr-4 text-center sm:pl-12 sm:pr-6 lg:pr-8">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
               Ready to Explore Together?
