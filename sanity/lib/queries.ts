@@ -112,7 +112,7 @@ export const sitemapQuery = groq`{
 }`
 
 export const journalPostsByTagQuery = groq`
-  *[_type == "journalPost" && $tag in tags] | order(publishedAt desc) {
+  *[_type == "journalPost" && $tagName in tags] | order(publishedAt desc) {
     _id,
     title,
     "slug": slug.current,

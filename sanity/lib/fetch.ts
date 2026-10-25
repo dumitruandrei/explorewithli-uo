@@ -285,7 +285,7 @@ export const getJournalPostsByTag = cache(
   async (tag: string): Promise<JournalPostCard[]> => {
     const raw = await client.fetch<RawJournalPostCard[]>(
       journalPostsByTagQuery,
-      { tag },
+      { tagName: tag },
       fetchOptions,
     )
     return raw.map(mapJournalPostCard)
