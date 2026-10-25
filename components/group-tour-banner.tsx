@@ -1,46 +1,54 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, CalendarDays, Users } from 'lucide-react'
 import { groupTour } from '@/lib/group-tour-content'
 
 export function GroupTourBanner() {
   return (
     <section
       aria-label="Group tours 2027"
-      className="bg-[oklch(0.24_0.042_148)] text-white"
+      className="px-5 py-10 sm:px-8 sm:py-14"
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:px-8 sm:py-7">
-        <div className="flex items-center gap-4 sm:gap-5">
-          <div className="relative hidden size-16 shrink-0 overflow-hidden rounded-md sm:block">
-            <Image
-              src="/images/group-tour/tea-terraces.png"
-              alt=""
-              fill
-              sizes="64px"
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[oklch(0.8_0.12_148)]">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[oklch(0.24_0.042_148)] text-white shadow-2xl shadow-black/25 ring-1 ring-white/10">
+        <Image
+          src="/images/group-tour/rice-terraces-sunset.jpg"
+          alt=""
+          fill
+          sizes="(min-width: 1280px) 1216px, 100vw"
+          className="object-cover object-right"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-r from-[oklch(0.2_0.045_148)] via-[oklch(0.2_0.045_148)]/90 to-[oklch(0.2_0.045_148)]/30 max-sm:from-[oklch(0.2_0.045_148)]/95 max-sm:via-[oklch(0.2_0.045_148)]/90 max-sm:to-[oklch(0.2_0.045_148)]/80"
+        />
+
+        <div className="relative flex flex-col gap-8 px-6 py-9 sm:px-10 sm:py-12 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-14 lg:py-14">
+          <div className="max-w-2xl">
+            <p className="inline-flex items-center gap-2 rounded-full bg-[oklch(0.8_0.12_148)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[oklch(0.2_0.045_148)]">
+              <CalendarDays className="size-3.5" />
               Group tours 2027
             </p>
-            <h2 className="mt-1 font-serif text-xl leading-snug text-balance sm:text-2xl">
+            <h2 className="mt-4 font-serif text-3xl leading-tight text-balance sm:text-4xl lg:text-5xl">
               Join us on {groupTour.title}
             </h2>
-            <p className="mt-1 text-sm leading-relaxed text-white/75">
-              14 days through Southwest China with a small group. Four
-              departures in spring and autumn.
+            <p className="mt-4 text-base leading-relaxed text-white/85 sm:text-lg">
+              14 days through Southwest China, with four departures in spring
+              and autumn.
+            </p>
+            <p className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[oklch(0.88_0.1_148)] sm:text-base">
+              <Users className="size-5" />
+              Small groups of 14 guests at most
             </p>
           </div>
-        </div>
 
-        <Link
-          href="/group-tour"
-          className="inline-flex h-11 shrink-0 items-center justify-center gap-2 self-start rounded-md bg-[oklch(0.975_0.002_90)] px-5 text-sm font-medium text-[oklch(0.24_0.042_148)] transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[oklch(0.24_0.042_148)] sm:self-auto"
-        >
-          Discover our group tours
-          <ArrowRight className="size-4" />
-        </Link>
+          <Link
+            href="/group-tour"
+            className="inline-flex h-14 shrink-0 items-center justify-center gap-2 self-start rounded-md bg-[oklch(0.975_0.002_90)] px-8 text-base font-semibold text-[oklch(0.24_0.042_148)] shadow-lg transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[oklch(0.24_0.042_148)] lg:self-auto"
+          >
+            Discover our group tours
+            <ArrowRight className="size-5" />
+          </Link>
+        </div>
       </div>
     </section>
   )
