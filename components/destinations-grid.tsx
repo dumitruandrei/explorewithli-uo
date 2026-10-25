@@ -9,7 +9,7 @@ export async function DestinationsGrid() {
   const destinations = await getDestinations()
 
   return (
-    <section id="destinations" className="bg-background py-20 sm:py-28">
+    <section id="destinations" className="bg-background pb-20 pt-12 sm:pb-28 sm:pt-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">

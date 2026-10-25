@@ -7,7 +7,7 @@ export function GroupTourBanner() {
   return (
     <section
       aria-label="Group tours 2027"
-      className="px-5 py-10 sm:px-8 sm:py-14"
+      className="px-5 pb-0 pt-10 sm:px-8 sm:pt-14"
     >
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[oklch(0.24_0.042_148)] text-white shadow-2xl shadow-black/25 ring-1 ring-white/10">
         <Image
