@@ -131,7 +131,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply flex min-h-screen flex-col bg-background text-foreground;
+  }
+  body > main {
+    flex: 1;
   }
   html {
     @apply font-sans scroll-smooth;
