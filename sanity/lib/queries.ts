@@ -129,6 +129,6 @@ export const journalPostsByTagQuery = groq`
 
 export const journalTagsQuery = groq`
   array::unique(
-    *[_type == "journalPost"].tags[]
+    *[_type == "journalPost"].tags[defined(@) && @ != ""]
   )
 `

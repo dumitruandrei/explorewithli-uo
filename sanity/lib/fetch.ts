@@ -186,8 +186,12 @@ function mapJournalPostCard(raw: RawJournalPostCard): JournalPostCard {
     author: raw.author?.trim(),
     publishedAt: raw.publishedAt,
     featured: raw.featured,
-    tags: raw.tags || [],
+    tags: (raw.tags ?? []).filter(isNonEmptyString),
   }
+}
+
+function isNonEmptyString(value: unknown): value is string {
+  return typeof value === 'string' && value.trim() !== ''
 }
 
 function mapJournalPostDetail(raw: RawJournalPostDetail): JournalPostDetail {
@@ -293,7 +297,8 @@ export const getJournalPostsByTag = cache(
 )
 
 export const getAllJournalTags = cache(async (): Promise<string[]> => {
-  return client.fetch<string[]>(journalTagsQuery, {}, fetchOptions)
+  const tags = await client.fetch<(string | null)[]>(journalTagsQuery, {}, fetchOptions)
+  return tags.filter(isNonEmptyString)
 })
 
 export const getSitemapEntries = cache(async (): Promise<SitemapEntries> => {
