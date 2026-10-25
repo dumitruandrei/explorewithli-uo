@@ -7,9 +7,9 @@ export function GroupTourBanner() {
   return (
     <section
       aria-label="Group tours 2027"
-      className="bg-[oklch(0.24_0.042_148)] pt-24 text-white sm:pt-[104px]"
+      className="bg-[oklch(0.24_0.042_148)] text-white"
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 pb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:px-8 sm:pb-7">
+      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:px-8 sm:py-7">
         <div className="flex items-center gap-4 sm:gap-5">
           <div className="relative hidden size-16 shrink-0 overflow-hidden rounded-md sm:block">
             <Image

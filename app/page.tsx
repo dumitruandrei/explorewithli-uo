@@ -14,8 +14,8 @@ export default async function Page() {
     <>
       <SiteHeader destinations={destinations} />
       <main>
-        <GroupTourBanner />
         <Hero />
+        <GroupTourBanner />
         <DestinationsGrid />
         <ReviewsSection />
         <BlogSection />
