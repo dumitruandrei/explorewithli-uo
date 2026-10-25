@@ -2,8 +2,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, MessageSquare, MapPin } from 'lucide-react'
 import { ContactForm } from '@/components/contact-form'
+import { getDestinationNav } from '@/sanity/lib/fetch'
 
-export function ContactFooter() {
+const footerLinks = [
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'Group Tour 2027', href: '/group-tour' },
+  { label: 'Journal', href: '/journal' },
+  { label: 'About Us', href: '/about' },
+]
+
+export async function ContactFooter() {
+  const destinations = await getDestinationNav()
+
   return (
     <footer id="contact" className="bg-[oklch(0.28_0.07_148)] text-[oklch(0.94_0.012_88)]">
       <div className="mx-auto max-w-7xl px-5 pb-8 pt-20 sm:px-8 sm:pb-10 sm:pt-28">
@@ -77,7 +87,47 @@ export function ContactFooter() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-6 border-t border-background/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <nav
+          aria-label="Footer"
+          className="mt-16 grid grid-cols-2 gap-8 border-t border-background/15 pt-10 sm:grid-cols-3"
+        >
+          <div>
+            <h3 className="text-sm font-medium uppercase tracking-wider text-[oklch(0.72_0.13_148)]">
+              Destinations
+            </h3>
+            <ul className="mt-4 flex flex-col gap-2">
+              {destinations.map((d) => (
+                <li key={d.slug}>
+                  <Link
+                    href={`/destinations/${d.slug}`}
+                    className="text-sm text-background/80 transition-colors hover:text-background"
+                  >
+                    {d.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-medium uppercase tracking-wider text-[oklch(0.72_0.13_148)]">
+              Explore
+            </h3>
+            <ul className="mt-4 flex flex-col gap-2">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-background/80 transition-colors hover:text-background"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+
+        <div className="mt-10 flex flex-col gap-6 border-t border-background/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/"
             className="flex items-center gap-3 font-serif text-xl"

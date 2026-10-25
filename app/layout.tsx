@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Fraunces } from 'next/font/google'
+import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from '@/lib/seo'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -14,10 +15,29 @@ const fraunces = Fraunces({
   display: 'swap',
 })
 
+const defaultTitle = 'Explore with Li — Boutique Journeys Through China'
+const defaultDescription =
+  'Explore with Li crafts bespoke, flexible journeys through Sichuan, Yunnan and Chongqing. Tailor your group size, duration and experiences with our local specialists.'
+
 export const metadata: Metadata = {
-  title: 'Explore with Li — Boutique Journeys Through China',
-  description:
-    'Explore with Li crafts bespoke, flexible journeys through Sichuan, Yunnan and Chongqing. Tailor your group size, duration and experiences with our local specialists.',
+  metadataBase: new URL(SITE_URL),
+  title: defaultTitle,
+  description: defaultDescription,
+  applicationName: SITE_NAME,
+  openGraph: {
+    type: 'website',
+    siteName: SITE_NAME,
+    locale: 'en_GB',
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [DEFAULT_OG_IMAGE],
+  },
   generator: 'v0.app',
   icons: {
     icon: [

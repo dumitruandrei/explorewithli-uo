@@ -28,6 +28,7 @@ export const destinationBySlugQuery = groq`
     heroImage,
     description,
     longDescription,
+    _updatedAt,
     packages[]{
       title,
       "slug": slug.current,
@@ -92,11 +93,23 @@ export const journalPostBySlugQuery = groq`
     readTime,
     author,
     publishedAt,
+    _updatedAt,
     intro,
     content[],
     tags
   }
 `
+
+export const sitemapQuery = groq`{
+  "destinations": *[_type == "destination" && defined(slug.current)]{
+    "slug": slug.current,
+    "updatedAt": _updatedAt
+  },
+  "posts": *[_type == "journalPost" && defined(slug.current)]{
+    "slug": slug.current,
+    "updatedAt": _updatedAt
+  }
+}`
 
 export const journalPostsByTagQuery = groq`
   *[_type == "journalPost" && $tag in tags] | order(publishedAt desc) {

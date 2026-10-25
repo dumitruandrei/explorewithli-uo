@@ -6,6 +6,8 @@ import { PortableText, type PortableTextComponents } from 'next-sanity'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { ContactAnchor } from '@/components/contact-anchor'
+import { JsonLd } from '@/components/json-ld'
+import { SITE_URL, absoluteUrl, breadcrumbJsonLd, buildPageMetadata } from '@/lib/seo'
 import {
   formatJournalDate,
   getDestinationNav,
@@ -133,10 +135,17 @@ export async function generateMetadata({
   const { slug } = await params
   const post = await getJournalPostBySlug(slug)
   if (!post) return {}
-  return {
+  return buildPageMetadata({
     title: `${post.title} — Explore with Li Journal`,
     description: post.excerpt,
-  }
+    path: `/journal/${post.slug}`,
+    image: post.ogImageUrl,
+    imageAlt: post.title,
+    type: 'article',
+    publishedTime: post.publishedAt,
+    modifiedTime: post.updatedAt,
+    authors: post.author ? [post.author] : undefined,
+  })
 }
 
 export default async function JournalArticlePage({
@@ -154,9 +163,37 @@ export default async function JournalArticlePage({
   if (!post) notFound()
 
   const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 3)
+  const postPath = `/journal/${post.slug}`
+
+  const blogPosting = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: [post.ogImageUrl.startsWith('/') ? absoluteUrl(post.ogImageUrl) : post.ogImageUrl],
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
+    author: post.author
+      ? { '@type': 'Person', name: post.author }
+      : { '@id': `${SITE_URL}/#organization` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    mainEntityOfPage: absoluteUrl(postPath),
+    articleSection: post.category,
+    keywords: post.tags.length > 0 ? post.tags.join(', ') : undefined,
+  }
 
   return (
     <>
+      <JsonLd
+        data={[
+          blogPosting,
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Journal', path: '/journal' },
+            { name: post.title, path: postPath },
+          ]),
+        ]}
+      />
       <SiteHeader destinations={destinations} />
       <main>
         <section className="relative flex min-h-[60svh] items-end overflow-hidden">

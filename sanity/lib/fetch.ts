@@ -15,6 +15,7 @@ import {
   journalPostsByTagQuery,
   journalTagsQuery,
   reviewsQuery,
+  sitemapQuery,
 } from './queries'
 
 const fetchOptions = { next: { revalidate: 60 } as const }
@@ -38,9 +39,16 @@ export type DestinationDetail = {
   region: string
   tagline: string
   heroImageUrl: string
+  ogImageUrl: string
   description: string
   longDescription: string
+  updatedAt: string
   packages: TravelPackage[]
+}
+
+export type SitemapEntries = {
+  destinations: { slug: string; updatedAt: string }[]
+  posts: { slug: string; updatedAt: string }[]
 }
 
 export type Review = {
@@ -67,6 +75,8 @@ export type JournalPostCard = {
 }
 
 export type JournalPostDetail = JournalPostCard & {
+  ogImageUrl: string
+  updatedAt: string
   intro: string
   content: any[]
 }
@@ -79,6 +89,7 @@ type RawDestinationDetail = {
   heroImage: SanityImageSource
   description: string
   longDescription: string
+  _updatedAt: string
     packages: {
       title: string
       slug: string
@@ -119,6 +130,7 @@ type RawJournalPostCard = {
 }
 
 type RawJournalPostDetail = RawJournalPostCard & {
+  _updatedAt: string
   intro: string
   content: JournalPostDetail['content']
 }
@@ -130,8 +142,10 @@ function mapDestinationDetail(raw: RawDestinationDetail): DestinationDetail {
     region: raw.region,
     tagline: raw.tagline,
     heroImageUrl: sanityImageUrl(raw.heroImage, { width: 1920, height: 1080 }),
+    ogImageUrl: sanityImageUrl(raw.heroImage, { width: 1200, height: 630 }),
     description: raw.description,
     longDescription: raw.longDescription,
+    updatedAt: raw._updatedAt,
     packages: raw.packages.map((pkg) => ({
       slug: pkg.slug,
       title: pkg.title,
@@ -169,7 +183,7 @@ function mapJournalPostCard(raw: RawJournalPostCard): JournalPostCard {
     imageUrl: sanityImageUrl(raw.image, { width: 1200, height: 750 }),
     category: raw.category,
     readTime: raw.readTime,
-    author: raw.author,
+    author: raw.author?.trim(),
     publishedAt: raw.publishedAt,
     featured: raw.featured,
     tags: raw.tags || [],
@@ -179,6 +193,8 @@ function mapJournalPostCard(raw: RawJournalPostCard): JournalPostCard {
 function mapJournalPostDetail(raw: RawJournalPostDetail): JournalPostDetail {
   return {
     ...mapJournalPostCard(raw),
+    ogImageUrl: sanityImageUrl(raw.image, { width: 1200, height: 630 }),
+    updatedAt: raw._updatedAt,
     intro: raw.intro,
     content: raw.content,
   }
@@ -278,4 +294,8 @@ export const getJournalPostsByTag = cache(
 
 export const getAllJournalTags = cache(async (): Promise<string[]> => {
   return client.fetch<string[]>(journalTagsQuery, {}, fetchOptions)
+})
+
+export const getSitemapEntries = cache(async (): Promise<SitemapEntries> => {
+  return client.fetch<SitemapEntries>(sitemapQuery, {}, fetchOptions)
 })

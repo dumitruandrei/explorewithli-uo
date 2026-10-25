@@ -9,6 +9,7 @@ import {
   getJournalPostsByTag,
   getAllJournalTags,
 } from '@/sanity/lib/fetch'
+import { buildPageMetadata } from '@/lib/seo'
 
 export async function generateStaticParams() {
   const tags = await getAllJournalTags()
@@ -22,10 +23,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { tag } = await params
   const decodedTag = decodeURIComponent(tag)
-  return {
-    title: `Posts tagged "${decodedTag}" — Explore with Li Journal`,
-    description: `Explore all blog posts tagged with "${decodedTag}"`,
-  }
+  const allTags = await getAllJournalTags()
+  // Case variants (e.g. /Chongqing vs /chongqing) point at one canonical spelling.
+  const canonicalTag =
+    allTags.find((t) => t.toLowerCase() === decodedTag.toLowerCase()) ?? decodedTag
+  return buildPageMetadata({
+    title: `Posts tagged "${canonicalTag}" — Explore with Li Journal`,
+    description: `Explore all blog posts tagged with "${canonicalTag}"`,
+    path: `/journal/tag/${encodeURIComponent(canonicalTag)}`,
+  })
 }
 
 export default async function JournalTagPage({

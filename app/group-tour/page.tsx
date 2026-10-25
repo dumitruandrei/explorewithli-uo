@@ -1,3 +1,4 @@
+import { buildPageMetadata } from '@/lib/seo'
 import {
   CalendarDays,
   Check,
@@ -23,11 +24,12 @@ import {
   bookingSteps,
 } from '@/lib/group-tour-content'
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: 'Group Tour 2027: Spices, Peaks & Tea Leaves | Explore with Li',
   description:
     'Join a small-group, 14-day journey from Chongqing through Yunnan to Shanghai in 2027. Maximum 14 travellers, from 2,780 CHF per person.',
-}
+  path: '/group-tour',
+})
 
 const navSections = [
   { id: 'overview', label: 'Overview' },

@@ -1,14 +1,16 @@
+import { buildPageMetadata } from '@/lib/seo'
 import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { teamMembers, collaborators } from '@/lib/about-content'
 import { getDestinationNav } from '@/sanity/lib/fetch'
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: 'About Us | Explore with Li',
   description:
     'Meet the Explore with Li team. We reimagine how people connect with southwest China through meaningful, slow travel.',
-}
+  path: '/about',
+})
 
 export default async function AboutPage() {
   const destinations = await getDestinationNav()

@@ -1,3 +1,4 @@
+import { buildPageMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import {
   Lightbulb,
@@ -14,11 +15,12 @@ import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { getDestinationNav } from '@/sanity/lib/fetch'
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: 'How It Works | Explore with Li',
   description:
     'From inspiration to takeoff: the six simple steps to planning your private, fully custom trip to China with Explore with Li.',
-}
+  path: '/how-it-works',
+})
 
 const steps = [
   {

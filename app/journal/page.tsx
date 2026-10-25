@@ -5,12 +5,14 @@ import { ArrowRight } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { getDestinationNav, getJournalPosts } from '@/sanity/lib/fetch'
+import { buildPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Journal — Explore with Li',
   description:
     'Stories, insights, and travel knowledge from our local specialists to inspire your next journey through China.',
-}
+  path: '/journal',
+})
 
 export default async function JournalIndexPage() {
   const [posts, destinations] = await Promise.all([
