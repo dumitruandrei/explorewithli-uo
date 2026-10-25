@@ -6,7 +6,7 @@ import { ContactForm } from '@/components/contact-form'
 export function ContactFooter() {
   return (
     <footer id="contact" className="bg-[oklch(0.28_0.07_148)] text-[oklch(0.94_0.012_88)]">
-      <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 pb-8 pt-20 sm:px-8 sm:pb-10 sm:pt-28">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[oklch(0.72_0.13_148)]">
