@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     description: defaultDescription,
     images: [DEFAULT_OG_IMAGE],
   },
-  generator: 'v0.app',
   icons: {
     icon: [
       {

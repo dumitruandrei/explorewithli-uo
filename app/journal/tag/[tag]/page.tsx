@@ -11,6 +11,8 @@ import {
 } from '@/sanity/lib/fetch'
 import { buildPageMetadata } from '@/lib/seo'
 
+const MIN_POSTS_TO_INDEX_TAG = 3
+
 export async function generateStaticParams() {
   const tags = await getAllJournalTags()
   return tags.map((tag) => ({ tag: encodeURIComponent(tag) }))
@@ -23,7 +25,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { tag } = await params
   const decodedTag = decodeURIComponent(tag)
-  const allTags = await getAllJournalTags()
+  const [allTags, posts] = await Promise.all([
+    getAllJournalTags(),
+    getJournalPostsByTag(decodedTag),
+  ])
   // Case variants (e.g. /Chongqing vs /chongqing) point at one canonical spelling.
   const canonicalTag =
     allTags.find((t) => t.toLowerCase() === decodedTag.toLowerCase()) ?? decodedTag
@@ -31,6 +36,8 @@ export async function generateMetadata({
     title: `Posts tagged "${canonicalTag}" — Explore with Li Journal`,
     description: `Explore all blog posts tagged with "${canonicalTag}"`,
     path: `/journal/tag/${encodeURIComponent(canonicalTag)}`,
+    // Tag pages with only one or two posts are thin duplicates of the posts themselves.
+    noIndex: posts.length < MIN_POSTS_TO_INDEX_TAG,
   })
 }
 

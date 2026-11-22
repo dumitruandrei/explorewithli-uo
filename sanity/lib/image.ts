@@ -14,7 +14,7 @@ export function sanityImageUrl(
   { width, height }: { width: number; height?: number },
 ): string {
   if (!source) return '/placeholder.svg'
-  let image = urlFor(source).width(width).auto('format').quality(80)
+  let image = urlFor(source).width(width).auto('format').quality(75)
   if (height) image = image.height(height)
   return image.url()
 }
