@@ -16,6 +16,22 @@ import {
   getJournalPostSlugs,
 } from '@/sanity/lib/fetch'
 
+// Consecutive text blocks render in one flow so their margins collapse like the old section layout;
+// tables and legacy sections stay separate items in the gap-10 column.
+function groupContent(content: any[] = []) {
+  const items: any[] = []
+  for (const item of content) {
+    const last = items[items.length - 1]
+    if (item._type === 'block') {
+      if (last?._type === 'blockGroup') last.blocks.push(item)
+      else items.push({ _type: 'blockGroup', blocks: [item] })
+    } else {
+      items.push(item)
+    }
+  }
+  return items
+}
+
 const portableTextComponents: PortableTextComponents = {
   block: {
     h1: ({ children }) => (
@@ -24,7 +40,7 @@ const portableTextComponents: PortableTextComponents = {
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="font-serif text-2xl mt-8 mb-4 text-foreground leading-tight sm:text-3xl">
+      <h2 className="font-serif text-2xl mt-10 mb-4 text-foreground leading-tight text-balance sm:text-3xl">
         {children}
       </h2>
     ),
@@ -239,7 +255,15 @@ export default async function JournalArticlePage({
             </p>
 
             <div className="mt-12 flex flex-col gap-10">
-              {post.content.map((item: any, i: number) => {
+              {groupContent(post.content).map((item: any, i: number) => {
+                if (item._type === 'blockGroup') {
+                  return (
+                    <div key={i} className="[&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
+                      <PortableText value={item.blocks} components={portableTextComponents} />
+                    </div>
+                  )
+                }
+
                 if (item._type === 'journalSection') {
                   return (
                     <section key={i}>

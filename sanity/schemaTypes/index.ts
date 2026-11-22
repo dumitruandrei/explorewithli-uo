@@ -1,5 +1,7 @@
 import {type SchemaTypeDefinition} from 'sanity'
 
+import {author} from './author'
+import {category} from './category'
 import {destination} from './destination'
 import {journalPost} from './journalPost'
 import {itineraryDay} from './objects/itineraryDay'
@@ -19,5 +21,7 @@ export const schema: {types: SchemaTypeDefinition[]} = {
     destination,
     review,
     journalPost,
+    category,
+    author,
   ],
 }
