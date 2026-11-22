@@ -1,5 +1,7 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
+import {altField, urlSlugOptions, urlSlugValidation} from './fields'
+
 export const destination = defineType({
   name: 'destination',
   title: 'Destination',
@@ -15,11 +17,8 @@ export const destination = defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'name',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
+      options: {source: 'name', ...urlSlugOptions},
+      validation: urlSlugValidation,
     }),
     defineField({
       name: 'region',
@@ -38,6 +37,7 @@ export const destination = defineType({
       title: 'Hero Image',
       type: 'image',
       options: {hotspot: true},
+      fields: [altField],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -69,6 +69,7 @@ export const destination = defineType({
       description: 'Lower numbers appear first in grids and navigation.',
       initialValue: 0,
     }),
+    defineField({name: 'seo', title: 'SEO', type: 'seo'}),
   ],
   orderings: [
     {

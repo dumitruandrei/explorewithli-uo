@@ -1,5 +1,7 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
+import {altField, urlSlugOptions, urlSlugValidation} from './fields'
+
 export const journalPost = defineType({
   name: 'journalPost',
   title: 'Journal Post',
@@ -15,11 +17,8 @@ export const journalPost = defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
+      options: {source: 'title', ...urlSlugOptions},
+      validation: urlSlugValidation,
     }),
     defineField({
       name: 'excerpt',
@@ -33,6 +32,7 @@ export const journalPost = defineType({
       title: 'Cover Image',
       type: 'image',
       options: {hotspot: true},
+      fields: [altField],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -100,6 +100,7 @@ export const journalPost = defineType({
       },
       description: 'Add tags to help categorize and filter this post',
     }),
+    defineField({name: 'seo', title: 'SEO', type: 'seo'}),
   ],
   orderings: [
     {

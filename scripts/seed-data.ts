@@ -1,5 +1,11 @@
 import type { TravelPackage } from '../lib/travel'
 
+/** Raw package shape authored for seeding, before Sanity adds alt text, gallery and SEO fields. */
+export type SeedPackage = Omit<
+  TravelPackage,
+  'urlSlug' | 'imageAlt' | 'ogImageUrl' | 'gallery' | 'seo'
+> & { images?: string[] }
+
 export type Destination = {
   slug: string
   name: string
@@ -8,7 +14,7 @@ export type Destination = {
   heroImage: string
   description: string
   longDescription: string
-  packages: TravelPackage[]
+  packages: SeedPackage[]
 }
 
 export type Review = {

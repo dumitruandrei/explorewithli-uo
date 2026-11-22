@@ -89,7 +89,7 @@ export default async function JournalTagPage({
                     <div className="relative aspect-[16/10] w-full overflow-hidden">
                       <Image
                         src={post.imageUrl}
-                        alt={post.title}
+                        alt={post.imageAlt}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"

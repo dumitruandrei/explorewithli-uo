@@ -37,12 +37,14 @@ export async function generateMetadata({
   const { slug } = await params
   const destination = await getDestinationBySlug(slug)
   if (!destination) return {}
+  const { seo } = destination
   return buildPageMetadata({
-    title: `${destination.name} — Explore with Li`,
-    description: destination.description,
+    title: seo.metaTitle ?? `${destination.name} — Explore with Li`,
+    description: seo.metaDescription ?? destination.description,
     path: `/destinations/${destination.slug}`,
-    image: destination.ogImageUrl,
-    imageAlt: `${destination.name}, ${destination.region}`,
+    image: seo.ogImageUrl ?? destination.ogImageUrl,
+    imageAlt: seo.ogImageAlt ?? destination.heroImageAlt,
+    noIndex: seo.noIndex,
   })
 }
 
@@ -122,7 +124,7 @@ export default async function DestinationPage({
         <section className="relative flex min-h-[70svh] items-end overflow-hidden">
           <Image
             src={destination.heroImageUrl}
-            alt={`${destination.name}, ${destination.region}`}
+            alt={destination.heroImageAlt}
             fill
             priority
             sizes="100vw"
@@ -170,6 +172,7 @@ export default async function DestinationPage({
                   key={pkg.slug}
                   pkg={pkg}
                   destinationName={destination.name}
+                  destinationSlug={destination.slug}
                 />
               ))}
             </div>
@@ -215,7 +218,7 @@ export default async function DestinationPage({
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
                         src={post.imageUrl}
-                        alt={post.title}
+                        alt={post.imageAlt}
                         fill
                         sizes="(min-width: 640px) 33vw, 100vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -257,7 +260,7 @@ export default async function DestinationPage({
                   >
                     <Image
                       src={sanityImageUrl(d.heroImage, { width: 900, height: 675 })}
-                      alt={`${d.name}, ${d.region}`}
+                      alt={d.heroImageAlt}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"

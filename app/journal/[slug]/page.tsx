@@ -135,12 +135,14 @@ export async function generateMetadata({
   const { slug } = await params
   const post = await getJournalPostBySlug(slug)
   if (!post) return {}
+  const { seo } = post
   return buildPageMetadata({
-    title: `${post.title} — Explore with Li Journal`,
-    description: post.excerpt,
+    title: seo.metaTitle ?? `${post.title} — Explore with Li Journal`,
+    description: seo.metaDescription ?? post.excerpt,
     path: `/journal/${post.slug}`,
-    image: post.ogImageUrl,
-    imageAlt: post.title,
+    image: seo.ogImageUrl ?? post.ogImageUrl,
+    imageAlt: seo.ogImageAlt ?? post.imageAlt,
+    noIndex: seo.noIndex,
     type: 'article',
     publishedTime: post.publishedAt,
     modifiedTime: post.updatedAt,
@@ -199,7 +201,7 @@ export default async function JournalArticlePage({
         <section className="relative flex min-h-[60svh] items-end overflow-hidden">
           <Image
             src={post.imageUrl}
-            alt={post.title}
+            alt={post.imageAlt}
             fill
             priority
             sizes="100vw"
@@ -316,7 +318,7 @@ export default async function JournalArticlePage({
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <Image
                       src={p.imageUrl}
-                      alt={p.title}
+                      alt={p.imageAlt}
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

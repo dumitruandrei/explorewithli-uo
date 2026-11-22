@@ -1,5 +1,7 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
+import {altField, urlSlugOptions, urlSlugValidation} from '../fields'
+
 export const travelPackage = defineType({
   name: 'travelPackage',
   title: 'Travel Package',
@@ -15,24 +17,26 @@ export const travelPackage = defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      description: 'Used in the package URL: /destinations/<destination>/<slug>.',
       options: {
-        source: 'title',
-        maxLength: 96,
+        source: (_doc, {parent}) => (parent as {title?: string})?.title ?? '',
+        ...urlSlugOptions,
       },
-      validation: (Rule) => Rule.required(),
+      validation: urlSlugValidation,
     }),
     defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {hotspot: true},
+      fields: [altField],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'images',
       title: 'Additional Gallery Images',
       type: 'array',
-      of: [defineArrayMember({type: 'image', options: {hotspot: true}})],
+      of: [defineArrayMember({type: 'image', options: {hotspot: true}, fields: [altField]})],
       description: 'Optional extra images for a slider / gallery scroll.',
     }),
     defineField({
@@ -92,6 +96,7 @@ export const travelPackage = defineType({
       description: 'Items not included in the tour price.',
       validation: (Rule) => Rule.required().min(1),
     }),
+    defineField({name: 'seo', title: 'SEO', type: 'seo'}),
   ],
   preview: {
     select: {

@@ -19,6 +19,7 @@ type PageMetadataInput = {
   publishedTime?: string
   modifiedTime?: string
   authors?: string[]
+  noIndex?: boolean
 }
 
 // Next.js replaces (not merges) the parent openGraph object, so every page
@@ -33,6 +34,7 @@ export function buildPageMetadata({
   publishedTime,
   modifiedTime,
   authors,
+  noIndex = false,
 }: PageMetadataInput): Metadata {
   const images = [{ url: image, width: 1200, height: 630, alt: imageAlt ?? title }]
 
@@ -40,6 +42,7 @@ export function buildPageMetadata({
     title,
     description,
     alternates: { canonical: path },
+    ...(noIndex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title,
       description,

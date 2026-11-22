@@ -33,6 +33,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: d.updatedAt,
       priority: 0.9,
     })),
+    ...destinations.flatMap((d) =>
+      d.packages.map((p) => ({
+        url: absoluteUrl(`/destinations/${d.slug}/${p.urlSlug}`),
+        lastModified: d.updatedAt,
+        priority: 0.8,
+      })),
+    ),
     ...posts.map((p) => ({
       url: absoluteUrl(`/journal/${p.slug}`),
       lastModified: p.updatedAt,

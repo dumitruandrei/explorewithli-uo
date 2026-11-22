@@ -29,6 +29,7 @@ export const destinationBySlugQuery = groq`
     description,
     longDescription,
     _updatedAt,
+    seo{metaTitle, metaDescription, ogImage, noIndex},
     packages[]{
       title,
       "slug": slug.current,
@@ -46,7 +47,8 @@ export const destinationBySlugQuery = groq`
       highlights,
       tripHighlights,
       included,
-      notIncluded
+      notIncluded,
+      seo{metaTitle, metaDescription, ogImage, noIndex}
     }
   }
 `
@@ -96,18 +98,21 @@ export const journalPostBySlugQuery = groq`
     _updatedAt,
     intro,
     content[],
-    tags
+    tags,
+    seo{metaTitle, metaDescription, ogImage, noIndex}
   }
 `
 
 export const sitemapQuery = groq`{
-  "destinations": *[_type == "destination" && defined(slug.current)]{
+  "destinations": *[_type == "destination" && defined(slug.current) && seo.noIndex != true]{
     "slug": slug.current,
-    "updatedAt": _updatedAt
+    "updatedAt": _updatedAt,
+    "packages": packages[seo.noIndex != true]{ "slug": slug.current, title }
   },
-  "posts": *[_type == "journalPost" && defined(slug.current)]{
+  "posts": *[_type == "journalPost" && defined(slug.current) && seo.noIndex != true]{
     "slug": slug.current,
-    "updatedAt": _updatedAt
+    "updatedAt": _updatedAt,
+    tags
   }
 }`
 
@@ -131,4 +136,11 @@ export const journalTagsQuery = groq`
   array::unique(
     *[_type == "journalPost"].tags[defined(@) && @ != ""]
   )
+`
+
+export const packageParamsQuery = groq`
+  *[_type == "destination" && defined(slug.current)]{
+    "slug": slug.current,
+    "packages": packages[]{ "slug": slug.current, title }
+  }
 `

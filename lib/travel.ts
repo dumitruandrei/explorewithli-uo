@@ -5,11 +5,27 @@ export type ItineraryDay = {
   activities: string[]
 }
 
+export type ImageWithAlt = { src: string; alt: string }
+
+export type SeoOverrides = {
+  metaTitle?: string
+  metaDescription?: string
+  ogImageUrl?: string
+  ogImageAlt?: string
+  noIndex: boolean
+}
+
 export type TravelPackage = {
   slug: string
+  /** Normalised, URL-safe version of `slug` used in /destinations/<dest>/<urlSlug>. */
+  urlSlug: string
   title: string
   image: string
-  images?: string[]
+  imageAlt: string
+  ogImageUrl: string
+  /** Main image first, then the additional gallery images. */
+  gallery: ImageWithAlt[]
+  seo: SeoOverrides
   description: string
   itinerary: ItineraryDay[]
   durationDays: number
