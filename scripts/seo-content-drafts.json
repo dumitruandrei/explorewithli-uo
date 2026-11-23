@@ -1,35 +1,40 @@
 {
   "journalPost": {
     "41b1d5e4-c73c-4215-b231-3a6c5c14b322": {
-      "metaTitle": "Culture Shocks to Expect in China: A Traveler's Guide"
+      "metaTitle": "Culture Shocks to Expect in China: A Traveler's Guide",
+      "metaDescription": "The culture shocks to expect in China, from bringing your own drinks to restaurants to scenic park shuttles, plus food and budget transport tips."
     },
     "journalPost-escape-the-city-discover-southwest-chongqing-s-4-must-visit-nature-heritage-gems": {
       "metaTitle": "4 Nature & Heritage Gems in Southwest Chongqing",
       "metaDescription": "Escape Chongqing's skyline for four nature and heritage gems in the southwest of the region, with what to see at each and how to get there."
     },
     "journalPost-china-travel-2025-navigating-china-30-day-visa-free-travel": {
-      "metaDescription": "Who can visit China visa-free for 30 days, which countries qualify, what to bring at the border, and answers to common questions before you fly."
+      "metaDescription": "Who can visit China visa-free for 30 days, which countries qualify, what to bring at the border, and answers to common questions before you fly.",
+      "metaTitle": "China's 30-Day Visa-Free Travel: Who Qualifies"
     },
     "journalPost-the-ultimate-list-of-12-featured-streets-most-tourists-miss-plus-how-to-get-there": {
       "metaTitle": "Chongqing's Featured Streets Most Tourists Miss",
-      "excerpt": "A Chongqing local's picks of the city's featured streets beyond Jiefangbei and Hongya Cave, from cliffside alleys to nightlife, with Metro directions."
+      "metaDescription": "A Chongqing local's picks of the city's featured streets beyond Jiefangbei and Hongya Cave, from cliffside alleys to nightlife, with Metro directions."
     },
     "journalPost-walk-the-battlefields-your-three-kingdoms-history-tour-in-chongqing-china": {
       "metaTitle": "Three Kingdoms History Tour in Chongqing, China",
-      "excerpt": "Follow Liu Bei, Zhuge Liang and Zhang Fei through Chongqing, from Baidi City to Zhang Fei Temple, with what to see at each Three Kingdoms site."
+      "metaDescription": "Follow Liu Bei, Zhuge Liang and Zhang Fei through Chongqing, from Baidi City to Zhang Fei Temple, with what to see at each Three Kingdoms site."
     },
     "journalPost-beyond-the-bling-authentic-chongqing-outside-of-jiefangbei": {
-      "metaDescription": "A Chongqing native's guide to the authentic city beyond Jiefangbei's skyscrapers: the neighborhoods, streets and local life most visitors miss."
+      "metaDescription": "A Chongqing native's guide to the authentic city beyond Jiefangbei's skyscrapers: the neighborhoods, streets and local life most visitors miss.",
+      "metaTitle": "Authentic Chongqing Beyond Jiefangbei"
     },
     "journalPost-your-ultimate-packing-guide-for-chongqing": {
-      "metaDescription": "What to pack for Chongqing: clothes for its humid, foggy climate, shoes for endless stairs, and the essentials for a smooth trip to the Mountain City."
+      "metaDescription": "What to pack for Chongqing: clothes for its humid, foggy climate, shoes for endless stairs, and the essentials for a smooth trip to the Mountain City.",
+      "metaTitle": "Packing Guide for Chongqing: What to Bring"
     },
     "journalPost-a-local-s-guide-to-chongqing-night-bbq-experience-the-sizzle-and-soul-of-chongqing-night-food": {
       "metaTitle": "Chongqing Night BBQ: A Local's Guide to Street Food",
       "metaDescription": "A Chongqing native's guide to night BBQ: what to order, how it works, and where to find the city's liveliest late-night street food scene."
     },
     "journalPost-best-gifts-to-bring-buy-from-chongqing": {
-      "excerpt": "A Chongqing native's guide to the best gifts to bring home, from hotpot seasoning to Sichuan pepper, and where to buy each one in the city."
+      "metaDescription": "A Chongqing native's guide to the best gifts to bring home, from hotpot seasoning to Sichuan pepper, and where to buy each one in the city.",
+      "metaTitle": "Best Gifts to Buy in Chongqing, by a Local"
     },
     "journalPost-from-a-local-why-we-say-chongqing-with-pride-and-why-its-name-is-not-offensive": {
       "metaTitle": "Why Chongqing's Name Is Not Offensive: A Local Explains",
@@ -40,7 +45,8 @@
       "metaDescription": "How China's 240-hour visa-free transit works: who qualifies, which ports and regions are included, and how to plan up to 10 days without a visa."
     },
     "journalPost-best-place-to-visit-in-chongqing": {
-      "metaDescription": "The best places to visit in Chongqing, from iconic landmarks to the local favorites residents love, picked by a Chongqing native."
+      "metaDescription": "The best places to visit in Chongqing, from iconic landmarks to the local favorites residents love, picked by a Chongqing native.",
+      "metaTitle": "Best Places to Visit in Chongqing, by a Local"
     },
     "journalPost-planning-your-china-trip-a-head-s-up-on-public-holidays-rest-of-2025-december-2026": {
       "metaTitle": "Chinese Public Holidays to Avoid When Traveling (2026)",
@@ -51,7 +57,8 @@
       "metaDescription": "You've booked your China high-speed rail tickets. Here's what to expect next, from entering the station and security to boarding and the ride."
     },
     "journalPost-wechat-and-alipay-set-up": {
-      "metaTitle": "How to Set Up WeChat Pay & Alipay for China Travel"
+      "metaTitle": "How to Set Up WeChat Pay & Alipay for China Travel",
+      "metaDescription": "How to set up WeChat Pay and Alipay with a foreign credit card: a step-by-step guide to cashless payments in China for international travelers."
     },
     "journalPost-food-recommendation-in-chongqing-not-spicy-or-vegetarian-options": {
       "metaTitle": "Non-Spicy and Vegetarian Food in Chongqing",
@@ -66,10 +73,12 @@
       "metaDescription": "What to pack for China: which medicines to bring from home, how to handle laundry on the road, and how to protect yourself from mosquitoes."
     },
     "journalPost-direct-flights-from-europe-to-chongqing": {
-      "metaDescription": "The direct flights from Europe to Chongqing, China, in one guide: airlines, routes and what to know to plan your trip without long layovers."
+      "metaDescription": "The direct flights from Europe to Chongqing, China, in one guide: airlines, routes and what to know to plan your trip without long layovers.",
+      "metaTitle": "Direct Flights from Europe to Chongqing, China"
     },
     "e92d4dc1-878a-4066-b167-5497ab380c72": {
-      "metaTitle": "How a Journey to Yunnan Redefines True Luxury"
+      "metaTitle": "How a Journey to Yunnan Redefines True Luxury",
+      "metaDescription": "Why Yunnan is redefining luxury travel: ancient Tea Horse Road towns, Tibetan culture and authentic experiences beyond the postcard."
     },
     "0fe236be-21b9-4632-8d27-59cf634a32e8": {
       "metaTitle": "Yunnan's Hidden Coffee Trail: From Pu'er to Your Cup",
@@ -84,7 +93,8 @@
       "metaDescription": "What Yunnan's snow peaks share with the Alps, and why their cultures and biodiversity give European travelers a fresh view of mountain travel."
     },
     "0a036694-3e2c-4f8c-8727-94b3c6689e02": {
-      "metaTitle": "5 Hidden Gem Towns on China's Yunnan-Guizhou Plateau"
+      "metaTitle": "5 Hidden Gem Towns on China's Yunnan-Guizhou Plateau",
+      "metaDescription": "Escape the crowds in 5 hidden gem towns in Guizhou and Yunnan, from karst canyons and ancient tea seas to borderland oceans of cloud."
     },
     "91150021-0a4e-40a5-81c6-7fd88fca50bf": {
       "metaTitle": "Lessons from the Mosuo: Yunnan's Matriarchal Culture",
@@ -95,16 +105,20 @@
       "metaDescription": "Plan your Zhangjiajie trip: the 3 essential parks, the best time to visit, transport tips, and how to spend 2 to 3 days in the Avatar mountains."
     },
     "e116a811-13fe-4dfe-96c9-f61dd6e189bc": {
-      "metaDescription": "Shaxi, between Lijiang and Dali, is a peaceful Bai village on the ancient Tea Horse Road. Discover Sideng Square, the Friday market and rural trails."
+      "metaDescription": "Shaxi, between Lijiang and Dali, is a peaceful Bai village on the ancient Tea Horse Road. Discover Sideng Square, the Friday market and rural trails.",
+      "metaTitle": "Slowing Down in Shaxi, Yunnan: A Tea Horse Road Village"
     },
     "0693be5f-c2a3-4bb7-95bb-6eb2813f6703": {
-      "metaDescription": "Planning a gluten-free trip to China? How to travel with celiac disease using Southern China's rice culture, safe food tips and easy travel hacks."
+      "metaDescription": "Planning a gluten-free trip to China? How to travel with celiac disease using Southern China's rice culture, safe food tips and easy travel hacks.",
+      "metaTitle": "Gluten-Free Travel in China: A Celiac Guide"
     },
     "bd02357d-d6b0-418e-8ce7-fffb13fdd37e": {
-      "metaTitle": "Tasting Yunnan: Coffee, Tea and Wild Mushrooms"
+      "metaTitle": "Tasting Yunnan: Coffee, Tea and Wild Mushrooms",
+      "metaDescription": "Yunnan's food geography explained: specialty coffee, aged Pu'er tea, seasonal wild mushroom feasts and ethnic cuisine in southwest China."
     },
     "ffb1999b-b681-4ff8-bea1-44a1ec448c16": {
-      "metaTitle": "Chongqing Train Stations: How to Pick the Right One"
+      "metaTitle": "Chongqing Train Stations: How to Pick the Right One",
+      "metaDescription": "Which Chongqing train station do you need? A guide to the city's 5 rail hubs for trains to Chengdu, Guilin, Zhangjiajie and beyond."
     }
   },
   "destination": {
