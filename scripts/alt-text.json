@@ -155,8 +155,8 @@
   },
   {
     "id": 9,
-    "alt": "Traditional upturned eaves framing modern skyscrapers in Chongqing",
-    "verify": true,
+    "alt": "Traditional Buddhist temple roofs against glass skyscrapers in central Chongqing",
+    "verify": false,
     "filename": "IMG_8818.JPG",
     "usedIn": [
       "Chongqing > Cyberpunk City & Historic Roots"
@@ -171,8 +171,8 @@
   },
   {
     "id": 10,
-    "alt": "Stone arch bridge over a koi pond in a leafy garden in Chongqing",
-    "verify": true,
+    "alt": "Stone arch bridge over a koi pond in Eling Park, Chongqing",
+    "verify": false,
     "filename": "IMG_8815.JPG",
     "usedIn": [
       "Chongqing > Cyberpunk City & Historic Roots"
@@ -288,8 +288,8 @@
   },
   {
     "id": 17,
-    "alt": "Piles of fresh vegetables and greens at a local wet market",
-    "verify": true,
+    "alt": "Piles of fresh vegetables and greens at a local wet market in China",
+    "verify": false,
     "filename": "RUBA5048.JPG",
     "usedIn": [
       "Chongqing > Local Flavors & Guild House Heritage",
@@ -309,8 +309,8 @@
   },
   {
     "id": 18,
-    "alt": "Shoppers at a traditional snack shop hung with red lanterns in an old Chongqing street",
-    "verify": true,
+    "alt": "Cook stirring a giant pan of hotpot base at a shop hung with red lanterns in Chongqing",
+    "verify": false,
     "filename": "PXL_20250415_041517093.MP.jpg",
     "usedIn": [
       "Chongqing > Local Flavors & Guild House Heritage"
@@ -341,8 +341,8 @@
   },
   {
     "id": 20,
-    "alt": "Tianfu Post Station courtyard at the bottom of the gorge at Wulong's Three Natural Bridges",
-    "verify": true,
+    "alt": "Traditional courtyard buildings of Tianfu Post Station at the bottom of the gorge in Wulong’s Three Natural Bridges",
+    "verify": false,
     "filename": "IMG_8822.JPG",
     "usedIn": [
       "Chongqing > Wulong Karst Nature Spectacular"
@@ -714,8 +714,8 @@
   },
   {
     "id": 43,
-    "alt": "Two women in traditional Dai dress preparing tea in Xishuangbanna",
-    "verify": true,
+    "alt": "Two women in traditional Dai dress shaping clay pots by hand in Xishuangbanna",
+    "verify": false,
     "filename": "2 (17).JPG",
     "usedIn": [
       "Yunnan > Tea, Rainforest & Flavors: Pu'er & Xishuangbanna"
@@ -857,8 +857,8 @@
   },
   {
     "id": 51,
-    "alt": "Elderly shopkeeper working in a traditional handicraft shop in Lijiang Old Town",
-    "verify": true,
+    "alt": "Elderly shopkeeper doing handiwork outside a traditional craft shop in Yunnan",
+    "verify": false,
     "filename": "pexels-xiaoxian-2151913460-37143311.jpg",
     "usedIn": [
       "Yunnan > Where the Wind Meets the Snow: A Dali & Lijiang Romance"
@@ -947,8 +947,8 @@
   },
   {
     "id": 56,
-    "alt": "Traveler walking a cobbled lane through an old town below the mountains",
-    "verify": true,
+    "alt": "Villager carrying a woven hat along a cobbled lane in Yuhu Village near Lijiang, below the mountains",
+    "verify": false,
     "filename": "玉湖村古村落.jpg",
     "usedIn": [
       "Yunnan > Walking on Clouds | Dali, Lijiang & Shangri-La"
@@ -1011,8 +1011,8 @@
   },
   {
     "id": 60,
-    "alt": "Ronald McDonald statue dressed as a Chinese deity at a restaurant in China",
-    "verify": true,
+    "alt": "Ronald McDonald statue styled as a Buddha holding a hamburger in a Chengdu shop",
+    "verify": false,
     "filename": "IMG_9373.JPG",
     "usedIn": [
       "POST: Mind-Blowing (and Slightly Quirky!) Culture Shocks You’ll Experience in China"
@@ -1059,8 +1059,8 @@
   },
   {
     "id": 63,
-    "alt": "Curving white canopy roof of a railway station in Chongqing",
-    "verify": true,
+    "alt": "Chongqing East Railway Station with its white, tree-like canopy roof",
+    "verify": false,
     "filename": "重庆东站.jpg",
     "usedIn": [
       "POST: Connecting Chongqing: How to Pick the Right Train Station for Your Trip "
@@ -1091,7 +1091,7 @@
   },
   {
     "id": 65,
-    "alt": "Packets of Chongqing spicy snacks above a bubbling hotpot",
+    "alt": "Packets of Chongqing hotpot base above a bubbling nine-grid hotpot",
     "verify": false,
     "filename": "best-gifts-to-bring-buy-from-chongqing-cover.jpg",
     "usedIn": [
@@ -1123,8 +1123,8 @@
   },
   {
     "id": 67,
-    "alt": "Shoppers at a traditional snack shop hung with red lanterns in an old Chongqing street",
-    "verify": true,
+    "alt": "Cook stirring a giant pan of hotpot base at a shop hung with red lanterns in Chongqing",
+    "verify": false,
     "filename": "beyond-the-bling-authentic-chongqing-outside-of-jiefangbei-cover.jpg",
     "usedIn": [
       "POST: Beyond the Bling: Authentic Chongqing outside of Jiefangbei"
@@ -1171,8 +1171,8 @@
   },
   {
     "id": 70,
-    "alt": "Aerial view of an airport terminal with aircraft at the gates",
-    "verify": true,
+    "alt": "Aerial view of Chongqing Jiangbei International Airport’s X-shaped terminal",
+    "verify": false,
     "filename": "direct-flights-from-europe-to-chongqing-cover.jpg",
     "usedIn": [
       "POST: Direct flights from Europe to Chongqing, China"
@@ -1299,7 +1299,7 @@
   },
   {
     "id": 78,
-    "alt": "Jiefangbei Liberation Monument among Chongqing skyscrapers at dusk",
+    "alt": "Clock tower on Nanbin Road with Raffles City and the Chongqing skyline across the river at dusk",
     "verify": false,
     "filename": "try-these-basic-chongqing-dialect-phrases-on-your-next-chongqing-trip-waitress-aunties-might-give-you-more-food-cover.jpg",
     "usedIn": [
@@ -1308,15 +1308,15 @@
     "url": "https://cdn.sanity.io/images/o7f7vu0c/production/aa0095767ae430732ade5f1f2ebd12335afe7d9a-4480x6720.jpg",
     "targets": [
       {
-        "docId": "journalPost-try-these-basic-chongqing-dialect-phrases-on-your-next-chongqing-trip-waitress-aunties-might-give-you-more-food",
+        "docId": "journalPost-chongqing-dialect-phrases",
         "path": "image.alt"
       }
     ]
   },
   {
     "id": 79,
-    "alt": "Ornate historic stone gate in Chongqing",
-    "verify": true,
+    "alt": "Ornate gate of the White Emperor Temple at Baidi City in Fengjie, Chongqing",
+    "verify": false,
     "filename": "walk-the-battlefields-your-three-kingdoms-history-tour-in-chongqing-china-cover.jpg",
     "usedIn": [
       "POST: ⚔️ Walk the Battlefields: Your Three Kingdoms History Tour in Chongqing, China"
@@ -1347,8 +1347,8 @@
   },
   {
     "id": 81,
-    "alt": "Aerial view of a large high-speed railway station",
-    "verify": true,
+    "alt": "Aerial view of Chongqing East Railway Station",
+    "verify": false,
     "filename": "your-high-speed-rail-adventure-in-china-from-ticket-to-track-cover.jpg",
     "usedIn": [
       "POST: Your High-Speed Rail Adventure in China: From Ticket to Track!"
