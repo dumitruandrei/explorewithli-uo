@@ -47,7 +47,7 @@ export async function BlogSection() {
             <div className="relative aspect-[16/10] w-full overflow-hidden">
               <Image
                 src={feature.imageUrl}
-                alt={feature.title}
+                alt={feature.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -83,7 +83,7 @@ export async function BlogSection() {
                 <div className="relative aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-md">
                   <Image
                     src={post.imageUrl}
-                    alt={post.title}
+                    alt={post.imageAlt}
                     fill
                     sizes="112px"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"

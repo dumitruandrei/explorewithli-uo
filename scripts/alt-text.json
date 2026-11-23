@@ -1,0 +1,1364 @@
+[
+  {
+    "id": 0,
+    "alt": "Towering sandstone pillars covered in forest in Zhangjiajie National Forest Park",
+    "verify": false,
+    "filename": "pexels-ahmed-abd-allah-4393137-6139687.jpg",
+    "usedIn": [
+      "Zhangjiajie | Southwest China",
+      "Zhangjiajie > National Forest Park Day Tour",
+      "POST: Beyond Pandora: The Ultimate Guide to Exploring Zhangjiajie’s Avatar Mountains"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/623ee61a796e3a01d0d8ec2055b41c6ab9104140-2736x3648.jpg",
+    "targets": [
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "heroImage.alt"
+      },
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "packages[_key==\"298badfdb340\"].image.alt"
+      },
+      {
+        "docId": "c8c2eee6-5813-406c-8ed7-61ebe1a6fa69",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "alt": "Visitors climbing the long stone stairway up to Heaven's Gate cave on Tianmen Mountain",
+    "verify": false,
+    "filename": "pexels-deimantas-viburys-1188635-33231951.jpg",
+    "usedIn": [
+      "Zhangjiajie > Tianmen Mountain Day Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/19d57ba251963353968296640044d45be7803c48-4079x6119.jpg",
+    "targets": [
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "packages[_key==\"adcb766c2e76\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "alt": "Heaven's Gate, the huge natural arch cut through Tianmen Mountain",
+    "verify": false,
+    "filename": "pexels-yuevision-34823813.jpg",
+    "usedIn": [
+      "Zhangjiajie > Tianmen Mountain Day Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/d8ff4b399dd14c1fa713ba71828b9f1890e54fbd-3072x4096.jpg",
+    "targets": [
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "packages[_key==\"adcb766c2e76\"].images[_key==\"d93e011503d3\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "alt": "Panorama of sandstone peaks rising above the forest in Zhangjiajie National Forest Park",
+    "verify": false,
+    "filename": "pexels-hujason-26771351.jpg",
+    "usedIn": [
+      "Zhangjiajie > National Forest Park Day Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/fa96723aa4408b473d0055357ec452e4b3324489-7305x3599.jpg",
+    "targets": [
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "packages[_key==\"298badfdb340\"].images[_key==\"94dd32e506f3\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "alt": "Forested sandstone pillars under a cloudy sky in Zhangjiajie",
+    "verify": false,
+    "filename": "pexels-ruben-vp-2151134060-37342747.jpg",
+    "usedIn": [
+      "Zhangjiajie > National Forest Park Day Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/11b7786543655bc86a242a13cfdff53e8fabfba1-3829x5745.jpg",
+    "targets": [
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "packages[_key==\"298badfdb340\"].images[_key==\"498799151628\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "alt": "The Zhangjiajie Grand Canyon glass bridge spanning a forested gorge",
+    "verify": false,
+    "filename": "pexels-ruben-vp-2151134060-37817227.jpg",
+    "usedIn": [
+      "Zhangjiajie > Grand Canyon Day Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/ca2d26abdeb6b32c6cafe3b24ebd30e246b454ba-6048x4032.jpg",
+    "targets": [
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "packages[_key==\"ce3d867772a1\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "alt": "Visitors walking across the Zhangjiajie Grand Canyon glass bridge",
+    "verify": false,
+    "filename": "pexels-ruben-vp-2151134060-37342741.jpg",
+    "usedIn": [
+      "Zhangjiajie > Grand Canyon Day Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/150a576fd9096f4c6629280d0aa1b012c1799c09-3200x5689.jpg",
+    "targets": [
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "packages[_key==\"ce3d867772a1\"].images[_key==\"b936def86602\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "alt": "Wild monkeys sitting in a tree in the Zhangjiajie forest",
+    "verify": true,
+    "filename": "pexels-ruben-vp-2151134060-37342746.jpg",
+    "usedIn": [
+      "Zhangjiajie > Grand Canyon Day Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/2862e21c988aac6ecdafff8677e719828cea1131-2505x4455.jpg",
+    "targets": [
+      {
+        "docId": "643e6bb8-34e1-4ab4-adaa-c8744c7ffe80",
+        "path": "packages[_key==\"ce3d867772a1\"].images[_key==\"16e63f64fdbe\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "alt": "Hongyadong lit up at night beneath the red-lit Qiansimen Bridge over the Jialing River in Chongqing",
+    "verify": false,
+    "filename": "pexels-jackson-oo-er-meng-476125598-30503272.jpg",
+    "usedIn": [
+      "Chongqing | Southwest China"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/5c11bc0bee9f5d06740d9c3e449f841fbe5ece39-3840x2560.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "heroImage.alt"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "alt": "Traditional upturned eaves framing modern skyscrapers in Chongqing",
+    "verify": true,
+    "filename": "IMG_8818.JPG",
+    "usedIn": [
+      "Chongqing > Cyberpunk City & Historic Roots"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/ada5ba6b2a0a6d8b0bb7f985c5c5140585eb84ff-1440x1920.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"hotpot-city\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "alt": "Stone arch bridge over a koi pond in a leafy garden in Chongqing",
+    "verify": true,
+    "filename": "IMG_8815.JPG",
+    "usedIn": [
+      "Chongqing > Cyberpunk City & Historic Roots"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/f8102a6b185ca3d9ece3fcd837734471fcab78d2-1440x1919.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"hotpot-city\"].images[_key==\"243e01e80dbb\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "alt": "Monorail train running between apartment blocks above a street mural in Chongqing",
+    "verify": false,
+    "filename": "pexels-285928837-13359809.jpg",
+    "usedIn": [
+      "Chongqing > Cyberpunk City & Historic Roots"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/e9ecd89bb320c3e6a31b41fbd5b3d7885bf08182-2768x4160.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"hotpot-city\"].images[_key==\"df144fef2c73\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "alt": "Friends sharing a Chongqing hotpot with sliced beef and dipping dishes",
+    "verify": false,
+    "filename": "PXL_20250413_115656229.MP.jpg",
+    "usedIn": [
+      "Chongqing > Cyberpunk City & Historic Roots"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/5d99b0ead2e374ecf58a96b4d9b8d3f6ba46b5dc-4032x2268.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"hotpot-city\"].images[_key==\"6db86b57a19e\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "alt": "Yangtze River cable car cabin passing between Chongqing high-rises",
+    "verify": false,
+    "filename": "your-ultimate-packing-guide-for-chongqing-cover.jpg",
+    "usedIn": [
+      "Chongqing > Skyline Wonders & Hidden Alleys",
+      "POST: Your Ultimate Packing Guide for Chongqing"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/bcb84ab081349c00e2770bc6689ccd4b51180cbb-2250x3857.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"yangtze-gorges\"].image.alt"
+      },
+      {
+        "docId": "journalPost-your-ultimate-packing-guide-for-chongqing",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "alt": "Chongqing skyline at the meeting point of the Yangtze and Jialing rivers",
+    "verify": false,
+    "filename": "pexels-tinny-hu-109766654-13045525.jpg",
+    "usedIn": [
+      "Chongqing > Skyline Wonders & Hidden Alleys"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/51a563c9f891ac8ae4c1ad3c79bc2dc7809460dc-6000x4000.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"yangtze-gorges\"].images[_key==\"175bdafd9a9b\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "alt": "Golden-lit tower among Chongqing skyscrapers with river bridges in the haze",
+    "verify": true,
+    "filename": "pexels-liuuu-_61-2383408-33709193.jpg",
+    "usedIn": [
+      "Chongqing > Skyline Wonders & Hidden Alleys"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/c1473492bb3f829bb7cb343e965733536d98cfac-4032x6048.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"yangtze-gorges\"].images[_key==\"01304c91cd73\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "alt": "Chongqing skyline silhouetted at dusk with a river cable car crossing",
+    "verify": false,
+    "filename": "pexels-anita-fan-342796132-14062542.jpg",
+    "usedIn": [
+      "Chongqing > Skyline Wonders & Hidden Alleys"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/59e1eb0189cba13279554536bdf8a6176d325e10-6016x4016.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"yangtze-gorges\"].images[_key==\"df8384077790\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "alt": "Piles of fresh vegetables and greens at a local wet market",
+    "verify": true,
+    "filename": "RUBA5048.JPG",
+    "usedIn": [
+      "Chongqing > Local Flavors & Guild House Heritage",
+      "POST: Tasting Geography: The Surprising Complexity of Yunnan’s Terroir, Coffee, and Wild Mushrooms"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/72a1d55d0c15cbbc2f3b2065d887685a65a4e707-4971x3314.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"0cce16e1a23a\"].image.alt"
+      },
+      {
+        "docId": "bd02357d-d6b0-418e-8ce7-fffb13fdd37e",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "alt": "Shoppers at a traditional snack shop hung with red lanterns in an old Chongqing street",
+    "verify": true,
+    "filename": "PXL_20250415_041517093.MP.jpg",
+    "usedIn": [
+      "Chongqing > Local Flavors & Guild House Heritage"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/34a84d0239c00f57acd9dbeb452ab2f09a692910-4032x2268.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"0cce16e1a23a\"].images[_key==\"7faab0c80818\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "alt": "Yellow walls and grey tiled roofs of the Huguang Guild Hall in Chongqing",
+    "verify": false,
+    "filename": "huguang guilt hall.png",
+    "usedIn": [
+      "Chongqing > Local Flavors & Guild House Heritage"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/0a25f4e361a02b627f533e1b07b036cbf899a323-898x551.png",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"0cce16e1a23a\"].images[_key==\"66cf384f9957\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "alt": "Tianfu Post Station courtyard at the bottom of the gorge at Wulong's Three Natural Bridges",
+    "verify": true,
+    "filename": "IMG_8822.JPG",
+    "usedIn": [
+      "Chongqing > Wulong Karst Nature Spectacular"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/3456db2739c68c59a66f5645a8dafc4e43a85f18-1440x2162.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"6189ca9c8d2c\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "alt": "Sheer karst cliffs above a green valley in Wulong",
+    "verify": false,
+    "filename": "20250416_142608.jpg",
+    "usedIn": [
+      "Chongqing > Wulong Karst Nature Spectacular"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/38dbc60c150b37545a00d08b43ba2fecb8f3e9db-4608x2592.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"6189ca9c8d2c\"].images[_key==\"b7c9f93c6aaf\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "alt": "Natural limestone bridge arching over the valley at Wulong's Three Natural Bridges",
+    "verify": false,
+    "filename": "IMG_8312.JPG",
+    "usedIn": [
+      "Chongqing > Wulong Karst Nature Spectacular"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/5165864747d3f9f9ac5a0a558c67fc152adfc0c1-4284x5712.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"6189ca9c8d2c\"].images[_key==\"b15d99d903d0\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "alt": "Traveler looking up at a giant natural arch at Wulong's Three Natural Bridges",
+    "verify": false,
+    "filename": "PXL_20250416_072611421.jpg",
+    "usedIn": [
+      "Chongqing > Wulong Karst Nature Spectacular"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/c65867b7ee8b12a0fa0429ce6bda8385154fb289-4032x2268.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"6189ca9c8d2c\"].images[_key==\"ae6f94bd984a\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "alt": "Seated Buddha carving surrounded by smaller figures in the Dazu Rock Carvings",
+    "verify": false,
+    "filename": "IMG_7481.jpg",
+    "usedIn": [
+      "Chongqing > Dazu Rock Carvings World Heritage Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/22e23d2abc6d10c893aeb28048979b45e1a1f12d-3024x4032.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"f1c0aee4b9f8\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "alt": "The gilded Thousand-Hand Guanyin statue at Baodingshan in Dazu",
+    "verify": false,
+    "filename": "20250414_124005_Original.JPG",
+    "usedIn": [
+      "Chongqing > Dazu Rock Carvings World Heritage Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/acde3ffd80139bc67c171824c4666c7a82c6d5fe-4032x2268.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"f1c0aee4b9f8\"].images[_key==\"f3052febf3b7\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "alt": "Painted cliff carvings at Baodingshan in Dazu with visitors walking below",
+    "verify": false,
+    "filename": "IMG_8150.JPG",
+    "usedIn": [
+      "Chongqing > Dazu Rock Carvings World Heritage Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/c777999de392f1606fe2417db90d08b42f9933af-5712x4284.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"f1c0aee4b9f8\"].images[_key==\"1e64481765f4\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "alt": "Travelers on a guided tour studying carvings along the covered walkway at Dazu",
+    "verify": false,
+    "filename": "PXL_20250414_082244327.jpg",
+    "usedIn": [
+      "Chongqing > Dazu Rock Carvings World Heritage Tour"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/56431afb93ebdf78bf204e32de99e08a93c61986-4032x2268.jpg",
+    "targets": [
+      {
+        "docId": "destination-chongqing",
+        "path": "packages[_key==\"f1c0aee4b9f8\"].images[_key==\"840e4925131c\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "alt": "Giant panda eating bamboo at a panda base in Chengdu, Sichuan",
+    "verify": false,
+    "filename": "pexels-ramazphotos-6967905.jpg",
+    "usedIn": [
+      "Sichuan | Southwest China",
+      "Sichuan > Legends of Shu: National Treasures & Ancient Mysteries"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/3b02dee7aa67b00b1c761382955913f249cec3a4-5184x3456.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "heroImage.alt"
+      },
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"panda-sanctuary\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "alt": "Bamboo-shaded walkway in a Chengdu park",
+    "verify": true,
+    "filename": "pexels-afhamhmsyri-34021090.jpg",
+    "usedIn": [
+      "Sichuan > Legends of Shu: National Treasures & Ancient Mysteries"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/aa528751ce790a5564620f7c5bc7560add21db33-4536x8064.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"panda-sanctuary\"].images[_key==\"0c36e0310a76\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "alt": "Anshun Bridge reflected in the Jin River at dusk in Chengdu",
+    "verify": false,
+    "filename": "pexels-xiavil-35557996.jpg",
+    "usedIn": [
+      "Sichuan > Legends of Shu: National Treasures & Ancient Mysteries"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/26473c7444d60ebf498e9df21312edf8dc5c7b10-6000x3376.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"panda-sanctuary\"].images[_key==\"f9d9f6ae591e\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "alt": "Hand holding a fan printed with Chengdu and a panda in front of city buildings",
+    "verify": false,
+    "filename": "pexels-william-xin-1932780618-33608931.jpg",
+    "usedIn": [
+      "Sichuan > Legends of Shu: National Treasures & Ancient Mysteries"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/ff6408729368596544a3e72a80aa747ffeb72ab7-2702x3604.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"panda-sanctuary\"].images[_key==\"db719bdfdf23\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "alt": "Traditional Sichuan building with curved eaves and red doors",
+    "verify": true,
+    "filename": "20090821163840_0_food.jpg",
+    "usedIn": [
+      "Sichuan > Legends of Shu: National Treasures & Ancient Mysteries"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/62554fdf2e6262a801c92098b42d870eccc26a16-746x468.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"panda-sanctuary\"].images[_key==\"5760eda5cbc3\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "alt": "The Leshan Giant Buddha carved into a red sandstone cliff",
+    "verify": false,
+    "filename": "Leshan.jpg",
+    "usedIn": [
+      "Sichuan > Rivers and Rituals: Leshan & Mount Emei"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/127e9b0f6b63967c18d1e6a180284eca116d142d-669x446.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"jiuzhaigou-lakes\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "alt": "Small Buddha figures carved into a rock niche above the river at Leshan",
+    "verify": false,
+    "filename": "pexels-eric-cai-2153084900-36956676.jpg",
+    "usedIn": [
+      "Sichuan > Rivers and Rituals: Leshan & Mount Emei"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/398316b2a41996ace6c7299e9a176afa800be87c-3720x2790.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"jiuzhaigou-lakes\"].images[_key==\"04ec46ec3102\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "alt": "Golden Samantabhadra statue and white elephant at the summit of Mount Emei",
+    "verify": false,
+    "filename": "pexels-kjbromme-27594946.jpg",
+    "usedIn": [
+      "Sichuan > Rivers and Rituals: Leshan & Mount Emei"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/0859a34ae8d941ea8169df686d9c3b0e3b832a30-5680x3786.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"jiuzhaigou-lakes\"].images[_key==\"684da47c7cc4\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "alt": "Temple roofs above a sea of clouds at the Golden Summit of Mount Emei",
+    "verify": false,
+    "filename": "pexels-yilin-mo-214378579-31497349.jpg",
+    "usedIn": [
+      "Sichuan > Rivers and Rituals: Leshan & Mount Emei"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/7a18a54af080e6b50040f32e47a06041cf7336a5-6000x3852.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"jiuzhaigou-lakes\"].images[_key==\"7acfd724b0b8\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "alt": "Turquoise terraced pools and waterfalls in Jiuzhaigou Valley",
+    "verify": true,
+    "filename": "jiuzhaigou.jpg",
+    "usedIn": [
+      "Sichuan > The Terraces of Huanglong & Fairytale Pools of Jiuzhaigou"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/605d7203f2f4c277d19e90ef90bab851f0bf3c07-967x544.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"4d29b8b08237\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "alt": "Bright blue travertine pools among autumn trees at Huanglong",
+    "verify": true,
+    "filename": "pexels-liiiiin-34617678.jpg",
+    "usedIn": [
+      "Sichuan > The Terraces of Huanglong & Fairytale Pools of Jiuzhaigou"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/3e485854f244f5bfebd432a980e4583bd1e5913a-7008x3942.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"4d29b8b08237\"].images[_key==\"12c948e75baa\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "alt": "Mountain lake reflecting autumn forest in Jiuzhaigou Valley",
+    "verify": false,
+    "filename": "pexels-david-tran-1629960371-34619129.jpg",
+    "usedIn": [
+      "Sichuan > The Terraces of Huanglong & Fairytale Pools of Jiuzhaigou"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/1683e356abd14f16af6a47d711d12c77b5ad1bff-5265x3510.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"4d29b8b08237\"].images[_key==\"d74b716d1b0f\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "alt": "Fallen trees visible through clear turquoise lake water in Jiuzhaigou",
+    "verify": false,
+    "filename": "pexels-chris-duan-259139750-31404918.jpg",
+    "usedIn": [
+      "Sichuan > The Terraces of Huanglong & Fairytale Pools of Jiuzhaigou"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/c1a807c91c660710d25b8236888f5dfed870b717-6850x4567.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"4d29b8b08237\"].images[_key==\"ca6851fe54fe\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "alt": "Snow-dusted firs beside a blue lake under snowy peaks in Jiuzhaigou in winter",
+    "verify": false,
+    "filename": "pexels-rick-lu-3478496-16368450.jpg",
+    "usedIn": [
+      "Sichuan > The Terraces of Huanglong & Fairytale Pools of Jiuzhaigou"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/47c36e16506e94160df5621cbef8ca7cadcc0126-3024x4032.jpg",
+    "targets": [
+      {
+        "docId": "destination-sichuan",
+        "path": "packages[_key==\"4d29b8b08237\"].images[_key==\"c4b5e9c280ca\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "alt": "Sunset over mountain rice terraces in Yunnan",
+    "verify": true,
+    "filename": "RUBA4886-HDR.JPG",
+    "usedIn": [
+      "Yunnan | Southwest China"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/b74662d8fff6eee00acb6563d08571c5fb1f7224-5992x3995.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "heroImage.alt"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "alt": "Two women in traditional Dai dress preparing tea in Xishuangbanna",
+    "verify": true,
+    "filename": "2 (17).JPG",
+    "usedIn": [
+      "Yunnan > Tea, Rainforest & Flavors: Pu'er & Xishuangbanna"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/6964bae911e9dc80bea4a579bc809bf1a3d3dd39-5760x3840.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"lijiang-old-town\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "alt": "Dried mushrooms and fresh produce at a market stall in Yunnan",
+    "verify": false,
+    "filename": "RUBA5043.JPG",
+    "usedIn": [
+      "Yunnan > Tea, Rainforest & Flavors: Pu'er & Xishuangbanna"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/ac4c108f7ae13f61df3eecf4a853aa223f693f18-6000x4000.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"lijiang-old-town\"].images[_key==\"73bbb7fe18c3\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "alt": "Dai-style temple with tiered golden roofs in Xishuangbanna",
+    "verify": false,
+    "filename": "pexels-da-na-461418424-32023025.jpg",
+    "usedIn": [
+      "Yunnan > Tea, Rainforest & Flavors: Pu'er & Xishuangbanna"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/0c3e81eeb98cef3b853db26d8227a457d9fe36fc-2592x3872.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"lijiang-old-town\"].images[_key==\"d39dc20af1e9\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "alt": "Aerial view of tea plantations on green hills under clouds in Pu'er",
+    "verify": true,
+    "filename": "pexels-454774851-16030624.jpg",
+    "usedIn": [
+      "Yunnan > Tea, Rainforest & Flavors: Pu'er & Xishuangbanna",
+      "POST: From Pu'er Tea to Specialty Coffee: Discover Yunnan’s Hidden Coffee Trail"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/1642674bf981ad073af1a539495f7237196c2e2b-5472x3078.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"lijiang-old-town\"].images[_key==\"c986996a6dff\"].alt"
+      },
+      {
+        "docId": "0fe236be-21b9-4632-8d27-59cf634a32e8",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "alt": "Golden pagoda rising above a forested hill in Xishuangbanna",
+    "verify": true,
+    "filename": "pexels-ruben-boekeloo-521336009-33435746.jpg",
+    "usedIn": [
+      "Yunnan > Tea, Rainforest & Flavors: Pu'er & Xishuangbanna"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/542c7b0a95519b91e0d91d1bcc9f63b66480e15d-4999x4000.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"lijiang-old-town\"].images[_key==\"11fdd704e134\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "alt": "Seagulls flying over Erhai Lake beside a small island pavilion in Dali",
+    "verify": false,
+    "filename": "pexels-junique-wu-2161069114-37486675.jpg",
+    "usedIn": [
+      "Yunnan > Where the Wind Meets the Snow: A Dali & Lijiang Romance"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/4ecfd2b2c11ce1f6afeaf46275844eceee50cf08-4000x2664.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"shangri-la-highlands\"].image.alt"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "alt": "Performers in red festival costumes parading through Lijiang Old Town",
+    "verify": true,
+    "filename": "pexels-noor-din-36749271-30404387.jpg",
+    "usedIn": [
+      "Yunnan > Where the Wind Meets the Snow: A Dali & Lijiang Romance",
+      "POST: Beyond the Postcard: How a Journey to Yunnan Redefines “True Luxury”"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/4242e05e94073decd40da4dbc29401c2df3d6495-2160x2880.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"shangri-la-highlands\"].images[_key==\"3ed3dbba1f62\"].alt"
+      },
+      {
+        "docId": "e92d4dc1-878a-4066-b167-5497ab380c72",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "alt": "Aerial view of a lakeside village on the shore of Erhai Lake in Dali",
+    "verify": false,
+    "filename": "pexels-chetong-35410604.jpg",
+    "usedIn": [
+      "Yunnan > Where the Wind Meets the Snow: A Dali & Lijiang Romance",
+      "Yunnan > Walking on Clouds | Dali, Lijiang & Shangri-La"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/bed08841bcd19f305583bb208c306ecdc8f42f4e-4032x2268.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"shangri-la-highlands\"].images[_key==\"fdf4d3abea14\"].alt"
+      },
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"98805d47a670\"].images[_key==\"16787b67a198\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "alt": "Elderly shopkeeper working in a traditional handicraft shop in Lijiang Old Town",
+    "verify": true,
+    "filename": "pexels-xiaoxian-2151913460-37143311.jpg",
+    "usedIn": [
+      "Yunnan > Where the Wind Meets the Snow: A Dali & Lijiang Romance"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/5f4326981f9af15713dcddf83bb3b8769b1db48a-2906x4359.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"shangri-la-highlands\"].images[_key==\"cbbf7b7adb0d\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "alt": "Temple hung with prayer flags beneath snow-capped mountains in Yunnan",
+    "verify": true,
+    "filename": "pexels-richard-l-2150581203-36823756.jpg",
+    "usedIn": [
+      "Yunnan > Where the Wind Meets the Snow: A Dali & Lijiang Romance",
+      "Yunnan > Walking on Clouds | Dali, Lijiang & Shangri-La"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/ab6f6ce5763c1541d2e353a4e528506619b79b3b-4672x7008.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"shangri-la-highlands\"].images[_key==\"bcca72e50fde\"].alt"
+      },
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"98805d47a670\"].images[_key==\"340d5a4f90fe\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "alt": "Turquoise waters of Blue Moon Valley beneath Jade Dragon Snow Mountain in Lijiang",
+    "verify": false,
+    "filename": "pexels-213167965-32885601.jpg",
+    "usedIn": [
+      "Yunnan > Where the Wind Meets the Snow: A Dali & Lijiang Romance"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/d63eae1fb2c2a377f84bec5f9385a881f880ea72-6960x4640.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"shangri-la-highlands\"].images[_key==\"7aa88d4e1379\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "alt": "Sunrise lighting snow peaks above a sea of clouds in northern Yunnan",
+    "verify": true,
+    "filename": "玉龙雪山日照金山.jpg",
+    "usedIn": [
+      "Yunnan > Walking on Clouds | Dali, Lijiang & Shangri-La",
+      "POST: The Alpine Parallel: What Yunnan's Snow Peaks Can Teach the European Traveler"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/a809ca5a9239660bba9609eaf174948780516d44-3060x3855.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"98805d47a670\"].image.alt"
+      },
+      {
+        "docId": "30910dd0-4f48-4051-9467-a4e7600d6c13",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "alt": "Altitude marker stone reading 4680 m on Jade Dragon Snow Mountain",
+    "verify": false,
+    "filename": "玉龙雪山3.jpg",
+    "usedIn": [
+      "Yunnan > Walking on Clouds | Dali, Lijiang & Shangri-La"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/d5e1974bacb1e59b49b9773ec96c26117bd6c93d-950x1597.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"98805d47a670\"].images[_key==\"cb6104199141\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "alt": "Traveler walking a cobbled lane through an old town below the mountains",
+    "verify": true,
+    "filename": "玉湖村古村落.jpg",
+    "usedIn": [
+      "Yunnan > Walking on Clouds | Dali, Lijiang & Shangri-La"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/c755419ed19fbe43eb0d188c560ddd04c84e096e-1134x1420.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"98805d47a670\"].images[_key==\"28c991f0e00e\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "alt": "Table set with a steaming pot of broth and side dishes in Yunnan",
+    "verify": true,
+    "filename": "56ee871e-568b-4ffd-9034-f5c9b4eeb0ee.jpg",
+    "usedIn": [
+      "Yunnan > Walking on Clouds | Dali, Lijiang & Shangri-La"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/3a8670c2f8c648bc08d7766360e2cc0cd70ba09a-1067x1600.jpg",
+    "targets": [
+      {
+        "docId": "destination-yunnan",
+        "path": "packages[_key==\"98805d47a670\"].images[_key==\"b0057b11972d\"].alt"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "alt": "Bowl of crossing-the-bridge rice noodles with greens and mushrooms",
+    "verify": false,
+    "filename": "Crossing-the-bridge-noodles.jpg",
+    "usedIn": [
+      "POST: The Ultimate Guide to Gluten-Free Travel in China"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/fc275880186e5cf9e52b33af22f2806cc1e5a053-830x622.jpg",
+    "targets": [
+      {
+        "docId": "0693be5f-c2a3-4bb7-95bb-6eb2813f6703",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "alt": "Morning mist over tea fields in Meitan, Guizhou",
+    "verify": false,
+    "filename": "Meitan.png",
+    "usedIn": [
+      "POST: Slow Travel Beyond the Crowds: 5 Hidden Gem Towns on China’s Yunnan-Guizhou Plateau"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/4428e3b53d35e2f33a8d48b96ab0207c6ea43d17-1400x907.png",
+    "targets": [
+      {
+        "docId": "0a036694-3e2c-4f8c-8727-94b3c6689e02",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "alt": "Ronald McDonald statue dressed as a Chinese deity at a restaurant in China",
+    "verify": true,
+    "filename": "IMG_9373.JPG",
+    "usedIn": [
+      "POST: Mind-Blowing (and Slightly Quirky!) Culture Shocks You’ll Experience in China"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/5a863b1c4cf23be37f618109fd8864e9bf27607a-4284x5712.jpg",
+    "targets": [
+      {
+        "docId": "41b1d5e4-c73c-4215-b231-3a6c5c14b322",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "alt": "Mosuo women in traditional dress dancing in Yunnan",
+    "verify": false,
+    "filename": "Yuannan, Mosuo.jpg",
+    "usedIn": [
+      "POST: Lessons from the Matriarchs: Wisdom and Perspective from Yunnan’s Mosuo Culture"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/036bc66e24478075eaf45d6aa3aec290e47fce06-4896x3264.jpg",
+    "targets": [
+      {
+        "docId": "91150021-0a4e-40a5-81c6-7fd88fca50bf",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "alt": "Red lanterns along a cobbled lane in Shaxi Ancient Town, Yunnan",
+    "verify": false,
+    "filename": "shaxi ancient town.jpg",
+    "usedIn": [
+      "POST: Slowing down in Shaxi, Yunnan"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/f4bf2a0567e0d49c2465ce2516e6c1e308e382e4-2000x1333.jpg",
+    "targets": [
+      {
+        "docId": "e116a811-13fe-4dfe-96c9-f61dd6e189bc",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "alt": "Curving white canopy roof of a railway station in Chongqing",
+    "verify": true,
+    "filename": "重庆东站.jpg",
+    "usedIn": [
+      "POST: Connecting Chongqing: How to Pick the Right Train Station for Your Trip "
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/69a1b3c405d19cef2d7b1759286cb94870e18a2f-4000x2252.jpg",
+    "targets": [
+      {
+        "docId": "ffb1999b-b681-4ff8-bea1-44a1ec448c16",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "alt": "Grilled skewers topped with chopped scallions at a Chongqing night barbecue stall",
+    "verify": false,
+    "filename": "a-local-s-guide-to-chongqing-night-bbq-experience-the-sizzle-and-soul-of-chongqing-night-food-cover.jpg",
+    "usedIn": [
+      "POST: A Local's Guide to Chongqing Night BBQ: Experience the Sizzle and Soul of Chongqing Night Food"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/2a0bdc4dc5ac75772bb5a3cd31d1d16ca23cf1a9-916x1041.png",
+    "targets": [
+      {
+        "docId": "journalPost-a-local-s-guide-to-chongqing-night-bbq-experience-the-sizzle-and-soul-of-chongqing-night-food",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "alt": "Packets of Chongqing spicy snacks above a bubbling hotpot",
+    "verify": false,
+    "filename": "best-gifts-to-bring-buy-from-chongqing-cover.jpg",
+    "usedIn": [
+      "POST: Best gifts to bring/buy from Chongqing"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/c5d7f57c23bcb60d880bcde1e6d7418f6fea05a9-640x507.webp",
+    "targets": [
+      {
+        "docId": "journalPost-best-gifts-to-bring-buy-from-chongqing",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "alt": "Sichuan opera performer breathing fire",
+    "verify": false,
+    "filename": "best-place-to-visit-in-chongqing-cover.jpg",
+    "usedIn": [
+      "POST: Best Place to visit in Chongqing"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/0be6e8b386268ae9f0eef0795fca6b0f9fe7f891-1118x1492.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-best-place-to-visit-in-chongqing",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "alt": "Shoppers at a traditional snack shop hung with red lanterns in an old Chongqing street",
+    "verify": true,
+    "filename": "beyond-the-bling-authentic-chongqing-outside-of-jiefangbei-cover.jpg",
+    "usedIn": [
+      "POST: Beyond the Bling: Authentic Chongqing outside of Jiefangbei"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/d0cffc971ef03d49a270b884e9816aacd98d50e1-4032x2268.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-beyond-the-bling-authentic-chongqing-outside-of-jiefangbei",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "alt": "Chongqing People's Great Hall with its green-tiled roofs",
+    "verify": false,
+    "filename": "china-240-hour-twov-cover.jpg",
+    "usedIn": [
+      "POST: China Travel 2026: Navigating China 240-Hour Travel without a Visa Policy"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/24a8b1e9ac1f6a6fe89590bea809c227e975cb2c-1920x1280.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-china-240-hour-twov",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "alt": "Hongyadong's illuminated stilt buildings at night in Chongqing",
+    "verify": false,
+    "filename": "china-travel-2025-navigating-china-30-day-visa-free-travel-cover.jpg",
+    "usedIn": [
+      "POST: China Travel 2025: Navigating China 30-Day-Visa-Free Travel"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/5d491ceac18ceed8fd9f8942ba04760f07fd750a-1440x1783.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-china-travel-2025-navigating-china-30-day-visa-free-travel",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "alt": "Aerial view of an airport terminal with aircraft at the gates",
+    "verify": true,
+    "filename": "direct-flights-from-europe-to-chongqing-cover.jpg",
+    "usedIn": [
+      "POST: Direct flights from Europe to Chongqing, China"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/f5576fd03a71e1bbbb000c2a43d84fcf548d782e-300x200.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-direct-flights-from-europe-to-chongqing",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "alt": "Carved Buddha figure in the Dazu Rock Carvings",
+    "verify": false,
+    "filename": "escape-the-city-discover-southwest-chongqing-s-4-must-visit-nature-heritage-gems-cover.jpg",
+    "usedIn": [
+      "POST: Escape the City: Discover Southwest Chongqing's 4 Must-Visit Nature & Heritage Gems"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/3a9b090252e55957764ccbcc9573c5ed22541309-3024x4032.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-escape-the-city-discover-southwest-chongqing-s-4-must-visit-nature-heritage-gems",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "alt": "Fresh greens and vegetables at a street market stall",
+    "verify": false,
+    "filename": "food-recommendation-in-chongqing-not-spicy-or-vegetarian-options-cover.jpg",
+    "usedIn": [
+      "POST: Non-spicy food and Vegetarian Food recommendation in Chongqing"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/4412cd586594436577182c23a3ca36a7b2701d9c-768x661.png",
+    "targets": [
+      {
+        "docId": "journalPost-food-recommendation-in-chongqing-not-spicy-or-vegetarian-options",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "alt": "Raffles City Chongqing lit up at night above the river",
+    "verify": false,
+    "filename": "from-a-local-why-we-say-chongqing-with-pride-and-why-its-name-is-not-offensive-cover.jpg",
+    "usedIn": [
+      "POST: From a Local: Why We Say &quot;Chongqing&quot; With Pride—And Why Its Name is NOT Offensive"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/9dff1df5499c6f4a6933820ffa331b8e080eab4e-6720x4480.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-from-a-local-why-we-say-chongqing-with-pride-and-why-its-name-is-not-offensive",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "alt": "Bowl of spicy boiled beef topped with chillies and green onion",
+    "verify": false,
+    "filename": "halal-in-the-mountain-city-your-guide-to-finding-muslim-friendly-food-in-chongqing-china-cover.jpg",
+    "usedIn": [
+      "POST: Halal in the Mountain City: Your Guide to Finding Muslim-Friendly Food in Chongqing, China"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/4d30a29f870bae062035be6c775338a844d90679-785x724.png",
+    "targets": [
+      {
+        "docId": "journalPost-halal-in-the-mountain-city-your-guide-to-finding-muslim-friendly-food-in-chongqing-china",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "alt": "Ornate wooden gateway framing a view of the city",
+    "verify": true,
+    "filename": "how-to-pack-for-your-china-trip-topic-medicine-laundry-and-anti-mosquito-cover.jpg",
+    "usedIn": [
+      "POST: How to pack for your China Trip? (Topic: Medicine, Laundry, and anti-mosquito)"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/3708bfd36808186fb263afc4777d40e4ce6c4d7c-3024x4032.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-how-to-pack-for-your-china-trip-topic-medicine-laundry-and-anti-mosquito",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "alt": "Stone window framing a cable-stayed bridge in Chongqing",
+    "verify": false,
+    "filename": "planning-your-china-trip-a-head-s-up-on-public-holidays-rest-of-2025-december-2026-cover.jpg",
+    "usedIn": [
+      "POST: Planning Your China Trip? Avoid those Chinese Public Holidays (Rest of 2025 - December 2026)"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/cb40d1e06527c633cc6601271d58d55c361e4e44-1439x1866.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-planning-your-china-trip-a-head-s-up-on-public-holidays-rest-of-2025-december-2026",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "alt": "Performers in traditional costume on a theatre stage",
+    "verify": false,
+    "filename": "the-ultimate-list-of-12-featured-streets-most-tourists-miss-plus-how-to-get-there-cover.jpg",
+    "usedIn": [
+      "POST: The ultimate list of 12 &quot;Featured Streets&quot; most tourists miss (plus how to get there) 🚠🌶️"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/2eb20e88bf16492c4376dd7888e1aa9bd152cdb5-5712x4284.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-the-ultimate-list-of-12-featured-streets-most-tourists-miss-plus-how-to-get-there",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "alt": "Jiefangbei Liberation Monument among Chongqing skyscrapers at dusk",
+    "verify": false,
+    "filename": "try-these-basic-chongqing-dialect-phrases-on-your-next-chongqing-trip-waitress-aunties-might-give-you-more-food-cover.jpg",
+    "usedIn": [
+      "POST: Try These Basic Chongqing Dialect Phrases on Your Next Chongqing Trip: Waitress aunties might give you more food :)"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/aa0095767ae430732ade5f1f2ebd12335afe7d9a-4480x6720.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-try-these-basic-chongqing-dialect-phrases-on-your-next-chongqing-trip-waitress-aunties-might-give-you-more-food",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "alt": "Ornate historic stone gate in Chongqing",
+    "verify": true,
+    "filename": "walk-the-battlefields-your-three-kingdoms-history-tour-in-chongqing-china-cover.jpg",
+    "usedIn": [
+      "POST: ⚔️ Walk the Battlefields: Your Three Kingdoms History Tour in Chongqing, China"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/eb9a9cd65f7cc12a7a2386494d0c24f07dd19285-4284x5712.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-walk-the-battlefields-your-three-kingdoms-history-tour-in-chongqing-china",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "alt": "Hand holding a phone up to a WeChat Pay QR code",
+    "verify": false,
+    "filename": "wechat-and-alipay-set-up-cover.jpg",
+    "usedIn": [
+      "POST: How to Set Up WeChat Pay & Alipay for Traveling in China: A Complete Guide"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/e79dda1250fe5e6cb133e8126c37079572c66826-693x392.png",
+    "targets": [
+      {
+        "docId": "journalPost-wechat-and-alipay-set-up",
+        "path": "image.alt"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "alt": "Aerial view of a large high-speed railway station",
+    "verify": true,
+    "filename": "your-high-speed-rail-adventure-in-china-from-ticket-to-track-cover.jpg",
+    "usedIn": [
+      "POST: Your High-Speed Rail Adventure in China: From Ticket to Track!"
+    ],
+    "url": "https://cdn.sanity.io/images/o7f7vu0c/production/51713330e7361bce4b68da22ea1aaa1c66ceed86-5472x3648.jpg",
+    "targets": [
+      {
+        "docId": "journalPost-your-high-speed-rail-adventure-in-china-from-ticket-to-track",
+        "path": "image.alt"
+      }
+    ]
+  }
+]

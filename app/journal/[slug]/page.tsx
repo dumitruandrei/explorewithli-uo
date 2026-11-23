@@ -6,6 +6,8 @@ import { PortableText, type PortableTextComponents } from 'next-sanity'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { ContactAnchor } from '@/components/contact-anchor'
+import { JsonLd } from '@/components/json-ld'
+import { SITE_URL, absoluteUrl, breadcrumbJsonLd, buildPageMetadata } from '@/lib/seo'
 import {
   formatJournalDate,
   getDestinationNav,
@@ -13,6 +15,22 @@ import {
   getJournalPosts,
   getJournalPostSlugs,
 } from '@/sanity/lib/fetch'
+
+// Consecutive text blocks render in one flow so their margins collapse like the old section layout;
+// tables and legacy sections stay separate items in the gap-10 column.
+function groupContent(content: any[] = []) {
+  const items: any[] = []
+  for (const item of content) {
+    const last = items[items.length - 1]
+    if (item._type === 'block') {
+      if (last?._type === 'blockGroup') last.blocks.push(item)
+      else items.push({ _type: 'blockGroup', blocks: [item] })
+    } else {
+      items.push(item)
+    }
+  }
+  return items
+}
 
 const portableTextComponents: PortableTextComponents = {
   block: {
@@ -22,7 +40,7 @@ const portableTextComponents: PortableTextComponents = {
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="font-serif text-2xl mt-8 mb-4 text-foreground leading-tight sm:text-3xl">
+      <h2 className="font-serif text-2xl mt-10 mb-4 text-foreground leading-tight text-balance sm:text-3xl">
         {children}
       </h2>
     ),
@@ -133,10 +151,19 @@ export async function generateMetadata({
   const { slug } = await params
   const post = await getJournalPostBySlug(slug)
   if (!post) return {}
-  return {
-    title: `${post.title} — Explore with Li Journal`,
-    description: post.excerpt,
-  }
+  const { seo } = post
+  return buildPageMetadata({
+    title: seo.metaTitle ?? `${post.title} — Explore with Li Journal`,
+    description: seo.metaDescription ?? post.excerpt,
+    path: `/journal/${post.slug}`,
+    image: seo.ogImageUrl ?? post.ogImageUrl,
+    imageAlt: seo.ogImageAlt ?? post.imageAlt,
+    noIndex: seo.noIndex,
+    type: 'article',
+    publishedTime: post.publishedAt,
+    modifiedTime: post.updatedAt,
+    authors: post.author ? [post.author] : undefined,
+  })
 }
 
 export default async function JournalArticlePage({
@@ -154,15 +181,43 @@ export default async function JournalArticlePage({
   if (!post) notFound()
 
   const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 3)
+  const postPath = `/journal/${post.slug}`
+
+  const blogPosting = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: [post.ogImageUrl.startsWith('/') ? absoluteUrl(post.ogImageUrl) : post.ogImageUrl],
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
+    author: post.author
+      ? { '@type': 'Person', name: post.author }
+      : { '@id': `${SITE_URL}/#organization` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    mainEntityOfPage: absoluteUrl(postPath),
+    articleSection: post.category,
+    keywords: post.tags.length > 0 ? post.tags.join(', ') : undefined,
+  }
 
   return (
     <>
+      <JsonLd
+        data={[
+          blogPosting,
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Journal', path: '/journal' },
+            { name: post.title, path: postPath },
+          ]),
+        ]}
+      />
       <SiteHeader destinations={destinations} />
       <main>
         <section className="relative flex min-h-[60svh] items-end overflow-hidden">
           <Image
             src={post.imageUrl}
-            alt={post.title}
+            alt={post.imageAlt}
             fill
             priority
             sizes="100vw"
@@ -200,7 +255,15 @@ export default async function JournalArticlePage({
             </p>
 
             <div className="mt-12 flex flex-col gap-10">
-              {post.content.map((item: any, i: number) => {
+              {groupContent(post.content).map((item: any, i: number) => {
+                if (item._type === 'blockGroup') {
+                  return (
+                    <div key={i} className="[&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
+                      <PortableText value={item.blocks} components={portableTextComponents} />
+                    </div>
+                  )
+                }
+
                 if (item._type === 'journalSection') {
                   return (
                     <section key={i}>
@@ -279,7 +342,7 @@ export default async function JournalArticlePage({
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <Image
                       src={p.imageUrl}
-                      alt={p.title}
+                      alt={p.imageAlt}
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

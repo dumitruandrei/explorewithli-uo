@@ -1,5 +1,7 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
+import {altField, urlSlugOptions, urlSlugValidation} from './fields'
+
 export const journalPost = defineType({
   name: 'journalPost',
   title: 'Journal Post',
@@ -15,11 +17,8 @@ export const journalPost = defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
+      options: {source: 'title', ...urlSlugOptions},
+      validation: urlSlugValidation,
     }),
     defineField({
       name: 'excerpt',
@@ -33,13 +32,23 @@ export const journalPost = defineType({
       title: 'Cover Image',
       type: 'image',
       options: {hotspot: true},
+      fields: [altField],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'category',
+      name: 'categoryRef',
       title: 'Category',
-      type: 'string',
+      type: 'reference',
+      to: [{type: 'category'}],
       validation: (Rule) => Rule.required(),
+    }),
+    // Legacy text fields stay until the live site reads the new fields; hidden once migrated.
+    defineField({
+      name: 'category',
+      title: 'Category (legacy text)',
+      type: 'string',
+      readOnly: true,
+      hidden: ({document}) => Boolean(document?.categoryRef),
     }),
     defineField({
       name: 'readTime',
@@ -49,10 +58,18 @@ export const journalPost = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'author',
+      name: 'authorRef',
       title: 'Author',
-      type: 'string',
+      type: 'reference',
+      to: [{type: 'author'}],
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'author',
+      title: 'Author (legacy text)',
+      type: 'string',
+      readOnly: true,
+      hidden: ({document}) => Boolean(document?.authorRef),
     }),
     defineField({
       name: 'publishedAt',
@@ -68,15 +85,27 @@ export const journalPost = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'content',
+      name: 'body',
       title: 'Article Content',
+      type: 'array',
+      description: 'Use "Heading 2" for section titles.',
+      of: [
+        defineArrayMember({type: 'block'}),
+        defineArrayMember({type: 'richTableBlock'}),
+      ],
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
+      name: 'content',
+      title: 'Article Content (legacy sections)',
       type: 'array',
       of: [
         defineArrayMember({type: 'journalSection'}),
         defineArrayMember({type: 'block'}),
         defineArrayMember({type: 'richTableBlock'}),
       ],
-      validation: (Rule) => Rule.required().min(1),
+      readOnly: true,
+      hidden: ({document}) => Array.isArray(document?.body) && document.body.length > 0,
     }),
     defineField({
       name: 'featured',
@@ -100,6 +129,7 @@ export const journalPost = defineType({
       },
       description: 'Add tags to help categorize and filter this post',
     }),
+    defineField({name: 'seo', title: 'SEO', type: 'seo'}),
   ],
   orderings: [
     {
@@ -111,7 +141,7 @@ export const journalPost = defineType({
   preview: {
     select: {
       title: 'title',
-      subtitle: 'category',
+      subtitle: 'categoryRef.title',
       media: 'image',
     },
   },

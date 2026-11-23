@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Check, X, Clock, Users, ArrowRight, MapPin, ChevronLeft, ChevronRight } from 'lucide-react'
 import type { TravelPackage } from '@/lib/travel'
 import { formatPrice } from '@/lib/travel'
@@ -10,14 +11,17 @@ import { ContactForm } from '@/components/contact-form'
 export function PackageCard({
   pkg,
   destinationName,
+  destinationSlug,
 }: {
   pkg: TravelPackage
   destinationName: string
+  destinationSlug: string
 }) {
   const [open, setOpen] = useState(false)
   const [imgIndex, setImgIndex] = useState(0)
 
-  const gallery = [pkg.image, ...(pkg.images || [])].filter(Boolean)
+  const gallery = pkg.gallery
+  const packageHref = `/destinations/${destinationSlug}/${pkg.urlSlug}`
 
   useEffect(() => {
     if (!open) {
@@ -55,7 +59,7 @@ export function PackageCard({
         >
           <Image
             src={pkg.image || '/placeholder.svg'}
-            alt={pkg.title}
+            alt={pkg.imageAlt}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -67,7 +71,9 @@ export function PackageCard({
 
         <div className="flex flex-1 flex-col p-5">
           <h3 className="font-serif text-xl leading-tight text-card-foreground text-balance">
-            {pkg.title}
+            <Link href={packageHref} className="hover:underline underline-offset-4">
+              {pkg.title}
+            </Link>
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             {pkg.description}
@@ -124,8 +130,8 @@ export function PackageCard({
           >
             <div className="relative aspect-[16/9] w-full group/hero">
               <Image
-                src={gallery[imgIndex] || '/placeholder.svg'}
-                alt={`${pkg.title} - Image ${imgIndex + 1}`}
+                src={gallery[imgIndex]?.src || '/placeholder.svg'}
+                alt={gallery[imgIndex]?.alt ?? pkg.imageAlt}
                 fill
                 sizes="(max-width: 768px) 100vw, 768px"
                 className="object-cover transition-all duration-500"
@@ -304,6 +310,13 @@ export function PackageCard({
               </div>
 
               <div className="mt-8 border-t border-border pt-6">
+                <Link
+                  href={packageHref}
+                  className="mb-6 inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80"
+                >
+                  Open the full page for this journey
+                  <ArrowRight className="size-4" />
+                </Link>
                 <h4 className="font-serif text-xl text-card-foreground">
                   Enquire about this journey
                 </h4>

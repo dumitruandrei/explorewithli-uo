@@ -28,6 +28,8 @@ export const destinationBySlugQuery = groq`
     heroImage,
     description,
     longDescription,
+    _updatedAt,
+    seo{metaTitle, metaDescription, ogImage, noIndex},
     packages[]{
       title,
       "slug": slug.current,
@@ -45,7 +47,8 @@ export const destinationBySlugQuery = groq`
       highlights,
       tripHighlights,
       included,
-      notIncluded
+      notIncluded,
+      seo{metaTitle, metaDescription, ogImage, noIndex}
     }
   }
 `
@@ -68,9 +71,9 @@ export const journalPostsQuery = groq`
     "slug": slug.current,
     excerpt,
     image,
-    category,
+    "category": coalesce(categoryRef->title, category),
     readTime,
-    author,
+    "author": coalesce(authorRef->name, author),
     publishedAt,
     featured,
     tags
@@ -88,26 +91,41 @@ export const journalPostBySlugQuery = groq`
     "slug": slug.current,
     excerpt,
     image,
-    category,
+    "category": coalesce(categoryRef->title, category),
     readTime,
-    author,
+    "author": coalesce(authorRef->name, author),
     publishedAt,
+    _updatedAt,
     intro,
-    content[],
-    tags
+    "content": coalesce(body, content),
+    tags,
+    seo{metaTitle, metaDescription, ogImage, noIndex}
   }
 `
 
+export const sitemapQuery = groq`{
+  "destinations": *[_type == "destination" && defined(slug.current) && seo.noIndex != true]{
+    "slug": slug.current,
+    "updatedAt": _updatedAt,
+    "packages": packages[seo.noIndex != true]{ "slug": slug.current, title }
+  },
+  "posts": *[_type == "journalPost" && defined(slug.current) && seo.noIndex != true]{
+    "slug": slug.current,
+    "updatedAt": _updatedAt,
+    tags
+  }
+}`
+
 export const journalPostsByTagQuery = groq`
-  *[_type == "journalPost" && $tag in tags] | order(publishedAt desc) {
+  *[_type == "journalPost" && $tagName in tags] | order(publishedAt desc) {
     _id,
     title,
     "slug": slug.current,
     excerpt,
     image,
-    category,
+    "category": coalesce(categoryRef->title, category),
     readTime,
-    author,
+    "author": coalesce(authorRef->name, author),
     publishedAt,
     featured,
     tags
@@ -116,6 +134,13 @@ export const journalPostsByTagQuery = groq`
 
 export const journalTagsQuery = groq`
   array::unique(
-    *[_type == "journalPost"].tags[]
+    *[_type == "journalPost"].tags[defined(@) && @ != ""]
   )
+`
+
+export const packageParamsQuery = groq`
+  *[_type == "destination" && defined(slug.current)]{
+    "slug": slug.current,
+    "packages": packages[]{ "slug": slug.current, title }
+  }
 `

@@ -1,14 +1,16 @@
+import { buildPageMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { getDestinationNav } from '@/sanity/lib/fetch'
 import { ShieldCheck, Cookie, Eye, Users, Scale, Mail } from 'lucide-react'
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: 'Privacy & Cookie Policy | Explore with Li',
   description:
     'Learn how Explore with Li handles your data. We use only strictly necessary cookies and collect only what you voluntarily share with us.',
-}
+  path: '/privacy',
+})
 
 export default async function PrivacyPage() {
   const destinations = await getDestinationNav()

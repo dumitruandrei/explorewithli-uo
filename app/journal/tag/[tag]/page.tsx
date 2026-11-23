@@ -9,6 +9,9 @@ import {
   getJournalPostsByTag,
   getAllJournalTags,
 } from '@/sanity/lib/fetch'
+import { buildPageMetadata } from '@/lib/seo'
+
+const MIN_POSTS_TO_INDEX_TAG = 3
 
 export async function generateStaticParams() {
   const tags = await getAllJournalTags()
@@ -22,10 +25,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { tag } = await params
   const decodedTag = decodeURIComponent(tag)
-  return {
-    title: `Posts tagged "${decodedTag}" — Explore with Li Journal`,
-    description: `Explore all blog posts tagged with "${decodedTag}"`,
-  }
+  const [allTags, posts] = await Promise.all([
+    getAllJournalTags(),
+    getJournalPostsByTag(decodedTag),
+  ])
+  // Case variants (e.g. /Chongqing vs /chongqing) point at one canonical spelling.
+  const canonicalTag =
+    allTags.find((t) => t.toLowerCase() === decodedTag.toLowerCase()) ?? decodedTag
+  return buildPageMetadata({
+    title: `Posts tagged "${canonicalTag}" — Explore with Li Journal`,
+    description: `Explore all blog posts tagged with "${canonicalTag}"`,
+    path: `/journal/tag/${encodeURIComponent(canonicalTag)}`,
+    // Tag pages with only one or two posts are thin duplicates of the posts themselves.
+    noIndex: posts.length < MIN_POSTS_TO_INDEX_TAG,
+  })
 }
 
 export default async function JournalTagPage({
@@ -83,7 +96,7 @@ export default async function JournalTagPage({
                     <div className="relative aspect-[16/10] w-full overflow-hidden">
                       <Image
                         src={post.imageUrl}
-                        alt={post.title}
+                        alt={post.imageAlt}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"

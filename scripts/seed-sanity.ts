@@ -2,7 +2,7 @@ import {existsSync, readFileSync} from 'fs'
 import {join} from 'path'
 import {getCliClient} from 'sanity/cli'
 
-import type { TravelPackage } from '../lib/travel'
+import type { SeedPackage } from './seed-data'
 import {
   blogPosts,
   destinations,
@@ -105,7 +105,7 @@ function parsePublishedAt(date: string) {
   return parsed.toISOString()
 }
 
-async function mapPackage(pkg: TravelPackage) {
+async function mapPackage(pkg: SeedPackage) {
   const images = pkg.images
     ? await Promise.all(
         pkg.images.map((img, i) =>

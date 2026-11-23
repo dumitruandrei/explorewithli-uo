@@ -75,6 +75,7 @@ export function SiteHeader({
               type="button"
               onClick={() => setDestOpen((v) => !v)}
               aria-expanded={destOpen}
+              aria-controls="destinations-menu"
               className={`flex items-center gap-1 rounded-sm px-4 py-2 text-sm font-medium transition-colors ${
                 onLight
                   ? 'text-foreground hover:text-primary'
@@ -86,8 +87,12 @@ export function SiteHeader({
                 className={`size-4 transition-transform ${destOpen ? 'rotate-180' : ''}`}
               />
             </button>
-            {destOpen && (
-              <div className="absolute left-0 top-full w-64 pt-2">
+            {/* Always rendered so crawlers see the links; visibility is CSS-only. */}
+            {(
+              <div
+                id="destinations-menu"
+                className={`absolute left-0 top-full w-64 pt-2 ${destOpen ? '' : 'hidden'}`}
+              >
                 <div className="overflow-hidden rounded-md border border-border bg-popover shadow-xl">
                   {destinations.map((d) => (
                     <Link
@@ -132,6 +137,8 @@ export function SiteHeader({
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
           className={`lg:hidden ${onLight ? 'text-foreground' : 'text-background'}`}
         >
           {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -139,8 +146,11 @@ export function SiteHeader({
       </nav>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="border-t border-border bg-background px-5 py-4 lg:hidden">
+      {(
+        <div
+          id="mobile-menu"
+          className={`border-t border-border bg-background px-5 py-4 lg:hidden ${mobileOpen ? '' : 'hidden'}`}
+        >
           <p className="px-1 pb-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
             Destinations
           </p>

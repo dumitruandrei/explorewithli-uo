@@ -5,12 +5,14 @@ import { ArrowRight } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { getDestinationNav, getJournalPosts } from '@/sanity/lib/fetch'
+import { buildPageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: 'Journal — Explore with Li',
   description:
     'Stories, insights, and travel knowledge from our local specialists to inspire your next journey through China.',
-}
+  path: '/journal',
+})
 
 export default async function JournalIndexPage() {
   const [posts, destinations] = await Promise.all([
@@ -52,7 +54,7 @@ export default async function JournalIndexPage() {
                 <div className="relative aspect-[16/10] w-full overflow-hidden lg:aspect-auto lg:min-h-[400px]">
                   <Image
                     src={feature.imageUrl}
-                    alt={feature.title}
+                    alt={feature.imageAlt}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -99,7 +101,7 @@ export default async function JournalIndexPage() {
                     <div className="relative aspect-[16/10] w-full overflow-hidden">
                       <Image
                         src={post.imageUrl}
-                        alt={post.title}
+                        alt={post.imageAlt}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
