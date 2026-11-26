@@ -17,6 +17,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/learn-more/chongqing-hiking-trails',
+        destination: '/journal/escape-the-city-discover-southwest-chongqing-s-4-must-visit-nature-heritage-gems',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }]
   },
