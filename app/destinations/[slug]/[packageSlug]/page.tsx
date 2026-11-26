@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, Check, Clock, X } from 'lucide-react'
+import { ArrowLeft, Check, Clock, MapPin, X } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { ContactForm } from '@/components/contact-form'
@@ -163,6 +163,16 @@ export default async function PackagePage({ params }: { params: Params }) {
                       <p className="mt-2 leading-relaxed text-muted-foreground">
                         {day.description}
                       </p>
+                      {day.activities.length > 0 && (
+                        <ul className="mt-3 flex flex-col gap-2">
+                          {day.activities.map((activity) => (
+                            <li key={activity} className="flex items-start gap-2 text-foreground">
+                              <MapPin className="mt-1 size-4 shrink-0 text-primary" aria-hidden />
+                              <span>{activity}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
                 </ol>
