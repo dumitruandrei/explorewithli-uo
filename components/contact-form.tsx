@@ -191,14 +191,16 @@ export function ContactForm({
       >
         {loading ? 'Sending enquiry...' : 'Request your tailored itinerary'}
       </Button>
-      <p
-        className={`mt-3 text-center text-sm leading-relaxed ${
-          isDark ? 'text-background/60' : 'text-muted-foreground'
-        }`}
-      >
-        Everything is flexible — group size, duration and activities can all be
-        adjusted. Pricing will adapt accordingly.
-      </p>
+      {!compact && (
+        <p
+          className={`mt-3 text-center text-sm leading-relaxed ${
+            isDark ? 'text-background/60' : 'text-muted-foreground'
+          }`}
+        >
+          Everything is flexible — group size, duration and activities can all be
+          adjusted. Pricing will adapt accordingly.
+        </p>
+      )}
     </form>
   )
 }

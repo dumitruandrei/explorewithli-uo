@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, Check, Clock, X } from 'lucide-react'
+import { ArrowLeft, Check, Clock, MapPin, X } from 'lucide-react'
+import { PackagePhotoCarousel } from '@/components/package-photo-carousel'
 import { SiteHeader } from '@/components/site-header'
 import { ContactFooter } from '@/components/contact-footer'
 import { ContactForm } from '@/components/contact-form'
@@ -43,7 +44,7 @@ export default async function PackagePage({ params }: { params: Params }) {
   const { destination, pkg } = result
   const destinationPath = `/destinations/${destination.slug}`
   const pagePath = `${destinationPath}/${pkg.urlSlug}`
-  const [hero, ...gallery] = pkg.gallery
+  const [hero] = pkg.gallery
 
   const tripJsonLd = {
     '@context': 'https://schema.org',
@@ -114,14 +115,16 @@ export default async function PackagePage({ params }: { params: Params }) {
             <h1 className="mt-2 font-serif text-4xl text-background text-balance sm:text-6xl">
               {pkg.title}
             </h1>
-            <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-background/90">
-              <span className="inline-flex items-center gap-2">
-                <Clock className="size-4" />
-                {pkg.durationDays} days
+            <div className="mt-5 flex flex-wrap items-center gap-3 text-background/90">
+              <span className="inline-flex items-center gap-2 rounded-full bg-black/25 px-4 py-2 backdrop-blur-sm">
+                <Clock className="size-4" aria-hidden />
+                {pkg.durationDays} {pkg.durationDays === 1 ? 'day' : 'days'}
               </span>
               {pkg.groupPrice > 0 && (
-                <span>
-                  From <strong className="font-semibold">€{pkg.groupPrice.toLocaleString('en-GB')}</strong> per person
+                <span className="inline-flex items-baseline gap-2 rounded-full bg-background px-4 py-2 text-foreground shadow-lg">
+                  <span className="text-sm text-muted-foreground">From</span>
+                  <strong className="font-serif text-2xl font-semibold">€{pkg.groupPrice.toLocaleString('en-GB')}</strong>
+                  <span className="text-sm text-muted-foreground">/ person</span>
                 </span>
               )}
             </div>
@@ -163,30 +166,28 @@ export default async function PackagePage({ params }: { params: Params }) {
                       <p className="mt-2 leading-relaxed text-muted-foreground">
                         {day.description}
                       </p>
+                      {day.activities.length > 0 && (
+                        <ul className="mt-3 flex flex-col gap-2">
+                          {day.activities.map((activity) => (
+                            <li key={activity} className="flex items-start gap-2 text-foreground">
+                              <MapPin className="mt-1 size-4 shrink-0 text-primary" aria-hidden />
+                              <span>{activity}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
                 </ol>
               </section>
             )}
 
-            {gallery.length > 0 && (
+            {pkg.gallery.length > 0 && (
               <section aria-labelledby="gallery">
                 <h2 id="gallery" className="font-serif text-3xl text-foreground">
                   Photos from this journey
                 </h2>
-                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  {gallery.map((img) => (
-                    <div key={img.src} className="relative aspect-[4/3] overflow-hidden rounded-md">
-                      <Image
-                        src={img.src || '/placeholder.svg'}
-                        alt={img.alt}
-                        fill
-                        sizes="(min-width: 640px) 33vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
+                <PackagePhotoCarousel photos={pkg.gallery} title={pkg.title} />
               </section>
             )}
 
@@ -227,6 +228,15 @@ export default async function PackagePage({ params }: { params: Params }) {
 
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <div className="rounded-md border border-border bg-card p-6">
+              {pkg.groupPrice > 0 && (
+                <div className="mb-6 rounded-md bg-secondary/70 p-4">
+                  <p className="text-sm text-muted-foreground">Starting price per person</p>
+                  <p className="mt-1 font-serif text-3xl font-semibold text-foreground">
+                    €{pkg.groupPrice.toLocaleString('en-GB')}
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">Based on a group of four</p>
+                </div>
+              )}
               <h2 className="font-serif text-2xl text-card-foreground">Enquire about this journey</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Group size, duration and activities can all be tailored to you.
@@ -234,6 +244,9 @@ export default async function PackagePage({ params }: { params: Params }) {
               <div className="mt-6">
                 <ContactForm context={pkg.title} compact />
               </div>
+              <p className="mt-6 rounded-md bg-secondary p-4 text-sm leading-relaxed text-secondary-foreground">
+                Everything about this trip is flexible — the group size, duration and activities can all be tailored to you. Pricing may change accordingly.
+              </p>
             </div>
           </aside>
         </div>
