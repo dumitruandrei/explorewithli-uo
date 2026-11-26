@@ -8,14 +8,22 @@ import type { ImageWithAlt } from '@/lib/travel'
 export function PackagePhotoCarousel({
   photos,
   title,
+  startIndex = 0,
 }: {
   photos: ImageWithAlt[]
   title: string
+  /** Index of the first photo shown in the mosaic; earlier ones (e.g. the hero) are skipped but stay in the viewer. */
+  startIndex?: number
 }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const dialogRef = useRef<HTMLDialogElement>(null)
   const activePhoto = photos[activeIndex]
+
+  const remaining = photos.slice(startIndex).map((photo, i) => ({ photo, index: startIndex + i }))
+  const visibleCount = remaining.length >= 5 ? 5 : remaining.length >= 3 ? 3 : remaining.length
+  const visible = remaining.slice(0, visibleCount)
+  const hiddenCount = remaining.length - visibleCount
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -48,28 +56,43 @@ export function PackagePhotoCarousel({
 
   return (
     <>
-      <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {photos.map((photo, index) => (
-          <button
-            key={`${photo.src}-${index}`}
-            type="button"
-            onClick={() => {
-              setActiveIndex(index)
-              setIsOpen(true)
-            }}
-            aria-label={`Open photo ${index + 1} of ${photos.length}: ${photo.alt}`}
-            className="group relative aspect-[4/3] overflow-hidden rounded-md bg-muted text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          >
-            <Image
-              src={photo.src || '/placeholder.svg'}
-              alt={photo.alt}
-              fill
-              sizes="(min-width: 640px) 33vw, 50vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <span className="sr-only">Open photo in carousel</span>
-          </button>
-        ))}
+      <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4">
+        {visible.map(({ photo, index }, position) => {
+          const isFeature = position === 0 && visible.length >= 3
+          const isLastVisible = position === visible.length - 1 && hiddenCount > 0
+          const spanClass = isFeature
+            ? 'col-span-2 aspect-[4/3] md:row-span-2 md:aspect-auto'
+            : visible.length === 1
+              ? 'col-span-2 md:col-span-4 aspect-[16/9]'
+              : visible.length === 2
+                ? 'aspect-[4/3] md:col-span-2'
+                : 'aspect-[4/3]'
+          return (
+            <button
+              key={`${photo.src}-${index}`}
+              type="button"
+              onClick={() => {
+                setActiveIndex(index)
+                setIsOpen(true)
+              }}
+              aria-label={`Open photo ${index + 1} of ${photos.length}: ${photo.alt}`}
+              className={`group relative overflow-hidden rounded-[1.25rem] bg-muted text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${spanClass}`}
+            >
+              <Image
+                src={photo.src || '/placeholder.svg'}
+                alt={photo.alt}
+                fill
+                sizes={isFeature ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 50vw'}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {isLastVisible && (
+                <span className="absolute inset-0 flex items-center justify-center bg-black/55 text-base font-medium text-white backdrop-blur-[2px]">
+                  +{hiddenCount} more
+                </span>
+              )}
+            </button>
+          )
+        })}
       </div>
 
       <dialog
